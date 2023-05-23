@@ -5,7 +5,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let proto_files = [
         ("../proto/api.proto", "api_descriptor.bin"),
         ("../proto/role.proto", "role_descriptor.bin"),
-        ("../proto/user.proto", "user_descriptor.bin")
+        ("../proto/user.proto", "user_descriptor.bin"),
+        ("../proto/token.proto", "token_descriptor.bin")
     ];
     let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 

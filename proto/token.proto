@@ -1,0 +1,58 @@
+syntax = "proto3";
+package token;
+
+service TokenService {
+    rpc ReadToken(TokenId) returns (TokenReadResponse);
+
+    rpc ListTokenByRole(RoleId) returns (TokenListResponse);
+
+    rpc ListTokenByUser(UserId) returns (TokenListResponse);
+
+    rpc CreateToken(TokenSchema) returns (TokenCreateResponse);
+
+    rpc DeleteToken(TokenId) returns (TokenChangeResponse);
+}
+
+message TokenSchema {
+    string id = 1;
+    uint32 role_id = 2;
+    uint32 user_id = 3;
+    int64 expire = 4;
+    uint32 limit = 5;
+    bytes ip = 6;
+}
+
+message TokenId {
+    string id = 1;
+}
+
+message RoleId {
+    uint32 id = 1;
+}
+
+message UserId {
+    uint32 id = 1;
+}
+
+enum ResponseStatus {
+    FAILED = 0;
+    SUCCESS = 1;
+}
+
+message TokenReadResponse {
+    TokenSchema result = 1;
+    ResponseStatus status = 2;
+}
+
+message TokenListResponse {
+    repeated TokenSchema result = 1;
+    ResponseStatus status = 2;
+}
+
+message TokenCreateResponse {
+    ResponseStatus status = 1;
+}
+
+message TokenChangeResponse {
+    ResponseStatus status = 1;
+}
