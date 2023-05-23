@@ -2,7 +2,8 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let proto_files: [(&str, &str); 0] = [
+    let proto_files = [
+        ("../proto/api.proto", "api_descriptor.bin")
     ];
     let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 

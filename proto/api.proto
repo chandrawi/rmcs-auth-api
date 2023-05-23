@@ -1,0 +1,135 @@
+syntax = "proto3";
+package api;
+
+service ApiService {
+    rpc ReadResource(ApiId) returns (ApiReadResponse);
+
+    rpc ReadResourceByName(ApiName) returns (ApiReadResponse);
+
+    rpc ListResource(ApiListRequest) returns (ApiListResponse);
+
+    rpc CreateResource(ApiSchema) returns (ApiCreateResponse);
+
+    rpc UpdateResource(ApiUpdate) returns (ApiChangeResponse);
+
+    rpc DeleteResource(ApiId) returns (ApiChangeResponse);
+
+    rpc ReadApplication(ApiId) returns (ApiReadResponse);
+
+    rpc ReadApplicationByName(ApiName) returns (ApiReadResponse);
+
+    rpc ListApplication(ApiListRequest) returns (ApiListResponse);
+
+    rpc CreateApplication(ApiSchema) returns (ApiCreateResponse);
+
+    rpc UpdateApplication(ApiUpdate) returns (ApiChangeResponse);
+
+    rpc DeleteApplication(ApiId) returns (ApiChangeResponse);
+
+    rpc ReadProcedure(ProcedureId) returns (ProcedureReadResponse);
+
+    rpc ReadProcedureByName(ProcedureName) returns (ProcedureReadResponse);
+
+    rpc ListProcedureByApi(ApiId) returns (ProcedureListResponse);
+
+    rpc CreateProcedure(ProcedureSchema) returns (ProcedureCreateResponse);
+
+    rpc UpdateProcedure(ProcedureUpdate) returns (ProcedureChangeResponse);
+
+    rpc DeleteProcedure(ProcedureId) returns (ProcedureChangeResponse);
+}
+
+message ApiSchema {
+    uint32 id = 1;
+    string name = 2;
+    string address = 3;
+    string description = 4;
+    repeated ProcedureSchema procedures = 5;
+}
+
+message ApiId {
+    uint32 id = 1;
+}
+
+message ApiName {
+    string name = 1;
+}
+
+message ApiListRequest {
+}
+
+message ApiUpdate {
+    uint32 id = 1;
+    optional string name = 2;
+    optional string address = 3;
+    optional string description = 4;
+}
+
+message ProcedureSchema {
+    uint32 id = 1;
+    uint32 api_id = 2;
+    string service = 3;
+    string procedure = 4;
+    string description = 5;
+}
+
+message ProcedureId {
+    uint32 id = 1;
+}
+
+message ProcedureName {
+    uint32 api_id = 1;
+    string service = 2;
+    string procedure = 3;
+}
+
+message ProcedureUpdate {
+    uint32 id = 1;
+    optional uint32 resource_id = 2;
+    optional string service = 3;
+    optional string procedure = 4;
+    optional string description = 5;
+}
+
+enum ResponseStatus {
+    FAILED = 0;
+    SUCCESS = 1;
+}
+
+message ApiReadResponse {
+    ApiSchema result = 1;
+    ResponseStatus status = 2;
+}
+
+message ApiListResponse {
+    repeated ApiSchema result = 1;
+    ResponseStatus status = 2;
+}
+
+message ApiCreateResponse {
+    uint32 id = 1;
+    ResponseStatus status = 2;
+}
+
+message ApiChangeResponse {
+    ResponseStatus status = 1;
+}
+
+message ProcedureReadResponse {
+    ProcedureSchema result = 1;
+    ResponseStatus status = 2;
+}
+
+message ProcedureListResponse {
+    repeated ProcedureSchema result = 1;
+    ResponseStatus status = 2;
+}
+
+message ProcedureCreateResponse {
+    uint32 id = 1;
+    ResponseStatus status = 2;
+}
+
+message ProcedureChangeResponse {
+    ResponseStatus status = 1;
+}
