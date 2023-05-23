@@ -3,7 +3,8 @@ use std::path::PathBuf;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let proto_files = [
-        ("../proto/api.proto", "api_descriptor.bin")
+        ("../proto/api.proto", "api_descriptor.bin"),
+        ("../proto/role.proto", "role_descriptor.bin")
     ];
     let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 

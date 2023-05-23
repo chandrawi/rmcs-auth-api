@@ -1,0 +1,79 @@
+syntax = "proto3";
+package role;
+
+service RoleService {
+    rpc ReadRole(RoleId) returns (RoleReadResponse);
+
+    rpc ReadRoleByName(RoleName) returns (RoleReadResponse);
+
+    rpc ListRole(RoleListRequest) returns (RoleListResponse);
+
+    rpc CreateRole(RoleSchema) returns (RoleCreateResponse);
+
+    rpc UpdateRole(RoleUpdate) returns (RoleChangeResponse);
+
+    rpc DeleteRole(RoleId) returns (RoleChangeResponse);
+
+    rpc AddRoleAccess(RoleAccess) returns (RoleChangeResponse);
+
+    rpc RemoveRoleAccess(RoleAccess) returns (RoleChangeResponse);
+}
+
+message RoleSchema {
+    uint32 id = 1;
+    string name = 2;
+    bool secured = 3;
+    bool multi = 4;
+    uint32 token_expire = 5;
+    uint32 token_limit = 6;
+    repeated uint32 access = 7;
+}
+
+message RoleId {
+    uint32 id = 1;
+}
+
+message RoleName {
+    string name = 1;
+}
+
+message RoleListRequest {
+}
+
+message RoleUpdate {
+    uint32 id = 1;
+    optional string name = 2;
+    optional bool secured = 3;
+    optional bool multi = 4;
+    optional uint32 token_expire = 5;
+    optional uint32 token_limit = 6;
+}
+
+message RoleAccess {
+    uint32 id = 1;
+    uint32 procedure_id = 2;
+}
+
+enum ResponseStatus {
+    FAILED = 0;
+    SUCCESS = 1;
+}
+
+message RoleReadResponse {
+    RoleSchema result = 1;
+    ResponseStatus status = 2;
+}
+
+message RoleListResponse {
+    repeated RoleSchema result = 1;
+    ResponseStatus status = 2;
+}
+
+message RoleCreateResponse {
+    uint32 id = 1;
+    ResponseStatus status = 2;
+}
+
+message RoleChangeResponse {
+    ResponseStatus status = 1;
+}
