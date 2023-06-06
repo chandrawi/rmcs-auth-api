@@ -2,29 +2,17 @@ syntax = "proto3";
 package api;
 
 service ApiService {
-    rpc ReadResource(ApiId) returns (ApiReadResponse);
+    rpc ReadApi(ApiId) returns (ApiReadResponse);
 
-    rpc ReadResourceByName(ApiName) returns (ApiReadResponse);
+    rpc ReadApiByName(ApiName) returns (ApiReadResponse);
 
-    rpc ListResource(ApiListRequest) returns (ApiListResponse);
+    rpc ListApiByCategory(ApiCategory) returns (ApiListResponse);
 
-    rpc CreateResource(ApiSchema) returns (ApiCreateResponse);
+    rpc CreateApi(ApiSchema) returns (ApiCreateResponse);
 
-    rpc UpdateResource(ApiUpdate) returns (ApiChangeResponse);
+    rpc UpdateApi(ApiUpdate) returns (ApiChangeResponse);
 
-    rpc DeleteResource(ApiId) returns (ApiChangeResponse);
-
-    rpc ReadApplication(ApiId) returns (ApiReadResponse);
-
-    rpc ReadApplicationByName(ApiName) returns (ApiReadResponse);
-
-    rpc ListApplication(ApiListRequest) returns (ApiListResponse);
-
-    rpc CreateApplication(ApiSchema) returns (ApiCreateResponse);
-
-    rpc UpdateApplication(ApiUpdate) returns (ApiChangeResponse);
-
-    rpc DeleteApplication(ApiId) returns (ApiChangeResponse);
+    rpc DeleteApi(ApiId) returns (ApiChangeResponse);
 
     rpc ReadProcedure(ProcedureId) returns (ProcedureReadResponse);
 
@@ -39,12 +27,21 @@ service ApiService {
     rpc DeleteProcedure(ProcedureId) returns (ProcedureChangeResponse);
 }
 
+message AccessKeySchema {
+    string role = 1;
+    bytes access_key = 2;
+}
+
 message ApiSchema {
     uint32 id = 1;
     string name = 2;
     string address = 3;
-    string description = 4;
-    repeated ProcedureSchema procedures = 5;
+    string category = 4;
+    string description = 5;
+    bytes public_key = 6;
+    optional string password = 7;
+    repeated ProcedureSchema procedures = 8;
+    repeated AccessKeySchema access_keys = 9;
 }
 
 message ApiId {
@@ -55,22 +52,26 @@ message ApiName {
     string name = 1;
 }
 
-message ApiListRequest {
+message ApiCategory {
+    string category = 1;
 }
 
 message ApiUpdate {
     uint32 id = 1;
     optional string name = 2;
     optional string address = 3;
-    optional string description = 4;
+    optional string category = 4;
+    optional string description = 5;
+    optional string password = 6;
+    bool update_key = 7;
 }
 
 message ProcedureSchema {
     uint32 id = 1;
     uint32 api_id = 2;
-    string service = 3;
-    string procedure = 4;
-    string description = 5;
+    string name = 3;
+    string description = 4;
+    repeated string roles = 5;
 }
 
 message ProcedureId {
@@ -79,16 +80,14 @@ message ProcedureId {
 
 message ProcedureName {
     uint32 api_id = 1;
-    string service = 2;
-    string procedure = 3;
+    string name = 3;
 }
 
 message ProcedureUpdate {
     uint32 id = 1;
     optional uint32 resource_id = 2;
-    optional string service = 3;
-    optional string procedure = 4;
-    optional string description = 5;
+    optional string name = 3;
+    optional string description = 4;
 }
 
 enum ResponseStatus {

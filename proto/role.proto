@@ -6,7 +6,9 @@ service RoleService {
 
     rpc ReadRoleByName(RoleName) returns (RoleReadResponse);
 
-    rpc ListRole(RoleListRequest) returns (RoleListResponse);
+    rpc ListRoleByApi(ApiId) returns (RoleListResponse);
+
+    rpc ListRoleByUser(UserId) returns (RoleListResponse);
 
     rpc CreateRole(RoleSchema) returns (RoleCreateResponse);
 
@@ -21,12 +23,14 @@ service RoleService {
 
 message RoleSchema {
     uint32 id = 1;
-    string name = 2;
-    bool secured = 3;
+    uint32 api_id = 2;
+    string name = 3;
     bool multi = 4;
-    uint32 token_expire = 5;
-    uint32 token_limit = 6;
-    repeated uint32 access = 7;
+    bool ip_lock = 5;
+    uint32 access_duration = 6;
+    uint32 refresh_duration = 7;
+    bytes access_key = 8;
+    repeated uint32 procedures = 9;
 }
 
 message RoleId {
@@ -34,19 +38,26 @@ message RoleId {
 }
 
 message RoleName {
-    string name = 1;
+    uint32 api_id = 1;
+    string name = 2;
 }
 
-message RoleListRequest {
+message ApiId {
+    uint32 api_id = 1;
+}
+
+message UserId {
+    uint32 user_id = 1;
 }
 
 message RoleUpdate {
     uint32 id = 1;
     optional string name = 2;
-    optional bool secured = 3;
-    optional bool multi = 4;
-    optional uint32 token_expire = 5;
-    optional uint32 token_limit = 6;
+    optional bool multi = 3;
+    optional bool ip_lock = 4;
+    optional uint32 access_duration = 5;
+    optional uint32 refresh_duration = 6;
+    bool update_key = 7;
 }
 
 message RoleAccess {

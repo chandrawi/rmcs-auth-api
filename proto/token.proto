@@ -2,36 +2,41 @@ syntax = "proto3";
 package token;
 
 service TokenService {
-    rpc ReadToken(TokenId) returns (TokenReadResponse);
+    rpc ReadRefreshToken(RefreshId) returns (TokenReadResponse);
 
-    rpc ListTokenByRole(RoleId) returns (TokenListResponse);
+    rpc ListAccessToken(AccessId) returns (TokenListResponse);
 
     rpc ListTokenByUser(UserId) returns (TokenListResponse);
 
-    rpc CreateToken(TokenSchema) returns (TokenCreateResponse);
+    rpc CreateRefreshToken(TokenSchema) returns (TokenCreateResponse);
 
-    rpc DeleteToken(TokenId) returns (TokenChangeResponse);
+    rpc CreateAccessToken(TokenSchema) returns (TokenCreateResponse);
+
+    rpc DeleteRefreshToken(RefreshId) returns (TokenChangeResponse);
+
+    rpc DeleteAccessToken(AccessId) returns (TokenChangeResponse);
+
+    rpc DeleteTokenByUser(UserId) returns (TokenChangeResponse);
 }
 
 message TokenSchema {
-    string id = 1;
-    uint32 role_id = 2;
+    string refresh_id = 1;
+    uint32 access_id = 2;
     uint32 user_id = 3;
     int64 expire = 4;
-    uint32 limit = 5;
-    bytes ip = 6;
+    bytes ip = 5;
 }
 
-message TokenId {
-    string id = 1;
+message RefreshId {
+    string refresh_id = 1;
 }
 
-message RoleId {
-    uint32 id = 1;
+message AccessId {
+    uint32 access_id = 1;
 }
 
 message UserId {
-    uint32 id = 1;
+    uint32 user_id = 1;
 }
 
 enum ResponseStatus {
@@ -50,7 +55,9 @@ message TokenListResponse {
 }
 
 message TokenCreateResponse {
-    ResponseStatus status = 1;
+    string refresh_id = 1;
+    uint32 access_id = 2;
+    ResponseStatus status = 3;
 }
 
 message TokenChangeResponse {

@@ -15,15 +15,22 @@ service UserService {
     rpc DeleteUser(UserId) returns (UserChangeResponse);
 }
 
+message UserRoleSchema {
+    string role = 1;
+    bool multi = 2;
+    bool ip_lock = 3;
+    uint32 access_duration = 4;
+    uint32 refresh_duration = 5;
+}
+
 message UserSchema {
     uint32 id = 1;
-    uint32 role_id = 2;
-    string name = 3;
-    string password = 4;
-    string public_key = 5;
-    string private_key = 6;
-    string email = 7;
-    string phone = 8;
+    string name = 2;
+    string email = 3;
+    string phone = 4;
+    bytes public_key = 5;
+    optional string password = 6;
+    repeated UserRoleSchema roles = 7;
 }
 
 message UserId {
@@ -41,11 +48,10 @@ message RoleId {
 message UserUpdate {
     uint32 id = 1;
     optional string name = 2;
-    optional string password = 3;
-    optional string public_key = 4;
-    optional string private_key = 5;
-    optional string email = 6;
-    optional string phone = 7;
+    optional string email = 3;
+    optional string phone = 4;
+    optional string password = 5;
+    bool update_key = 6;
 }
 
 enum ResponseStatus {

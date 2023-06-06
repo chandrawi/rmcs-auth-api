@@ -1,22 +1,34 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct UserRoleSchema {
+    #[prost(string, tag = "1")]
+    pub role: ::prost::alloc::string::String,
+    #[prost(bool, tag = "2")]
+    pub multi: bool,
+    #[prost(bool, tag = "3")]
+    pub ip_lock: bool,
+    #[prost(uint32, tag = "4")]
+    pub access_duration: u32,
+    #[prost(uint32, tag = "5")]
+    pub refresh_duration: u32,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserSchema {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(uint32, tag = "2")]
-    pub role_id: u32,
-    #[prost(string, tag = "3")]
+    #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
-    #[prost(string, tag = "4")]
-    pub password: ::prost::alloc::string::String,
-    #[prost(string, tag = "5")]
-    pub public_key: ::prost::alloc::string::String,
-    #[prost(string, tag = "6")]
-    pub private_key: ::prost::alloc::string::String,
-    #[prost(string, tag = "7")]
+    #[prost(string, tag = "3")]
     pub email: ::prost::alloc::string::String,
-    #[prost(string, tag = "8")]
+    #[prost(string, tag = "4")]
     pub phone: ::prost::alloc::string::String,
+    #[prost(bytes = "vec", tag = "5")]
+    pub public_key: ::prost::alloc::vec::Vec<u8>,
+    #[prost(string, optional, tag = "6")]
+    pub password: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(message, repeated, tag = "7")]
+    pub roles: ::prost::alloc::vec::Vec<UserRoleSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -44,15 +56,13 @@ pub struct UserUpdate {
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
-    pub password: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "4")]
-    pub public_key: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "5")]
-    pub private_key: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "6")]
     pub email: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "7")]
+    #[prost(string, optional, tag = "4")]
     pub phone: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "5")]
+    pub password: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, tag = "6")]
+    pub update_key: bool,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

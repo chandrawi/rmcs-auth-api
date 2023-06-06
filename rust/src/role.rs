@@ -3,18 +3,22 @@
 pub struct RoleSchema {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(string, tag = "2")]
+    #[prost(uint32, tag = "2")]
+    pub api_id: u32,
+    #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
-    #[prost(bool, tag = "3")]
-    pub secured: bool,
     #[prost(bool, tag = "4")]
     pub multi: bool,
-    #[prost(uint32, tag = "5")]
-    pub token_expire: u32,
+    #[prost(bool, tag = "5")]
+    pub ip_lock: bool,
     #[prost(uint32, tag = "6")]
-    pub token_limit: u32,
-    #[prost(uint32, repeated, tag = "7")]
-    pub access: ::prost::alloc::vec::Vec<u32>,
+    pub access_duration: u32,
+    #[prost(uint32, tag = "7")]
+    pub refresh_duration: u32,
+    #[prost(bytes = "vec", tag = "8")]
+    pub access_key: ::prost::alloc::vec::Vec<u8>,
+    #[prost(uint32, repeated, tag = "9")]
+    pub procedures: ::prost::alloc::vec::Vec<u32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -25,12 +29,23 @@ pub struct RoleId {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleName {
-    #[prost(string, tag = "1")]
+    #[prost(uint32, tag = "1")]
+    pub api_id: u32,
+    #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct RoleListRequest {}
+pub struct ApiId {
+    #[prost(uint32, tag = "1")]
+    pub api_id: u32,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct UserId {
+    #[prost(uint32, tag = "1")]
+    pub user_id: u32,
+}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleUpdate {
@@ -39,13 +54,15 @@ pub struct RoleUpdate {
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(bool, optional, tag = "3")]
-    pub secured: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "4")]
     pub multi: ::core::option::Option<bool>,
+    #[prost(bool, optional, tag = "4")]
+    pub ip_lock: ::core::option::Option<bool>,
     #[prost(uint32, optional, tag = "5")]
-    pub token_expire: ::core::option::Option<u32>,
+    pub access_duration: ::core::option::Option<u32>,
     #[prost(uint32, optional, tag = "6")]
-    pub token_limit: ::core::option::Option<u32>,
+    pub refresh_duration: ::core::option::Option<u32>,
+    #[prost(bool, tag = "7")]
+    pub update_key: bool,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -245,9 +262,9 @@ pub mod role_service_client {
                 .insert(GrpcMethod::new("role.RoleService", "ReadRoleByName"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_role(
+        pub async fn list_role_by_api(
             &mut self,
-            request: impl tonic::IntoRequest<super::RoleListRequest>,
+            request: impl tonic::IntoRequest<super::ApiId>,
         ) -> std::result::Result<
             tonic::Response<super::RoleListResponse>,
             tonic::Status,
@@ -263,10 +280,36 @@ pub mod role_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/role.RoleService/ListRole",
+                "/role.RoleService/ListRoleByApi",
             );
             let mut req = request.into_request();
-            req.extensions_mut().insert(GrpcMethod::new("role.RoleService", "ListRole"));
+            req.extensions_mut()
+                .insert(GrpcMethod::new("role.RoleService", "ListRoleByApi"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_role_by_user(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UserId>,
+        ) -> std::result::Result<
+            tonic::Response<super::RoleListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/role.RoleService/ListRoleByUser",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("role.RoleService", "ListRoleByUser"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_role(
@@ -417,9 +460,16 @@ pub mod role_service_server {
             tonic::Response<super::RoleReadResponse>,
             tonic::Status,
         >;
-        async fn list_role(
+        async fn list_role_by_api(
             &self,
-            request: tonic::Request<super::RoleListRequest>,
+            request: tonic::Request<super::ApiId>,
+        ) -> std::result::Result<
+            tonic::Response<super::RoleListResponse>,
+            tonic::Status,
+        >;
+        async fn list_role_by_user(
+            &self,
+            request: tonic::Request<super::UserId>,
         ) -> std::result::Result<
             tonic::Response<super::RoleListResponse>,
             tonic::Status,
@@ -625,13 +675,11 @@ pub mod role_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/role.RoleService/ListRole" => {
+                "/role.RoleService/ListRoleByApi" => {
                     #[allow(non_camel_case_types)]
-                    struct ListRoleSvc<T: RoleService>(pub Arc<T>);
-                    impl<
-                        T: RoleService,
-                    > tonic::server::UnaryService<super::RoleListRequest>
-                    for ListRoleSvc<T> {
+                    struct ListRoleByApiSvc<T: RoleService>(pub Arc<T>);
+                    impl<T: RoleService> tonic::server::UnaryService<super::ApiId>
+                    for ListRoleByApiSvc<T> {
                         type Response = super::RoleListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -639,10 +687,12 @@ pub mod role_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::RoleListRequest>,
+                            request: tonic::Request<super::ApiId>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
-                            let fut = async move { (*inner).list_role(request).await };
+                            let fut = async move {
+                                (*inner).list_role_by_api(request).await
+                            };
                             Box::pin(fut)
                         }
                     }
@@ -653,7 +703,51 @@ pub mod role_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ListRoleSvc(inner);
+                        let method = ListRoleByApiSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/role.RoleService/ListRoleByUser" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListRoleByUserSvc<T: RoleService>(pub Arc<T>);
+                    impl<T: RoleService> tonic::server::UnaryService<super::UserId>
+                    for ListRoleByUserSvc<T> {
+                        type Response = super::RoleListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::UserId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_role_by_user(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListRoleByUserSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
