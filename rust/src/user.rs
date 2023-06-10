@@ -1,16 +1,20 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserRoleSchema {
-    #[prost(string, tag = "1")]
+    #[prost(uint32, tag = "1")]
+    pub api_id: u32,
+    #[prost(string, tag = "2")]
     pub role: ::prost::alloc::string::String,
-    #[prost(bool, tag = "2")]
-    pub multi: bool,
     #[prost(bool, tag = "3")]
+    pub multi: bool,
+    #[prost(bool, tag = "4")]
     pub ip_lock: bool,
-    #[prost(uint32, tag = "4")]
-    pub access_duration: u32,
     #[prost(uint32, tag = "5")]
+    pub access_duration: u32,
+    #[prost(uint32, tag = "6")]
     pub refresh_duration: u32,
+    #[prost(bytes = "vec", tag = "7")]
+    pub access_key: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -25,8 +29,8 @@ pub struct UserSchema {
     pub phone: ::prost::alloc::string::String,
     #[prost(bytes = "vec", tag = "5")]
     pub public_key: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, optional, tag = "6")]
-    pub password: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, tag = "6")]
+    pub password: ::prost::alloc::string::String,
     #[prost(message, repeated, tag = "7")]
     pub roles: ::prost::alloc::vec::Vec<UserRoleSchema>,
 }

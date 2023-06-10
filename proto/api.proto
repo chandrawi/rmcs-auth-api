@@ -27,11 +27,6 @@ service ApiService {
     rpc DeleteProcedure(ProcedureId) returns (ProcedureChangeResponse);
 }
 
-message AccessKeySchema {
-    string role = 1;
-    bytes access_key = 2;
-}
-
 message ApiSchema {
     uint32 id = 1;
     string name = 2;
@@ -39,9 +34,9 @@ message ApiSchema {
     string category = 4;
     string description = 5;
     bytes public_key = 6;
-    optional string password = 7;
-    repeated ProcedureSchema procedures = 8;
-    repeated AccessKeySchema access_keys = 9;
+    string password = 7;
+    bytes access_key = 8;
+    repeated ProcedureSchema procedures = 9;
 }
 
 message ApiId {

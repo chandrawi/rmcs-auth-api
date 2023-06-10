@@ -16,11 +16,13 @@ service UserService {
 }
 
 message UserRoleSchema {
-    string role = 1;
-    bool multi = 2;
-    bool ip_lock = 3;
-    uint32 access_duration = 4;
-    uint32 refresh_duration = 5;
+    uint32 api_id = 1;
+    string role = 2;
+    bool multi = 3;
+    bool ip_lock = 4;
+    uint32 access_duration = 5;
+    uint32 refresh_duration = 6;
+    bytes access_key = 7;
 }
 
 message UserSchema {
@@ -29,7 +31,7 @@ message UserSchema {
     string email = 3;
     string phone = 4;
     bytes public_key = 5;
-    optional string password = 6;
+    string password = 6;
     repeated UserRoleSchema roles = 7;
 }
 

@@ -1,13 +1,5 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct AccessKeySchema {
-    #[prost(string, tag = "1")]
-    pub role: ::prost::alloc::string::String,
-    #[prost(bytes = "vec", tag = "2")]
-    pub access_key: ::prost::alloc::vec::Vec<u8>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiSchema {
     #[prost(uint32, tag = "1")]
     pub id: u32,
@@ -21,12 +13,12 @@ pub struct ApiSchema {
     pub description: ::prost::alloc::string::String,
     #[prost(bytes = "vec", tag = "6")]
     pub public_key: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, optional, tag = "7")]
-    pub password: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(message, repeated, tag = "8")]
-    pub procedures: ::prost::alloc::vec::Vec<ProcedureSchema>,
+    #[prost(string, tag = "7")]
+    pub password: ::prost::alloc::string::String,
+    #[prost(bytes = "vec", tag = "8")]
+    pub access_key: ::prost::alloc::vec::Vec<u8>,
     #[prost(message, repeated, tag = "9")]
-    pub access_keys: ::prost::alloc::vec::Vec<AccessKeySchema>,
+    pub procedures: ::prost::alloc::vec::Vec<ProcedureSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
