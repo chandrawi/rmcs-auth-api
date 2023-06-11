@@ -47,16 +47,12 @@ pub struct TokenUpdate {
 pub struct TokenReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<TokenSchema>,
-    #[prost(enumeration = "ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenListResponse {
     #[prost(message, repeated, tag = "1")]
     pub result: ::prost::alloc::vec::Vec<TokenSchema>,
-    #[prost(enumeration = "ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -65,49 +61,16 @@ pub struct TokenCreateResponse {
     pub refresh_id: ::prost::alloc::string::String,
     #[prost(uint32, tag = "2")]
     pub access_id: u32,
-    #[prost(enumeration = "ResponseStatus", tag = "3")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenUpdateResponse {
     #[prost(string, tag = "1")]
     pub refresh_id: ::prost::alloc::string::String,
-    #[prost(enumeration = "ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct TokenChangeResponse {
-    #[prost(enumeration = "ResponseStatus", tag = "1")]
-    pub status: i32,
-}
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum ResponseStatus {
-    Failed = 0,
-    Success = 1,
-}
-impl ResponseStatus {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            ResponseStatus::Failed => "FAILED",
-            ResponseStatus::Success => "SUCCESS",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "FAILED" => Some(Self::Failed),
-            "SUCCESS" => Some(Self::Success),
-            _ => None,
-        }
-    }
-}
+pub struct TokenChangeResponse {}
 /// Generated client implementations.
 pub mod token_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]

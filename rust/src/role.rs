@@ -77,57 +77,22 @@ pub struct RoleAccess {
 pub struct RoleReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<RoleSchema>,
-    #[prost(enumeration = "ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleListResponse {
     #[prost(message, repeated, tag = "1")]
     pub result: ::prost::alloc::vec::Vec<RoleSchema>,
-    #[prost(enumeration = "ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleCreateResponse {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(enumeration = "ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct RoleChangeResponse {
-    #[prost(enumeration = "ResponseStatus", tag = "1")]
-    pub status: i32,
-}
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum ResponseStatus {
-    Failed = 0,
-    Success = 1,
-}
-impl ResponseStatus {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            ResponseStatus::Failed => "FAILED",
-            ResponseStatus::Success => "SUCCESS",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "FAILED" => Some(Self::Failed),
-            "SUCCESS" => Some(Self::Success),
-            _ => None,
-        }
-    }
-}
+pub struct RoleChangeResponse {}
 /// Generated client implementations.
 pub mod role_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]

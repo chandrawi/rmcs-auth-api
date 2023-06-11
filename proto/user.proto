@@ -56,26 +56,17 @@ message UserUpdate {
     bool update_key = 6;
 }
 
-enum ResponseStatus {
-    FAILED = 0;
-    SUCCESS = 1;
-}
-
 message UserReadResponse {
     UserSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message UserListResponse {
     repeated UserSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message UserCreateResponse {
     uint32 id = 1;
-    ResponseStatus status = 2;
 }
 
 message UserChangeResponse {
-    ResponseStatus status = 1;
 }

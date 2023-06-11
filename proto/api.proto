@@ -85,45 +85,32 @@ message ProcedureUpdate {
     optional string description = 4;
 }
 
-enum ResponseStatus {
-    FAILED = 0;
-    SUCCESS = 1;
-}
-
 message ApiReadResponse {
     ApiSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message ApiListResponse {
     repeated ApiSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message ApiCreateResponse {
     uint32 id = 1;
-    ResponseStatus status = 2;
 }
 
 message ApiChangeResponse {
-    ResponseStatus status = 1;
 }
 
 message ProcedureReadResponse {
     ProcedureSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message ProcedureListResponse {
     repeated ProcedureSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message ProcedureCreateResponse {
     uint32 id = 1;
-    ResponseStatus status = 2;
 }
 
 message ProcedureChangeResponse {
-    ResponseStatus status = 1;
 }

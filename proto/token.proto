@@ -50,32 +50,22 @@ message TokenUpdate {
     optional bytes ip = 4;
 }
 
-enum ResponseStatus {
-    FAILED = 0;
-    SUCCESS = 1;
-}
-
 message TokenReadResponse {
     TokenSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message TokenListResponse {
     repeated TokenSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message TokenCreateResponse {
     string refresh_id = 1;
     uint32 access_id = 2;
-    ResponseStatus status = 3;
 }
 
 message TokenUpdateResponse {
     string refresh_id = 1;
-    ResponseStatus status = 2;
 }
 
 message TokenChangeResponse {
-    ResponseStatus status = 1;
 }

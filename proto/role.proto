@@ -65,26 +65,17 @@ message RoleAccess {
     uint32 procedure_id = 2;
 }
 
-enum ResponseStatus {
-    FAILED = 0;
-    SUCCESS = 1;
-}
-
 message RoleReadResponse {
     RoleSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message RoleListResponse {
     repeated RoleSchema result = 1;
-    ResponseStatus status = 2;
 }
 
 message RoleCreateResponse {
     uint32 id = 1;
-    ResponseStatus status = 2;
 }
 
 message RoleChangeResponse {
-    ResponseStatus status = 1;
 }
