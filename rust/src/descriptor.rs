@@ -17,3 +17,8 @@ pub mod token {
     pub const DESCRIPTOR_SET: &[u8] =
         tonic::include_file_descriptor_set!("token_descriptor");
 }
+
+pub mod auth {
+    pub const DESCRIPTOR_SET: &[u8] =
+        tonic::include_file_descriptor_set!("auth_descriptor");
+}
