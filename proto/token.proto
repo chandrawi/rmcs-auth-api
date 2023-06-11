@@ -2,19 +2,23 @@ syntax = "proto3";
 package token;
 
 service TokenService {
-    rpc ReadRefreshToken(RefreshId) returns (TokenReadResponse);
+    rpc ReadAccessToken(AccessId) returns (TokenReadResponse);
 
-    rpc ListAccessToken(AccessId) returns (TokenListResponse);
+    rpc ReadRefreshToken(RefreshId) returns (TokenReadResponse);
 
     rpc ListTokenByUser(UserId) returns (TokenListResponse);
 
-    rpc CreateRefreshToken(TokenSchema) returns (TokenCreateResponse);
-
     rpc CreateAccessToken(TokenSchema) returns (TokenCreateResponse);
 
-    rpc DeleteRefreshToken(RefreshId) returns (TokenChangeResponse);
+    rpc CreateRefreshToken(TokenSchema) returns (TokenCreateResponse);
+
+    rpc UpdateAccessToken(TokenUpdate) returns (TokenUpdateResponse);
+
+    rpc UpdateRefreshToken(TokenUpdate) returns (TokenUpdateResponse);
 
     rpc DeleteAccessToken(AccessId) returns (TokenChangeResponse);
+
+    rpc DeleteRefreshToken(RefreshId) returns (TokenChangeResponse);
 
     rpc DeleteTokenByUser(UserId) returns (TokenChangeResponse);
 }
@@ -39,6 +43,13 @@ message UserId {
     uint32 user_id = 1;
 }
 
+message TokenUpdate {
+    optional string refresh_id = 1;
+    optional uint32 access_id = 2;
+    optional int64 expire = 3;
+    optional bytes ip = 4;
+}
+
 enum ResponseStatus {
     FAILED = 0;
     SUCCESS = 1;
@@ -58,6 +69,11 @@ message TokenCreateResponse {
     string refresh_id = 1;
     uint32 access_id = 2;
     ResponseStatus status = 3;
+}
+
+message TokenUpdateResponse {
+    string refresh_id = 1;
+    ResponseStatus status = 2;
 }
 
 message TokenChangeResponse {

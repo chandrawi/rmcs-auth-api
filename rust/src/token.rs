@@ -32,6 +32,18 @@ pub struct UserId {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TokenUpdate {
+    #[prost(string, optional, tag = "1")]
+    pub refresh_id: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(uint32, optional, tag = "2")]
+    pub access_id: ::core::option::Option<u32>,
+    #[prost(int64, optional, tag = "3")]
+    pub expire: ::core::option::Option<i64>,
+    #[prost(bytes = "vec", optional, tag = "4")]
+    pub ip: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<TokenSchema>,
@@ -54,6 +66,14 @@ pub struct TokenCreateResponse {
     #[prost(uint32, tag = "2")]
     pub access_id: u32,
     #[prost(enumeration = "ResponseStatus", tag = "3")]
+    pub status: i32,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TokenUpdateResponse {
+    #[prost(string, tag = "1")]
+    pub refresh_id: ::prost::alloc::string::String,
+    #[prost(enumeration = "ResponseStatus", tag = "2")]
     pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -173,6 +193,31 @@ pub mod token_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
+        pub async fn read_access_token(
+            &mut self,
+            request: impl tonic::IntoRequest<super::AccessId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TokenReadResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/token.TokenService/ReadAccessToken",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("token.TokenService", "ReadAccessToken"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn read_refresh_token(
             &mut self,
             request: impl tonic::IntoRequest<super::RefreshId>,
@@ -196,31 +241,6 @@ pub mod token_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("token.TokenService", "ReadRefreshToken"));
-            self.inner.unary(req, path, codec).await
-        }
-        pub async fn list_access_token(
-            &mut self,
-            request: impl tonic::IntoRequest<super::AccessId>,
-        ) -> std::result::Result<
-            tonic::Response<super::TokenListResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/token.TokenService/ListAccessToken",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("token.TokenService", "ListAccessToken"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_token_by_user(
@@ -248,31 +268,6 @@ pub mod token_service_client {
                 .insert(GrpcMethod::new("token.TokenService", "ListTokenByUser"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn create_refresh_token(
-            &mut self,
-            request: impl tonic::IntoRequest<super::TokenSchema>,
-        ) -> std::result::Result<
-            tonic::Response<super::TokenCreateResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/token.TokenService/CreateRefreshToken",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("token.TokenService", "CreateRefreshToken"));
-            self.inner.unary(req, path, codec).await
-        }
         pub async fn create_access_token(
             &mut self,
             request: impl tonic::IntoRequest<super::TokenSchema>,
@@ -298,11 +293,11 @@ pub mod token_service_client {
                 .insert(GrpcMethod::new("token.TokenService", "CreateAccessToken"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn delete_refresh_token(
+        pub async fn create_refresh_token(
             &mut self,
-            request: impl tonic::IntoRequest<super::RefreshId>,
+            request: impl tonic::IntoRequest<super::TokenSchema>,
         ) -> std::result::Result<
-            tonic::Response<super::TokenChangeResponse>,
+            tonic::Response<super::TokenCreateResponse>,
             tonic::Status,
         > {
             self.inner
@@ -316,11 +311,61 @@ pub mod token_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/token.TokenService/DeleteRefreshToken",
+                "/token.TokenService/CreateRefreshToken",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("token.TokenService", "DeleteRefreshToken"));
+                .insert(GrpcMethod::new("token.TokenService", "CreateRefreshToken"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn update_access_token(
+            &mut self,
+            request: impl tonic::IntoRequest<super::TokenUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::TokenUpdateResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/token.TokenService/UpdateAccessToken",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("token.TokenService", "UpdateAccessToken"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn update_refresh_token(
+            &mut self,
+            request: impl tonic::IntoRequest<super::TokenUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::TokenUpdateResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/token.TokenService/UpdateRefreshToken",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("token.TokenService", "UpdateRefreshToken"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn delete_access_token(
@@ -346,6 +391,31 @@ pub mod token_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("token.TokenService", "DeleteAccessToken"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn delete_refresh_token(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RefreshId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TokenChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/token.TokenService/DeleteRefreshToken",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("token.TokenService", "DeleteRefreshToken"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn delete_token_by_user(
@@ -382,18 +452,18 @@ pub mod token_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with TokenServiceServer.
     #[async_trait]
     pub trait TokenService: Send + Sync + 'static {
+        async fn read_access_token(
+            &self,
+            request: tonic::Request<super::AccessId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TokenReadResponse>,
+            tonic::Status,
+        >;
         async fn read_refresh_token(
             &self,
             request: tonic::Request<super::RefreshId>,
         ) -> std::result::Result<
             tonic::Response<super::TokenReadResponse>,
-            tonic::Status,
-        >;
-        async fn list_access_token(
-            &self,
-            request: tonic::Request<super::AccessId>,
-        ) -> std::result::Result<
-            tonic::Response<super::TokenListResponse>,
             tonic::Status,
         >;
         async fn list_token_by_user(
@@ -403,13 +473,6 @@ pub mod token_service_server {
             tonic::Response<super::TokenListResponse>,
             tonic::Status,
         >;
-        async fn create_refresh_token(
-            &self,
-            request: tonic::Request<super::TokenSchema>,
-        ) -> std::result::Result<
-            tonic::Response<super::TokenCreateResponse>,
-            tonic::Status,
-        >;
         async fn create_access_token(
             &self,
             request: tonic::Request<super::TokenSchema>,
@@ -417,16 +480,37 @@ pub mod token_service_server {
             tonic::Response<super::TokenCreateResponse>,
             tonic::Status,
         >;
-        async fn delete_refresh_token(
+        async fn create_refresh_token(
             &self,
-            request: tonic::Request<super::RefreshId>,
+            request: tonic::Request<super::TokenSchema>,
         ) -> std::result::Result<
-            tonic::Response<super::TokenChangeResponse>,
+            tonic::Response<super::TokenCreateResponse>,
+            tonic::Status,
+        >;
+        async fn update_access_token(
+            &self,
+            request: tonic::Request<super::TokenUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::TokenUpdateResponse>,
+            tonic::Status,
+        >;
+        async fn update_refresh_token(
+            &self,
+            request: tonic::Request<super::TokenUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::TokenUpdateResponse>,
             tonic::Status,
         >;
         async fn delete_access_token(
             &self,
             request: tonic::Request<super::AccessId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TokenChangeResponse>,
+            tonic::Status,
+        >;
+        async fn delete_refresh_token(
+            &self,
+            request: tonic::Request<super::RefreshId>,
         ) -> std::result::Result<
             tonic::Response<super::TokenChangeResponse>,
             tonic::Status,
@@ -518,6 +602,50 @@ pub mod token_service_server {
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             let inner = self.inner.clone();
             match req.uri().path() {
+                "/token.TokenService/ReadAccessToken" => {
+                    #[allow(non_camel_case_types)]
+                    struct ReadAccessTokenSvc<T: TokenService>(pub Arc<T>);
+                    impl<T: TokenService> tonic::server::UnaryService<super::AccessId>
+                    for ReadAccessTokenSvc<T> {
+                        type Response = super::TokenReadResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::AccessId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).read_access_token(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ReadAccessTokenSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/token.TokenService/ReadRefreshToken" => {
                     #[allow(non_camel_case_types)]
                     struct ReadRefreshTokenSvc<T: TokenService>(pub Arc<T>);
@@ -547,50 +675,6 @@ pub mod token_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = ReadRefreshTokenSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/token.TokenService/ListAccessToken" => {
-                    #[allow(non_camel_case_types)]
-                    struct ListAccessTokenSvc<T: TokenService>(pub Arc<T>);
-                    impl<T: TokenService> tonic::server::UnaryService<super::AccessId>
-                    for ListAccessTokenSvc<T> {
-                        type Response = super::TokenListResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::AccessId>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                (*inner).list_access_token(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = ListAccessTokenSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -650,50 +734,6 @@ pub mod token_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/token.TokenService/CreateRefreshToken" => {
-                    #[allow(non_camel_case_types)]
-                    struct CreateRefreshTokenSvc<T: TokenService>(pub Arc<T>);
-                    impl<T: TokenService> tonic::server::UnaryService<super::TokenSchema>
-                    for CreateRefreshTokenSvc<T> {
-                        type Response = super::TokenCreateResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::TokenSchema>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                (*inner).create_refresh_token(request).await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let inner = inner.0;
-                        let method = CreateRefreshTokenSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
                 "/token.TokenService/CreateAccessToken" => {
                     #[allow(non_camel_case_types)]
                     struct CreateAccessTokenSvc<T: TokenService>(pub Arc<T>);
@@ -738,23 +778,23 @@ pub mod token_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/token.TokenService/DeleteRefreshToken" => {
+                "/token.TokenService/CreateRefreshToken" => {
                     #[allow(non_camel_case_types)]
-                    struct DeleteRefreshTokenSvc<T: TokenService>(pub Arc<T>);
-                    impl<T: TokenService> tonic::server::UnaryService<super::RefreshId>
-                    for DeleteRefreshTokenSvc<T> {
-                        type Response = super::TokenChangeResponse;
+                    struct CreateRefreshTokenSvc<T: TokenService>(pub Arc<T>);
+                    impl<T: TokenService> tonic::server::UnaryService<super::TokenSchema>
+                    for CreateRefreshTokenSvc<T> {
+                        type Response = super::TokenCreateResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::RefreshId>,
+                            request: tonic::Request<super::TokenSchema>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).delete_refresh_token(request).await
+                                (*inner).create_refresh_token(request).await
                             };
                             Box::pin(fut)
                         }
@@ -766,7 +806,95 @@ pub mod token_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = DeleteRefreshTokenSvc(inner);
+                        let method = CreateRefreshTokenSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/token.TokenService/UpdateAccessToken" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateAccessTokenSvc<T: TokenService>(pub Arc<T>);
+                    impl<T: TokenService> tonic::server::UnaryService<super::TokenUpdate>
+                    for UpdateAccessTokenSvc<T> {
+                        type Response = super::TokenUpdateResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::TokenUpdate>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).update_access_token(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateAccessTokenSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/token.TokenService/UpdateRefreshToken" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateRefreshTokenSvc<T: TokenService>(pub Arc<T>);
+                    impl<T: TokenService> tonic::server::UnaryService<super::TokenUpdate>
+                    for UpdateRefreshTokenSvc<T> {
+                        type Response = super::TokenUpdateResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::TokenUpdate>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).update_refresh_token(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateRefreshTokenSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -811,6 +939,50 @@ pub mod token_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = DeleteAccessTokenSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/token.TokenService/DeleteRefreshToken" => {
+                    #[allow(non_camel_case_types)]
+                    struct DeleteRefreshTokenSvc<T: TokenService>(pub Arc<T>);
+                    impl<T: TokenService> tonic::server::UnaryService<super::RefreshId>
+                    for DeleteRefreshTokenSvc<T> {
+                        type Response = super::TokenChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RefreshId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).delete_refresh_token(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DeleteRefreshTokenSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
