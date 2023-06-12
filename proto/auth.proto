@@ -25,7 +25,7 @@ message ApiKeyResponse {
 
 message ApiLoginRequest {
     uint32 api_id = 1;
-    string password = 2;
+    bytes password = 2;
     bytes public_key = 3;
 }
 
@@ -49,7 +49,7 @@ message UserKeyResponse {
 
 message UserLoginRequest {
     string name = 1;
-    string password = 2;
+    bytes password = 2;
 }
 
 message AccessTokenMap {

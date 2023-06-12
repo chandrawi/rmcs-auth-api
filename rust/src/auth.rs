@@ -15,8 +15,8 @@ pub struct ApiKeyResponse {
 pub struct ApiLoginRequest {
     #[prost(uint32, tag = "1")]
     pub api_id: u32,
-    #[prost(string, tag = "2")]
-    pub password: ::prost::alloc::string::String,
+    #[prost(bytes = "vec", tag = "2")]
+    pub password: ::prost::alloc::vec::Vec<u8>,
     #[prost(bytes = "vec", tag = "3")]
     pub public_key: ::prost::alloc::vec::Vec<u8>,
 }
@@ -53,8 +53,8 @@ pub struct UserKeyResponse {
 pub struct UserLoginRequest {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub password: ::prost::alloc::string::String,
+    #[prost(bytes = "vec", tag = "2")]
+    pub password: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
