@@ -70,6 +70,14 @@ pub struct UserUpdate {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct UserRole {
+    #[prost(uint32, tag = "1")]
+    pub user_id: u32,
+    #[prost(uint32, tag = "2")]
+    pub role_id: u32,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<UserSchema>,
@@ -78,7 +86,7 @@ pub struct UserReadResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserListResponse {
     #[prost(message, repeated, tag = "1")]
-    pub result: ::prost::alloc::vec::Vec<UserSchema>,
+    pub results: ::prost::alloc::vec::Vec<UserSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -323,6 +331,56 @@ pub mod user_service_client {
                 .insert(GrpcMethod::new("user.UserService", "DeleteUser"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn add_user_role(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UserRole>,
+        ) -> std::result::Result<
+            tonic::Response<super::UserChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/user.UserService/AddUserRole",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("user.UserService", "AddUserRole"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn remove_user_role(
+            &mut self,
+            request: impl tonic::IntoRequest<super::UserRole>,
+        ) -> std::result::Result<
+            tonic::Response<super::UserChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/user.UserService/RemoveUserRole",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("user.UserService", "RemoveUserRole"));
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -370,6 +428,20 @@ pub mod user_service_server {
         async fn delete_user(
             &self,
             request: tonic::Request<super::UserId>,
+        ) -> std::result::Result<
+            tonic::Response<super::UserChangeResponse>,
+            tonic::Status,
+        >;
+        async fn add_user_role(
+            &self,
+            request: tonic::Request<super::UserRole>,
+        ) -> std::result::Result<
+            tonic::Response<super::UserChangeResponse>,
+            tonic::Status,
+        >;
+        async fn remove_user_role(
+            &self,
+            request: tonic::Request<super::UserRole>,
         ) -> std::result::Result<
             tonic::Response<super::UserChangeResponse>,
             tonic::Status,
@@ -695,6 +767,94 @@ pub mod user_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = DeleteUserSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/user.UserService/AddUserRole" => {
+                    #[allow(non_camel_case_types)]
+                    struct AddUserRoleSvc<T: UserService>(pub Arc<T>);
+                    impl<T: UserService> tonic::server::UnaryService<super::UserRole>
+                    for AddUserRoleSvc<T> {
+                        type Response = super::UserChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::UserRole>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).add_user_role(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = AddUserRoleSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/user.UserService/RemoveUserRole" => {
+                    #[allow(non_camel_case_types)]
+                    struct RemoveUserRoleSvc<T: UserService>(pub Arc<T>);
+                    impl<T: UserService> tonic::server::UnaryService<super::UserRole>
+                    for RemoveUserRoleSvc<T> {
+                        type Response = super::UserChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::UserRole>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).remove_user_role(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = RemoveUserRoleSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

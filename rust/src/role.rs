@@ -61,8 +61,6 @@ pub struct RoleUpdate {
     pub access_duration: ::core::option::Option<u32>,
     #[prost(uint32, optional, tag = "6")]
     pub refresh_duration: ::core::option::Option<u32>,
-    #[prost(bool, tag = "7")]
-    pub update_key: bool,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -82,7 +80,7 @@ pub struct RoleReadResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleListResponse {
     #[prost(message, repeated, tag = "1")]
-    pub result: ::prost::alloc::vec::Vec<RoleSchema>,
+    pub results: ::prost::alloc::vec::Vec<RoleSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

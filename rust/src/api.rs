@@ -89,11 +89,9 @@ pub struct ProcedureName {
 pub struct ProcedureUpdate {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(uint32, optional, tag = "2")]
-    pub resource_id: ::core::option::Option<u32>,
-    #[prost(string, optional, tag = "3")]
+    #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "4")]
+    #[prost(string, optional, tag = "3")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -106,7 +104,7 @@ pub struct ApiReadResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiListResponse {
     #[prost(message, repeated, tag = "1")]
-    pub result: ::prost::alloc::vec::Vec<ApiSchema>,
+    pub results: ::prost::alloc::vec::Vec<ApiSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -127,7 +125,7 @@ pub struct ProcedureReadResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProcedureListResponse {
     #[prost(message, repeated, tag = "1")]
-    pub result: ::prost::alloc::vec::Vec<ProcedureSchema>,
+    pub results: ::prost::alloc::vec::Vec<ProcedureSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -13,6 +13,10 @@ service UserService {
     rpc UpdateUser(UserUpdate) returns (UserChangeResponse);
 
     rpc DeleteUser(UserId) returns (UserChangeResponse);
+
+    rpc AddUserRole(UserRole) returns (UserChangeResponse);
+
+    rpc RemoveUserRole(UserRole) returns (UserChangeResponse);
 }
 
 message UserRoleSchema {
@@ -56,12 +60,17 @@ message UserUpdate {
     bool update_key = 6;
 }
 
+message UserRole {
+    uint32 user_id = 1;
+    uint32 role_id = 2;
+}
+
 message UserReadResponse {
     UserSchema result = 1;
 }
 
 message UserListResponse {
-    repeated UserSchema result = 1;
+    repeated UserSchema results = 1;
 }
 
 message UserCreateResponse {

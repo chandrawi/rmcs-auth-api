@@ -55,7 +55,7 @@ message TokenReadResponse {
 }
 
 message TokenListResponse {
-    repeated TokenSchema result = 1;
+    repeated TokenSchema results = 1;
 }
 
 message TokenCreateResponse {

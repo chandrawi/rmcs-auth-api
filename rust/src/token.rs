@@ -52,7 +52,7 @@ pub struct TokenReadResponse {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenListResponse {
     #[prost(message, repeated, tag = "1")]
-    pub result: ::prost::alloc::vec::Vec<TokenSchema>,
+    pub results: ::prost::alloc::vec::Vec<TokenSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
