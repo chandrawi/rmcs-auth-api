@@ -1,22 +1,24 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenSchema {
-    #[prost(string, tag = "1")]
-    pub refresh_id: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "2")]
+    #[prost(uint32, tag = "1")]
     pub access_id: u32,
-    #[prost(uint32, tag = "3")]
+    #[prost(uint32, tag = "2")]
     pub user_id: u32,
-    #[prost(int64, tag = "4")]
+    #[prost(string, tag = "3")]
+    pub refresh_token: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub auth_token: ::prost::alloc::string::String,
+    #[prost(int64, tag = "5")]
     pub expire: i64,
-    #[prost(bytes = "vec", tag = "5")]
+    #[prost(bytes = "vec", tag = "6")]
     pub ip: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct RefreshId {
+pub struct AuthToken {
     #[prost(string, tag = "1")]
-    pub refresh_id: ::prost::alloc::string::String,
+    pub auth_token: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -32,14 +34,28 @@ pub struct UserId {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct AuthTokenCreate {
+    #[prost(uint32, tag = "1")]
+    pub user_id: u32,
+    #[prost(uint32, tag = "2")]
+    pub number: u32,
+    #[prost(int64, tag = "3")]
+    pub expire: i64,
+    #[prost(bytes = "vec", tag = "4")]
+    pub ip: ::prost::alloc::vec::Vec<u8>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenUpdate {
-    #[prost(string, optional, tag = "1")]
-    pub refresh_id: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(uint32, optional, tag = "2")]
+    #[prost(uint32, optional, tag = "1")]
     pub access_id: ::core::option::Option<u32>,
-    #[prost(int64, optional, tag = "3")]
+    #[prost(string, optional, tag = "2")]
+    pub refresh_token: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "3")]
+    pub auth_token: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(int64, optional, tag = "4")]
     pub expire: ::core::option::Option<i64>,
-    #[prost(bytes = "vec", optional, tag = "4")]
+    #[prost(bytes = "vec", optional, tag = "5")]
     pub ip: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -57,16 +73,26 @@ pub struct TokenListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenCreateResponse {
-    #[prost(string, tag = "1")]
-    pub refresh_id: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "2")]
+    #[prost(uint32, tag = "1")]
     pub access_id: u32,
+    #[prost(string, tag = "2")]
+    pub refresh_token: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub auth_token: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct AuthTokenCreateResponse {
+    #[prost(message, repeated, tag = "1")]
+    pub tokens: ::prost::alloc::vec::Vec<TokenCreateResponse>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenUpdateResponse {
     #[prost(string, tag = "1")]
-    pub refresh_id: ::prost::alloc::string::String,
+    pub refresh_token: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub auth_token: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -181,11 +207,11 @@ pub mod token_service_client {
                 .insert(GrpcMethod::new("token.TokenService", "ReadAccessToken"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn read_refresh_token(
+        pub async fn list_auth_token(
             &mut self,
-            request: impl tonic::IntoRequest<super::RefreshId>,
+            request: impl tonic::IntoRequest<super::AuthToken>,
         ) -> std::result::Result<
-            tonic::Response<super::TokenReadResponse>,
+            tonic::Response<super::TokenListResponse>,
             tonic::Status,
         > {
             self.inner
@@ -199,11 +225,11 @@ pub mod token_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/token.TokenService/ReadRefreshToken",
+                "/token.TokenService/ListAuthToken",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("token.TokenService", "ReadRefreshToken"));
+                .insert(GrpcMethod::new("token.TokenService", "ListAuthToken"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_token_by_user(
@@ -256,11 +282,11 @@ pub mod token_service_client {
                 .insert(GrpcMethod::new("token.TokenService", "CreateAccessToken"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn create_refresh_token(
+        pub async fn create_auth_token(
             &mut self,
-            request: impl tonic::IntoRequest<super::TokenSchema>,
+            request: impl tonic::IntoRequest<super::AuthTokenCreate>,
         ) -> std::result::Result<
-            tonic::Response<super::TokenCreateResponse>,
+            tonic::Response<super::AuthTokenCreateResponse>,
             tonic::Status,
         > {
             self.inner
@@ -274,11 +300,11 @@ pub mod token_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/token.TokenService/CreateRefreshToken",
+                "/token.TokenService/CreateAuthToken",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("token.TokenService", "CreateRefreshToken"));
+                .insert(GrpcMethod::new("token.TokenService", "CreateAuthToken"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn update_access_token(
@@ -306,7 +332,7 @@ pub mod token_service_client {
                 .insert(GrpcMethod::new("token.TokenService", "UpdateAccessToken"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn update_refresh_token(
+        pub async fn update_auth_token(
             &mut self,
             request: impl tonic::IntoRequest<super::TokenUpdate>,
         ) -> std::result::Result<
@@ -324,11 +350,11 @@ pub mod token_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/token.TokenService/UpdateRefreshToken",
+                "/token.TokenService/UpdateAuthToken",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("token.TokenService", "UpdateRefreshToken"));
+                .insert(GrpcMethod::new("token.TokenService", "UpdateAuthToken"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn delete_access_token(
@@ -356,9 +382,9 @@ pub mod token_service_client {
                 .insert(GrpcMethod::new("token.TokenService", "DeleteAccessToken"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn delete_refresh_token(
+        pub async fn delete_auth_token(
             &mut self,
-            request: impl tonic::IntoRequest<super::RefreshId>,
+            request: impl tonic::IntoRequest<super::AuthToken>,
         ) -> std::result::Result<
             tonic::Response<super::TokenChangeResponse>,
             tonic::Status,
@@ -374,11 +400,11 @@ pub mod token_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/token.TokenService/DeleteRefreshToken",
+                "/token.TokenService/DeleteAuthToken",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("token.TokenService", "DeleteRefreshToken"));
+                .insert(GrpcMethod::new("token.TokenService", "DeleteAuthToken"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn delete_token_by_user(
@@ -422,11 +448,11 @@ pub mod token_service_server {
             tonic::Response<super::TokenReadResponse>,
             tonic::Status,
         >;
-        async fn read_refresh_token(
+        async fn list_auth_token(
             &self,
-            request: tonic::Request<super::RefreshId>,
+            request: tonic::Request<super::AuthToken>,
         ) -> std::result::Result<
-            tonic::Response<super::TokenReadResponse>,
+            tonic::Response<super::TokenListResponse>,
             tonic::Status,
         >;
         async fn list_token_by_user(
@@ -443,11 +469,11 @@ pub mod token_service_server {
             tonic::Response<super::TokenCreateResponse>,
             tonic::Status,
         >;
-        async fn create_refresh_token(
+        async fn create_auth_token(
             &self,
-            request: tonic::Request<super::TokenSchema>,
+            request: tonic::Request<super::AuthTokenCreate>,
         ) -> std::result::Result<
-            tonic::Response<super::TokenCreateResponse>,
+            tonic::Response<super::AuthTokenCreateResponse>,
             tonic::Status,
         >;
         async fn update_access_token(
@@ -457,7 +483,7 @@ pub mod token_service_server {
             tonic::Response<super::TokenUpdateResponse>,
             tonic::Status,
         >;
-        async fn update_refresh_token(
+        async fn update_auth_token(
             &self,
             request: tonic::Request<super::TokenUpdate>,
         ) -> std::result::Result<
@@ -471,9 +497,9 @@ pub mod token_service_server {
             tonic::Response<super::TokenChangeResponse>,
             tonic::Status,
         >;
-        async fn delete_refresh_token(
+        async fn delete_auth_token(
             &self,
-            request: tonic::Request<super::RefreshId>,
+            request: tonic::Request<super::AuthToken>,
         ) -> std::result::Result<
             tonic::Response<super::TokenChangeResponse>,
             tonic::Status,
@@ -609,23 +635,23 @@ pub mod token_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/token.TokenService/ReadRefreshToken" => {
+                "/token.TokenService/ListAuthToken" => {
                     #[allow(non_camel_case_types)]
-                    struct ReadRefreshTokenSvc<T: TokenService>(pub Arc<T>);
-                    impl<T: TokenService> tonic::server::UnaryService<super::RefreshId>
-                    for ReadRefreshTokenSvc<T> {
-                        type Response = super::TokenReadResponse;
+                    struct ListAuthTokenSvc<T: TokenService>(pub Arc<T>);
+                    impl<T: TokenService> tonic::server::UnaryService<super::AuthToken>
+                    for ListAuthTokenSvc<T> {
+                        type Response = super::TokenListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::RefreshId>,
+                            request: tonic::Request<super::AuthToken>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).read_refresh_token(request).await
+                                (*inner).list_auth_token(request).await
                             };
                             Box::pin(fut)
                         }
@@ -637,7 +663,7 @@ pub mod token_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = ReadRefreshTokenSvc(inner);
+                        let method = ListAuthTokenSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -741,23 +767,25 @@ pub mod token_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/token.TokenService/CreateRefreshToken" => {
+                "/token.TokenService/CreateAuthToken" => {
                     #[allow(non_camel_case_types)]
-                    struct CreateRefreshTokenSvc<T: TokenService>(pub Arc<T>);
-                    impl<T: TokenService> tonic::server::UnaryService<super::TokenSchema>
-                    for CreateRefreshTokenSvc<T> {
-                        type Response = super::TokenCreateResponse;
+                    struct CreateAuthTokenSvc<T: TokenService>(pub Arc<T>);
+                    impl<
+                        T: TokenService,
+                    > tonic::server::UnaryService<super::AuthTokenCreate>
+                    for CreateAuthTokenSvc<T> {
+                        type Response = super::AuthTokenCreateResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::TokenSchema>,
+                            request: tonic::Request<super::AuthTokenCreate>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).create_refresh_token(request).await
+                                (*inner).create_auth_token(request).await
                             };
                             Box::pin(fut)
                         }
@@ -769,7 +797,7 @@ pub mod token_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = CreateRefreshTokenSvc(inner);
+                        let method = CreateAuthTokenSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -829,11 +857,11 @@ pub mod token_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/token.TokenService/UpdateRefreshToken" => {
+                "/token.TokenService/UpdateAuthToken" => {
                     #[allow(non_camel_case_types)]
-                    struct UpdateRefreshTokenSvc<T: TokenService>(pub Arc<T>);
+                    struct UpdateAuthTokenSvc<T: TokenService>(pub Arc<T>);
                     impl<T: TokenService> tonic::server::UnaryService<super::TokenUpdate>
-                    for UpdateRefreshTokenSvc<T> {
+                    for UpdateAuthTokenSvc<T> {
                         type Response = super::TokenUpdateResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -845,7 +873,7 @@ pub mod token_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).update_refresh_token(request).await
+                                (*inner).update_auth_token(request).await
                             };
                             Box::pin(fut)
                         }
@@ -857,7 +885,7 @@ pub mod token_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = UpdateRefreshTokenSvc(inner);
+                        let method = UpdateAuthTokenSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -917,11 +945,11 @@ pub mod token_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/token.TokenService/DeleteRefreshToken" => {
+                "/token.TokenService/DeleteAuthToken" => {
                     #[allow(non_camel_case_types)]
-                    struct DeleteRefreshTokenSvc<T: TokenService>(pub Arc<T>);
-                    impl<T: TokenService> tonic::server::UnaryService<super::RefreshId>
-                    for DeleteRefreshTokenSvc<T> {
+                    struct DeleteAuthTokenSvc<T: TokenService>(pub Arc<T>);
+                    impl<T: TokenService> tonic::server::UnaryService<super::AuthToken>
+                    for DeleteAuthTokenSvc<T> {
                         type Response = super::TokenChangeResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -929,11 +957,11 @@ pub mod token_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::RefreshId>,
+                            request: tonic::Request<super::AuthToken>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                (*inner).delete_refresh_token(request).await
+                                (*inner).delete_auth_token(request).await
                             };
                             Box::pin(fut)
                         }
@@ -945,7 +973,7 @@ pub mod token_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let inner = inner.0;
-                        let method = DeleteRefreshTokenSvc(inner);
+                        let method = DeleteAuthTokenSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
