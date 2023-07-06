@@ -40,7 +40,7 @@ message ApiLoginResponse {
 }
 
 message UserKeyRequest {
-    string name = 1;
+    string username = 1;
 }
 
 message UserKeyResponse {
@@ -48,32 +48,36 @@ message UserKeyResponse {
 }
 
 message UserLoginRequest {
-    string name = 1;
+    string username = 1;
     bytes password = 2;
 }
 
 message AccessTokenMap {
     uint32 api_id = 1;
     string access_token = 2;
+    string refresh_token = 3;
 }
 
 message UserLoginResponse {
-    string refresh_token = 1;
-    repeated AccessTokenMap access_tokens = 2;
+    uint32 user_id = 1;
+    string auth_token = 2;
+    repeated AccessTokenMap access_tokens = 3;
 }
 
 message UserRefreshRequest {
-    string refresh_token = 1;
-    AccessTokenMap access_token = 2;
+    uint32 api_id = 1;
+    string access_token = 2;
+    string refresh_token = 3;
 }
 
 message UserRefreshResponse {
-    string refresh_token = 1;
-    AccessTokenMap access_token = 2;
+    string access_token = 1;
+    string refresh_token = 2;
 }
 
 message UserLogoutRequest {
-    string refresh_token = 1;
+    uint32 user_id = 1;
+    string auth_token = 2;
 }
 
 message UserLogoutResponse {
