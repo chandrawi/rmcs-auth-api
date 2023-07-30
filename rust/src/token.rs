@@ -1,10 +1,10 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenSchema {
-    #[prost(uint32, tag = "1")]
-    pub access_id: u32,
-    #[prost(uint32, tag = "2")]
-    pub user_id: u32,
+    #[prost(int32, tag = "1")]
+    pub access_id: i32,
+    #[prost(int32, tag = "2")]
+    pub user_id: i32,
     #[prost(string, tag = "3")]
     pub refresh_token: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
@@ -23,20 +23,20 @@ pub struct AuthToken {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AccessId {
-    #[prost(uint32, tag = "1")]
-    pub access_id: u32,
+    #[prost(int32, tag = "1")]
+    pub access_id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserId {
-    #[prost(uint32, tag = "1")]
-    pub user_id: u32,
+    #[prost(int32, tag = "1")]
+    pub user_id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthTokenCreate {
-    #[prost(uint32, tag = "1")]
-    pub user_id: u32,
+    #[prost(int32, tag = "1")]
+    pub user_id: i32,
     #[prost(uint32, tag = "2")]
     pub number: u32,
     #[prost(int64, tag = "3")]
@@ -47,8 +47,8 @@ pub struct AuthTokenCreate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenUpdate {
-    #[prost(uint32, optional, tag = "1")]
-    pub access_id: ::core::option::Option<u32>,
+    #[prost(int32, optional, tag = "1")]
+    pub access_id: ::core::option::Option<i32>,
     #[prost(string, optional, tag = "2")]
     pub refresh_token: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
@@ -73,8 +73,8 @@ pub struct TokenListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TokenCreateResponse {
-    #[prost(uint32, tag = "1")]
-    pub access_id: u32,
+    #[prost(int32, tag = "1")]
+    pub access_id: i32,
     #[prost(string, tag = "2")]
     pub refresh_token: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]

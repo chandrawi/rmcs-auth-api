@@ -1,26 +1,26 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserRoleSchema {
-    #[prost(uint32, tag = "1")]
-    pub api_id: u32,
+    #[prost(int32, tag = "1")]
+    pub api_id: i32,
     #[prost(string, tag = "2")]
     pub role: ::prost::alloc::string::String,
     #[prost(bool, tag = "3")]
     pub multi: bool,
     #[prost(bool, tag = "4")]
     pub ip_lock: bool,
-    #[prost(uint32, tag = "5")]
-    pub access_duration: u32,
-    #[prost(uint32, tag = "6")]
-    pub refresh_duration: u32,
+    #[prost(int32, tag = "5")]
+    pub access_duration: i32,
+    #[prost(int32, tag = "6")]
+    pub refresh_duration: i32,
     #[prost(bytes = "vec", tag = "7")]
     pub access_key: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserSchema {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
@@ -37,8 +37,8 @@ pub struct UserSchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserId {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -49,14 +49,14 @@ pub struct UserName {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleId {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserUpdate {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
@@ -71,10 +71,10 @@ pub struct UserUpdate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserRole {
-    #[prost(uint32, tag = "1")]
-    pub user_id: u32,
-    #[prost(uint32, tag = "2")]
-    pub role_id: u32,
+    #[prost(int32, tag = "1")]
+    pub user_id: i32,
+    #[prost(int32, tag = "2")]
+    pub role_id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -91,8 +91,8 @@ pub struct UserListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserCreateResponse {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

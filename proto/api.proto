@@ -28,7 +28,7 @@ service ApiService {
 }
 
 message ApiSchema {
-    uint32 id = 1;
+    int32 id = 1;
     string name = 2;
     string address = 3;
     string category = 4;
@@ -40,7 +40,7 @@ message ApiSchema {
 }
 
 message ApiId {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message ApiName {
@@ -52,7 +52,7 @@ message ApiCategory {
 }
 
 message ApiUpdate {
-    uint32 id = 1;
+    int32 id = 1;
     optional string name = 2;
     optional string address = 3;
     optional string category = 4;
@@ -62,24 +62,24 @@ message ApiUpdate {
 }
 
 message ProcedureSchema {
-    uint32 id = 1;
-    uint32 api_id = 2;
+    int32 id = 1;
+    int32 api_id = 2;
     string name = 3;
     string description = 4;
     repeated string roles = 5;
 }
 
 message ProcedureId {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message ProcedureName {
-    uint32 api_id = 1;
+    int32 api_id = 1;
     string name = 3;
 }
 
 message ProcedureUpdate {
-    uint32 id = 1;
+    int32 id = 1;
     optional string name = 2;
     optional string description = 3;
 }
@@ -93,7 +93,7 @@ message ApiListResponse {
 }
 
 message ApiCreateResponse {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message ApiChangeResponse {
@@ -108,7 +108,7 @@ message ProcedureListResponse {
 }
 
 message ProcedureCreateResponse {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message ProcedureChangeResponse {
