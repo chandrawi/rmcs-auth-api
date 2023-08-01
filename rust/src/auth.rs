@@ -1,8 +1,8 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiKeyRequest {
-    #[prost(int32, tag = "1")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -13,8 +13,8 @@ pub struct ApiKeyResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiLoginRequest {
-    #[prost(int32, tag = "1")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(bytes = "vec", tag = "2")]
     pub password: ::prost::alloc::vec::Vec<u8>,
     #[prost(bytes = "vec", tag = "3")]
@@ -59,8 +59,8 @@ pub struct UserLoginRequest {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AccessTokenMap {
-    #[prost(int32, tag = "1")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "2")]
     pub access_token: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
@@ -69,8 +69,8 @@ pub struct AccessTokenMap {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserLoginResponse {
-    #[prost(int32, tag = "1")]
-    pub user_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub user_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "2")]
     pub auth_token: ::prost::alloc::string::String,
     #[prost(message, repeated, tag = "3")]
@@ -79,8 +79,8 @@ pub struct UserLoginResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserRefreshRequest {
-    #[prost(int32, tag = "1")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "2")]
     pub access_token: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
@@ -97,8 +97,8 @@ pub struct UserRefreshResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserLogoutRequest {
-    #[prost(int32, tag = "1")]
-    pub user_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub user_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "2")]
     pub auth_token: ::prost::alloc::string::String,
 }

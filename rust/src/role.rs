@@ -1,10 +1,10 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleSchema {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
-    #[prost(int32, tag = "2")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(bytes = "vec", tag = "2")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
     #[prost(bool, tag = "4")]
@@ -17,40 +17,40 @@ pub struct RoleSchema {
     pub refresh_duration: i32,
     #[prost(bytes = "vec", tag = "8")]
     pub access_key: ::prost::alloc::vec::Vec<u8>,
-    #[prost(int32, repeated, tag = "9")]
-    pub procedures: ::prost::alloc::vec::Vec<i32>,
+    #[prost(bytes = "vec", repeated, tag = "9")]
+    pub procedures: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleId {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleName {
-    #[prost(int32, tag = "1")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiId {
-    #[prost(int32, tag = "1")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserId {
-    #[prost(int32, tag = "1")]
-    pub user_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub user_id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleUpdate {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(bool, optional, tag = "3")]
@@ -65,10 +65,10 @@ pub struct RoleUpdate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleAccess {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
-    #[prost(int32, tag = "2")]
-    pub procedure_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(bytes = "vec", tag = "2")]
+    pub procedure_id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -85,8 +85,8 @@ pub struct RoleListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleCreateResponse {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

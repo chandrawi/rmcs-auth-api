@@ -1,8 +1,8 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiSchema {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
@@ -23,8 +23,8 @@ pub struct ApiSchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiId {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -41,8 +41,8 @@ pub struct ApiCategory {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiUpdate {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
@@ -59,10 +59,10 @@ pub struct ApiUpdate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProcedureSchema {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
-    #[prost(int32, tag = "2")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(bytes = "vec", tag = "2")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
@@ -73,22 +73,22 @@ pub struct ProcedureSchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProcedureId {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProcedureName {
-    #[prost(int32, tag = "1")]
-    pub api_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProcedureUpdate {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
@@ -109,8 +109,8 @@ pub struct ApiListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiCreateResponse {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -130,8 +130,8 @@ pub struct ProcedureListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProcedureCreateResponse {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

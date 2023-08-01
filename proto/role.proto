@@ -22,36 +22,36 @@ service RoleService {
 }
 
 message RoleSchema {
-    int32 id = 1;
-    int32 api_id = 2;
+    bytes id = 1;
+    bytes api_id = 2;
     string name = 3;
     bool multi = 4;
     bool ip_lock = 5;
     int32 access_duration = 6;
     int32 refresh_duration = 7;
     bytes access_key = 8;
-    repeated int32 procedures = 9;
+    repeated bytes procedures = 9;
 }
 
 message RoleId {
-    int32 id = 1;
+    bytes id = 1;
 }
 
 message RoleName {
-    int32 api_id = 1;
+    bytes api_id = 1;
     string name = 2;
 }
 
 message ApiId {
-    int32 api_id = 1;
+    bytes api_id = 1;
 }
 
 message UserId {
-    int32 user_id = 1;
+    bytes user_id = 1;
 }
 
 message RoleUpdate {
-    int32 id = 1;
+    bytes id = 1;
     optional string name = 2;
     optional bool multi = 3;
     optional bool ip_lock = 4;
@@ -60,8 +60,8 @@ message RoleUpdate {
 }
 
 message RoleAccess {
-    int32 id = 1;
-    int32 procedure_id = 2;
+    bytes id = 1;
+    bytes procedure_id = 2;
 }
 
 message RoleReadResponse {
@@ -73,7 +73,7 @@ message RoleListResponse {
 }
 
 message RoleCreateResponse {
-    int32 id = 1;
+    bytes id = 1;
 }
 
 message RoleChangeResponse {

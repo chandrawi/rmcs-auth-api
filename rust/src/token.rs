@@ -3,8 +3,8 @@
 pub struct TokenSchema {
     #[prost(int32, tag = "1")]
     pub access_id: i32,
-    #[prost(int32, tag = "2")]
-    pub user_id: i32,
+    #[prost(bytes = "vec", tag = "2")]
+    pub user_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "3")]
     pub refresh_token: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
@@ -29,14 +29,14 @@ pub struct AccessId {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserId {
-    #[prost(int32, tag = "1")]
-    pub user_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub user_id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AuthTokenCreate {
-    #[prost(int32, tag = "1")]
-    pub user_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub user_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(uint32, tag = "2")]
     pub number: u32,
     #[prost(int64, tag = "3")]

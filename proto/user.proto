@@ -20,7 +20,7 @@ service UserService {
 }
 
 message UserRoleSchema {
-    int32 api_id = 1;
+    bytes api_id = 1;
     string role = 2;
     bool multi = 3;
     bool ip_lock = 4;
@@ -30,7 +30,7 @@ message UserRoleSchema {
 }
 
 message UserSchema {
-    int32 id = 1;
+    bytes id = 1;
     string name = 2;
     string email = 3;
     string phone = 4;
@@ -40,7 +40,7 @@ message UserSchema {
 }
 
 message UserId {
-    int32 id = 1;
+    bytes id = 1;
 }
 
 message UserName {
@@ -48,11 +48,11 @@ message UserName {
 }
 
 message RoleId {
-    int32 id = 1;
+    bytes id = 1;
 }
 
 message UserUpdate {
-    int32 id = 1;
+    bytes id = 1;
     optional string name = 2;
     optional string email = 3;
     optional string phone = 4;
@@ -61,8 +61,8 @@ message UserUpdate {
 }
 
 message UserRole {
-    int32 user_id = 1;
-    int32 role_id = 2;
+    bytes user_id = 1;
+    bytes role_id = 2;
 }
 
 message UserReadResponse {
@@ -74,7 +74,7 @@ message UserListResponse {
 }
 
 message UserCreateResponse {
-    int32 id = 1;
+    bytes id = 1;
 }
 
 message UserChangeResponse {
