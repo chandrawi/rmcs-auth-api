@@ -27,11 +27,9 @@ pub struct UserSchema {
     pub email: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
     pub phone: ::prost::alloc::string::String,
-    #[prost(bytes = "vec", tag = "5")]
-    pub public_key: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, tag = "6")]
+    #[prost(string, tag = "5")]
     pub password: ::prost::alloc::string::String,
-    #[prost(message, repeated, tag = "7")]
+    #[prost(message, repeated, tag = "6")]
     pub roles: ::prost::alloc::vec::Vec<UserRoleSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -65,8 +63,6 @@ pub struct UserUpdate {
     pub phone: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "5")]
     pub password: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(bool, tag = "6")]
-    pub update_key: bool,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

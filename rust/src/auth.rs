@@ -1,9 +1,6 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ApiKeyRequest {
-    #[prost(bytes = "vec", tag = "1")]
-    pub api_id: ::prost::alloc::vec::Vec<u8>,
-}
+pub struct ApiKeyRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiKeyResponse {
@@ -38,10 +35,7 @@ pub struct ApiLoginResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct UserKeyRequest {
-    #[prost(string, tag = "1")]
-    pub username: ::prost::alloc::string::String,
-}
+pub struct UserKeyRequest {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct UserKeyResponse {

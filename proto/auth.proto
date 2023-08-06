@@ -16,7 +16,6 @@ service AuthService {
 }
 
 message ApiKeyRequest {
-    bytes api_id = 1;
 }
 
 message ApiKeyResponse {
@@ -40,7 +39,6 @@ message ApiLoginResponse {
 }
 
 message UserKeyRequest {
-    string username = 1;
 }
 
 message UserKeyResponse {

@@ -33,10 +33,9 @@ message ApiSchema {
     string address = 3;
     string category = 4;
     string description = 5;
-    bytes public_key = 6;
-    string password = 7;
-    bytes access_key = 8;
-    repeated ProcedureSchema procedures = 9;
+    string password = 6;
+    bytes access_key = 7;
+    repeated ProcedureSchema procedures = 8;
 }
 
 message ApiId {

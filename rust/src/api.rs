@@ -11,13 +11,11 @@ pub struct ApiSchema {
     pub category: ::prost::alloc::string::String,
     #[prost(string, tag = "5")]
     pub description: ::prost::alloc::string::String,
-    #[prost(bytes = "vec", tag = "6")]
-    pub public_key: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, tag = "7")]
+    #[prost(string, tag = "6")]
     pub password: ::prost::alloc::string::String,
-    #[prost(bytes = "vec", tag = "8")]
+    #[prost(bytes = "vec", tag = "7")]
     pub access_key: ::prost::alloc::vec::Vec<u8>,
-    #[prost(message, repeated, tag = "9")]
+    #[prost(message, repeated, tag = "8")]
     pub procedures: ::prost::alloc::vec::Vec<ProcedureSchema>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]

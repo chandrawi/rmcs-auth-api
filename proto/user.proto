@@ -34,9 +34,8 @@ message UserSchema {
     string name = 2;
     string email = 3;
     string phone = 4;
-    bytes public_key = 5;
-    string password = 6;
-    repeated UserRoleSchema roles = 7;
+    string password = 5;
+    repeated UserRoleSchema roles = 6;
 }
 
 message UserId {
@@ -57,7 +56,6 @@ message UserUpdate {
     optional string email = 3;
     optional string phone = 4;
     optional string password = 5;
-    bool update_key = 6;
 }
 
 message UserRole {
