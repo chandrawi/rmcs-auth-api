@@ -51,8 +51,8 @@ pub struct ApiUpdate {
     pub description: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "6")]
     pub password: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(bool, tag = "7")]
-    pub update_key: bool,
+    #[prost(bytes = "vec", optional, tag = "7")]
+    pub access_key: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

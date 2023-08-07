@@ -57,7 +57,7 @@ message ApiUpdate {
     optional string category = 4;
     optional string description = 5;
     optional string password = 6;
-    bool update_key = 7;
+    optional bytes access_key = 7;
 }
 
 message ProcedureSchema {
