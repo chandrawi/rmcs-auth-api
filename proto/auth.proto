@@ -34,8 +34,9 @@ message ProcedureMap {
 }
 
 message ApiLoginResponse {
-    bytes access_key = 1;
-    repeated ProcedureMap access_procedures = 2;
+    bytes root_key = 1;
+    bytes access_key = 2;
+    repeated ProcedureMap access_procedures = 3;
 }
 
 message UserKeyRequest {
