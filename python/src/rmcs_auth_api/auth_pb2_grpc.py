@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import auth_pb2 as auth__pb2
+from rmcs_auth_api import auth_pb2 as rmcs__auth__api_dot_auth__pb2
 
 
 class AuthServiceStub(object):
@@ -16,33 +16,33 @@ class AuthServiceStub(object):
         """
         self.ApiLoginKey = channel.unary_unary(
                 '/auth.AuthService/ApiLoginKey',
-                request_serializer=auth__pb2.ApiKeyRequest.SerializeToString,
-                response_deserializer=auth__pb2.ApiKeyResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_auth__pb2.ApiKeyRequest.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_auth__pb2.ApiKeyResponse.FromString,
                 )
         self.ApiLogin = channel.unary_unary(
                 '/auth.AuthService/ApiLogin',
-                request_serializer=auth__pb2.ApiLoginRequest.SerializeToString,
-                response_deserializer=auth__pb2.ApiLoginResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_auth__pb2.ApiLoginRequest.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_auth__pb2.ApiLoginResponse.FromString,
                 )
         self.UserLoginKey = channel.unary_unary(
                 '/auth.AuthService/UserLoginKey',
-                request_serializer=auth__pb2.UserKeyRequest.SerializeToString,
-                response_deserializer=auth__pb2.UserKeyResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_auth__pb2.UserKeyRequest.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_auth__pb2.UserKeyResponse.FromString,
                 )
         self.UserLogin = channel.unary_unary(
                 '/auth.AuthService/UserLogin',
-                request_serializer=auth__pb2.UserLoginRequest.SerializeToString,
-                response_deserializer=auth__pb2.UserLoginResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_auth__pb2.UserLoginRequest.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_auth__pb2.UserLoginResponse.FromString,
                 )
         self.UserRefresh = channel.unary_unary(
                 '/auth.AuthService/UserRefresh',
-                request_serializer=auth__pb2.UserRefreshRequest.SerializeToString,
-                response_deserializer=auth__pb2.UserRefreshResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_auth__pb2.UserRefreshRequest.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_auth__pb2.UserRefreshResponse.FromString,
                 )
         self.UserLogout = channel.unary_unary(
                 '/auth.AuthService/UserLogout',
-                request_serializer=auth__pb2.UserLogoutRequest.SerializeToString,
-                response_deserializer=auth__pb2.UserLogoutResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_auth__pb2.UserLogoutRequest.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_auth__pb2.UserLogoutResponse.FromString,
                 )
 
 
@@ -90,33 +90,33 @@ def add_AuthServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ApiLoginKey': grpc.unary_unary_rpc_method_handler(
                     servicer.ApiLoginKey,
-                    request_deserializer=auth__pb2.ApiKeyRequest.FromString,
-                    response_serializer=auth__pb2.ApiKeyResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_auth__pb2.ApiKeyRequest.FromString,
+                    response_serializer=rmcs__auth__api_dot_auth__pb2.ApiKeyResponse.SerializeToString,
             ),
             'ApiLogin': grpc.unary_unary_rpc_method_handler(
                     servicer.ApiLogin,
-                    request_deserializer=auth__pb2.ApiLoginRequest.FromString,
-                    response_serializer=auth__pb2.ApiLoginResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_auth__pb2.ApiLoginRequest.FromString,
+                    response_serializer=rmcs__auth__api_dot_auth__pb2.ApiLoginResponse.SerializeToString,
             ),
             'UserLoginKey': grpc.unary_unary_rpc_method_handler(
                     servicer.UserLoginKey,
-                    request_deserializer=auth__pb2.UserKeyRequest.FromString,
-                    response_serializer=auth__pb2.UserKeyResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_auth__pb2.UserKeyRequest.FromString,
+                    response_serializer=rmcs__auth__api_dot_auth__pb2.UserKeyResponse.SerializeToString,
             ),
             'UserLogin': grpc.unary_unary_rpc_method_handler(
                     servicer.UserLogin,
-                    request_deserializer=auth__pb2.UserLoginRequest.FromString,
-                    response_serializer=auth__pb2.UserLoginResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_auth__pb2.UserLoginRequest.FromString,
+                    response_serializer=rmcs__auth__api_dot_auth__pb2.UserLoginResponse.SerializeToString,
             ),
             'UserRefresh': grpc.unary_unary_rpc_method_handler(
                     servicer.UserRefresh,
-                    request_deserializer=auth__pb2.UserRefreshRequest.FromString,
-                    response_serializer=auth__pb2.UserRefreshResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_auth__pb2.UserRefreshRequest.FromString,
+                    response_serializer=rmcs__auth__api_dot_auth__pb2.UserRefreshResponse.SerializeToString,
             ),
             'UserLogout': grpc.unary_unary_rpc_method_handler(
                     servicer.UserLogout,
-                    request_deserializer=auth__pb2.UserLogoutRequest.FromString,
-                    response_serializer=auth__pb2.UserLogoutResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_auth__pb2.UserLogoutRequest.FromString,
+                    response_serializer=rmcs__auth__api_dot_auth__pb2.UserLogoutResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -140,8 +140,8 @@ class AuthService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/auth.AuthService/ApiLoginKey',
-            auth__pb2.ApiKeyRequest.SerializeToString,
-            auth__pb2.ApiKeyResponse.FromString,
+            rmcs__auth__api_dot_auth__pb2.ApiKeyRequest.SerializeToString,
+            rmcs__auth__api_dot_auth__pb2.ApiKeyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -157,8 +157,8 @@ class AuthService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/auth.AuthService/ApiLogin',
-            auth__pb2.ApiLoginRequest.SerializeToString,
-            auth__pb2.ApiLoginResponse.FromString,
+            rmcs__auth__api_dot_auth__pb2.ApiLoginRequest.SerializeToString,
+            rmcs__auth__api_dot_auth__pb2.ApiLoginResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -174,8 +174,8 @@ class AuthService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/auth.AuthService/UserLoginKey',
-            auth__pb2.UserKeyRequest.SerializeToString,
-            auth__pb2.UserKeyResponse.FromString,
+            rmcs__auth__api_dot_auth__pb2.UserKeyRequest.SerializeToString,
+            rmcs__auth__api_dot_auth__pb2.UserKeyResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,8 +191,8 @@ class AuthService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/auth.AuthService/UserLogin',
-            auth__pb2.UserLoginRequest.SerializeToString,
-            auth__pb2.UserLoginResponse.FromString,
+            rmcs__auth__api_dot_auth__pb2.UserLoginRequest.SerializeToString,
+            rmcs__auth__api_dot_auth__pb2.UserLoginResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -208,8 +208,8 @@ class AuthService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/auth.AuthService/UserRefresh',
-            auth__pb2.UserRefreshRequest.SerializeToString,
-            auth__pb2.UserRefreshResponse.FromString,
+            rmcs__auth__api_dot_auth__pb2.UserRefreshRequest.SerializeToString,
+            rmcs__auth__api_dot_auth__pb2.UserRefreshResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -225,7 +225,7 @@ class AuthService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/auth.AuthService/UserLogout',
-            auth__pb2.UserLogoutRequest.SerializeToString,
-            auth__pb2.UserLogoutResponse.FromString,
+            rmcs__auth__api_dot_auth__pb2.UserLogoutRequest.SerializeToString,
+            rmcs__auth__api_dot_auth__pb2.UserLogoutResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

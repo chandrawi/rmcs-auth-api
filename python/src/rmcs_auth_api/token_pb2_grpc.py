@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import token_pb2 as token__pb2
+from rmcs_auth_api import token_pb2 as rmcs__auth__api_dot_token__pb2
 
 
 class TokenServiceStub(object):
@@ -16,53 +16,53 @@ class TokenServiceStub(object):
         """
         self.ReadAccessToken = channel.unary_unary(
                 '/token.TokenService/ReadAccessToken',
-                request_serializer=token__pb2.AccessId.SerializeToString,
-                response_deserializer=token__pb2.TokenReadResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.AccessId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenReadResponse.FromString,
                 )
         self.ListAuthToken = channel.unary_unary(
                 '/token.TokenService/ListAuthToken',
-                request_serializer=token__pb2.AuthToken.SerializeToString,
-                response_deserializer=token__pb2.TokenListResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.AuthToken.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenListResponse.FromString,
                 )
         self.ListTokenByUser = channel.unary_unary(
                 '/token.TokenService/ListTokenByUser',
-                request_serializer=token__pb2.UserId.SerializeToString,
-                response_deserializer=token__pb2.TokenListResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.UserId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenListResponse.FromString,
                 )
         self.CreateAccessToken = channel.unary_unary(
                 '/token.TokenService/CreateAccessToken',
-                request_serializer=token__pb2.TokenSchema.SerializeToString,
-                response_deserializer=token__pb2.TokenCreateResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.TokenSchema.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenCreateResponse.FromString,
                 )
         self.CreateAuthToken = channel.unary_unary(
                 '/token.TokenService/CreateAuthToken',
-                request_serializer=token__pb2.AuthTokenCreate.SerializeToString,
-                response_deserializer=token__pb2.AuthTokenCreateResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.AuthTokenCreate.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.AuthTokenCreateResponse.FromString,
                 )
         self.UpdateAccessToken = channel.unary_unary(
                 '/token.TokenService/UpdateAccessToken',
-                request_serializer=token__pb2.TokenUpdate.SerializeToString,
-                response_deserializer=token__pb2.TokenUpdateResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.TokenUpdate.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.FromString,
                 )
         self.UpdateAuthToken = channel.unary_unary(
                 '/token.TokenService/UpdateAuthToken',
-                request_serializer=token__pb2.TokenUpdate.SerializeToString,
-                response_deserializer=token__pb2.TokenUpdateResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.TokenUpdate.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.FromString,
                 )
         self.DeleteAccessToken = channel.unary_unary(
                 '/token.TokenService/DeleteAccessToken',
-                request_serializer=token__pb2.AccessId.SerializeToString,
-                response_deserializer=token__pb2.TokenChangeResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.AccessId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
                 )
         self.DeleteAuthToken = channel.unary_unary(
                 '/token.TokenService/DeleteAuthToken',
-                request_serializer=token__pb2.AuthToken.SerializeToString,
-                response_deserializer=token__pb2.TokenChangeResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.AuthToken.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
                 )
         self.DeleteTokenByUser = channel.unary_unary(
                 '/token.TokenService/DeleteTokenByUser',
-                request_serializer=token__pb2.UserId.SerializeToString,
-                response_deserializer=token__pb2.TokenChangeResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_token__pb2.UserId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
                 )
 
 
@@ -134,53 +134,53 @@ def add_TokenServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReadAccessToken': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadAccessToken,
-                    request_deserializer=token__pb2.AccessId.FromString,
-                    response_serializer=token__pb2.TokenReadResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.AccessId.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenReadResponse.SerializeToString,
             ),
             'ListAuthToken': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAuthToken,
-                    request_deserializer=token__pb2.AuthToken.FromString,
-                    response_serializer=token__pb2.TokenListResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.AuthToken.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenListResponse.SerializeToString,
             ),
             'ListTokenByUser': grpc.unary_unary_rpc_method_handler(
                     servicer.ListTokenByUser,
-                    request_deserializer=token__pb2.UserId.FromString,
-                    response_serializer=token__pb2.TokenListResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.UserId.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenListResponse.SerializeToString,
             ),
             'CreateAccessToken': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccessToken,
-                    request_deserializer=token__pb2.TokenSchema.FromString,
-                    response_serializer=token__pb2.TokenCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.TokenSchema.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenCreateResponse.SerializeToString,
             ),
             'CreateAuthToken': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAuthToken,
-                    request_deserializer=token__pb2.AuthTokenCreate.FromString,
-                    response_serializer=token__pb2.AuthTokenCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.AuthTokenCreate.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.AuthTokenCreateResponse.SerializeToString,
             ),
             'UpdateAccessToken': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessToken,
-                    request_deserializer=token__pb2.TokenUpdate.FromString,
-                    response_serializer=token__pb2.TokenUpdateResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.TokenUpdate.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.SerializeToString,
             ),
             'UpdateAuthToken': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAuthToken,
-                    request_deserializer=token__pb2.TokenUpdate.FromString,
-                    response_serializer=token__pb2.TokenUpdateResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.TokenUpdate.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.SerializeToString,
             ),
             'DeleteAccessToken': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAccessToken,
-                    request_deserializer=token__pb2.AccessId.FromString,
-                    response_serializer=token__pb2.TokenChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.AccessId.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.SerializeToString,
             ),
             'DeleteAuthToken': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAuthToken,
-                    request_deserializer=token__pb2.AuthToken.FromString,
-                    response_serializer=token__pb2.TokenChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.AuthToken.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.SerializeToString,
             ),
             'DeleteTokenByUser': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteTokenByUser,
-                    request_deserializer=token__pb2.UserId.FromString,
-                    response_serializer=token__pb2.TokenChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_token__pb2.UserId.FromString,
+                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -204,8 +204,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/ReadAccessToken',
-            token__pb2.AccessId.SerializeToString,
-            token__pb2.TokenReadResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.AccessId.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -221,8 +221,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/ListAuthToken',
-            token__pb2.AuthToken.SerializeToString,
-            token__pb2.TokenListResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.AuthToken.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -238,8 +238,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/ListTokenByUser',
-            token__pb2.UserId.SerializeToString,
-            token__pb2.TokenListResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.UserId.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -255,8 +255,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/CreateAccessToken',
-            token__pb2.TokenSchema.SerializeToString,
-            token__pb2.TokenCreateResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.TokenSchema.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -272,8 +272,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/CreateAuthToken',
-            token__pb2.AuthTokenCreate.SerializeToString,
-            token__pb2.AuthTokenCreateResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.AuthTokenCreate.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.AuthTokenCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -289,8 +289,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/UpdateAccessToken',
-            token__pb2.TokenUpdate.SerializeToString,
-            token__pb2.TokenUpdateResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.TokenUpdate.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -306,8 +306,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/UpdateAuthToken',
-            token__pb2.TokenUpdate.SerializeToString,
-            token__pb2.TokenUpdateResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.TokenUpdate.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -323,8 +323,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/DeleteAccessToken',
-            token__pb2.AccessId.SerializeToString,
-            token__pb2.TokenChangeResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.AccessId.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -340,8 +340,8 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/DeleteAuthToken',
-            token__pb2.AuthToken.SerializeToString,
-            token__pb2.TokenChangeResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.AuthToken.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -357,7 +357,7 @@ class TokenService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/token.TokenService/DeleteTokenByUser',
-            token__pb2.UserId.SerializeToString,
-            token__pb2.TokenChangeResponse.FromString,
+            rmcs__auth__api_dot_token__pb2.UserId.SerializeToString,
+            rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

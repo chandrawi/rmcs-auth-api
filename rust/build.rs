@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .build_server(true)
             .file_descriptor_set_path(out_dir.join(fdescriptor))
             .out_dir("./src")
-            .compile(&[fproto], &["../proto/rmcs_auth_api"])?;
+            .compile(&[fproto], &["../proto"])?;
     }
 
     Ok(())

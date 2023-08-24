@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import api_pb2 as api__pb2
+from rmcs_auth_api import api_pb2 as rmcs__auth__api_dot_api__pb2
 
 
 class ApiServiceStub(object):
@@ -16,63 +16,63 @@ class ApiServiceStub(object):
         """
         self.ReadApi = channel.unary_unary(
                 '/api.ApiService/ReadApi',
-                request_serializer=api__pb2.ApiId.SerializeToString,
-                response_deserializer=api__pb2.ApiReadResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ApiId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ApiReadResponse.FromString,
                 )
         self.ReadApiByName = channel.unary_unary(
                 '/api.ApiService/ReadApiByName',
-                request_serializer=api__pb2.ApiName.SerializeToString,
-                response_deserializer=api__pb2.ApiReadResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ApiName.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ApiReadResponse.FromString,
                 )
         self.ListApiByCategory = channel.unary_unary(
                 '/api.ApiService/ListApiByCategory',
-                request_serializer=api__pb2.ApiCategory.SerializeToString,
-                response_deserializer=api__pb2.ApiListResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ApiCategory.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ApiListResponse.FromString,
                 )
         self.CreateApi = channel.unary_unary(
                 '/api.ApiService/CreateApi',
-                request_serializer=api__pb2.ApiSchema.SerializeToString,
-                response_deserializer=api__pb2.ApiCreateResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ApiSchema.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ApiCreateResponse.FromString,
                 )
         self.UpdateApi = channel.unary_unary(
                 '/api.ApiService/UpdateApi',
-                request_serializer=api__pb2.ApiUpdate.SerializeToString,
-                response_deserializer=api__pb2.ApiChangeResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ApiUpdate.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ApiChangeResponse.FromString,
                 )
         self.DeleteApi = channel.unary_unary(
                 '/api.ApiService/DeleteApi',
-                request_serializer=api__pb2.ApiId.SerializeToString,
-                response_deserializer=api__pb2.ApiChangeResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ApiId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ApiChangeResponse.FromString,
                 )
         self.ReadProcedure = channel.unary_unary(
                 '/api.ApiService/ReadProcedure',
-                request_serializer=api__pb2.ProcedureId.SerializeToString,
-                response_deserializer=api__pb2.ProcedureReadResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ProcedureId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.FromString,
                 )
         self.ReadProcedureByName = channel.unary_unary(
                 '/api.ApiService/ReadProcedureByName',
-                request_serializer=api__pb2.ProcedureName.SerializeToString,
-                response_deserializer=api__pb2.ProcedureReadResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ProcedureName.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.FromString,
                 )
         self.ListProcedureByApi = channel.unary_unary(
                 '/api.ApiService/ListProcedureByApi',
-                request_serializer=api__pb2.ApiId.SerializeToString,
-                response_deserializer=api__pb2.ProcedureListResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ApiId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureListResponse.FromString,
                 )
         self.CreateProcedure = channel.unary_unary(
                 '/api.ApiService/CreateProcedure',
-                request_serializer=api__pb2.ProcedureSchema.SerializeToString,
-                response_deserializer=api__pb2.ProcedureCreateResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ProcedureSchema.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureCreateResponse.FromString,
                 )
         self.UpdateProcedure = channel.unary_unary(
                 '/api.ApiService/UpdateProcedure',
-                request_serializer=api__pb2.ProcedureUpdate.SerializeToString,
-                response_deserializer=api__pb2.ProcedureChangeResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ProcedureUpdate.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureChangeResponse.FromString,
                 )
         self.DeleteProcedure = channel.unary_unary(
                 '/api.ApiService/DeleteProcedure',
-                request_serializer=api__pb2.ProcedureId.SerializeToString,
-                response_deserializer=api__pb2.ProcedureChangeResponse.FromString,
+                request_serializer=rmcs__auth__api_dot_api__pb2.ProcedureId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureChangeResponse.FromString,
                 )
 
 
@@ -156,63 +156,63 @@ def add_ApiServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReadApi': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadApi,
-                    request_deserializer=api__pb2.ApiId.FromString,
-                    response_serializer=api__pb2.ApiReadResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ApiId.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ApiReadResponse.SerializeToString,
             ),
             'ReadApiByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadApiByName,
-                    request_deserializer=api__pb2.ApiName.FromString,
-                    response_serializer=api__pb2.ApiReadResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ApiName.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ApiReadResponse.SerializeToString,
             ),
             'ListApiByCategory': grpc.unary_unary_rpc_method_handler(
                     servicer.ListApiByCategory,
-                    request_deserializer=api__pb2.ApiCategory.FromString,
-                    response_serializer=api__pb2.ApiListResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ApiCategory.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ApiListResponse.SerializeToString,
             ),
             'CreateApi': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateApi,
-                    request_deserializer=api__pb2.ApiSchema.FromString,
-                    response_serializer=api__pb2.ApiCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ApiSchema.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ApiCreateResponse.SerializeToString,
             ),
             'UpdateApi': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateApi,
-                    request_deserializer=api__pb2.ApiUpdate.FromString,
-                    response_serializer=api__pb2.ApiChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ApiUpdate.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ApiChangeResponse.SerializeToString,
             ),
             'DeleteApi': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteApi,
-                    request_deserializer=api__pb2.ApiId.FromString,
-                    response_serializer=api__pb2.ApiChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ApiId.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ApiChangeResponse.SerializeToString,
             ),
             'ReadProcedure': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadProcedure,
-                    request_deserializer=api__pb2.ProcedureId.FromString,
-                    response_serializer=api__pb2.ProcedureReadResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureId.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.SerializeToString,
             ),
             'ReadProcedureByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadProcedureByName,
-                    request_deserializer=api__pb2.ProcedureName.FromString,
-                    response_serializer=api__pb2.ProcedureReadResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureName.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.SerializeToString,
             ),
             'ListProcedureByApi': grpc.unary_unary_rpc_method_handler(
                     servicer.ListProcedureByApi,
-                    request_deserializer=api__pb2.ApiId.FromString,
-                    response_serializer=api__pb2.ProcedureListResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ApiId.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ProcedureListResponse.SerializeToString,
             ),
             'CreateProcedure': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateProcedure,
-                    request_deserializer=api__pb2.ProcedureSchema.FromString,
-                    response_serializer=api__pb2.ProcedureCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureSchema.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ProcedureCreateResponse.SerializeToString,
             ),
             'UpdateProcedure': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateProcedure,
-                    request_deserializer=api__pb2.ProcedureUpdate.FromString,
-                    response_serializer=api__pb2.ProcedureChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureUpdate.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ProcedureChangeResponse.SerializeToString,
             ),
             'DeleteProcedure': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteProcedure,
-                    request_deserializer=api__pb2.ProcedureId.FromString,
-                    response_serializer=api__pb2.ProcedureChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureId.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ProcedureChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -236,8 +236,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/ReadApi',
-            api__pb2.ApiId.SerializeToString,
-            api__pb2.ApiReadResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ApiId.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ApiReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -253,8 +253,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/ReadApiByName',
-            api__pb2.ApiName.SerializeToString,
-            api__pb2.ApiReadResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ApiName.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ApiReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -270,8 +270,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/ListApiByCategory',
-            api__pb2.ApiCategory.SerializeToString,
-            api__pb2.ApiListResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ApiCategory.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ApiListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -287,8 +287,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/CreateApi',
-            api__pb2.ApiSchema.SerializeToString,
-            api__pb2.ApiCreateResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ApiSchema.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ApiCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -304,8 +304,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/UpdateApi',
-            api__pb2.ApiUpdate.SerializeToString,
-            api__pb2.ApiChangeResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ApiUpdate.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ApiChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -321,8 +321,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/DeleteApi',
-            api__pb2.ApiId.SerializeToString,
-            api__pb2.ApiChangeResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ApiId.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ApiChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -338,8 +338,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/ReadProcedure',
-            api__pb2.ProcedureId.SerializeToString,
-            api__pb2.ProcedureReadResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ProcedureId.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -355,8 +355,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/ReadProcedureByName',
-            api__pb2.ProcedureName.SerializeToString,
-            api__pb2.ProcedureReadResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ProcedureName.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -372,8 +372,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/ListProcedureByApi',
-            api__pb2.ApiId.SerializeToString,
-            api__pb2.ProcedureListResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ApiId.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ProcedureListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -389,8 +389,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/CreateProcedure',
-            api__pb2.ProcedureSchema.SerializeToString,
-            api__pb2.ProcedureCreateResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ProcedureSchema.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ProcedureCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -406,8 +406,8 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/UpdateProcedure',
-            api__pb2.ProcedureUpdate.SerializeToString,
-            api__pb2.ProcedureChangeResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ProcedureUpdate.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ProcedureChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -423,7 +423,7 @@ class ApiService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/api.ApiService/DeleteProcedure',
-            api__pb2.ProcedureId.SerializeToString,
-            api__pb2.ProcedureChangeResponse.FromString,
+            rmcs__auth__api_dot_api__pb2.ProcedureId.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ProcedureChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
