@@ -3,11 +3,11 @@ use std::path::PathBuf;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let proto_files = [
-        ("../proto/api.proto", "api_descriptor.bin"),
-        ("../proto/role.proto", "role_descriptor.bin"),
-        ("../proto/user.proto", "user_descriptor.bin"),
-        ("../proto/token.proto", "token_descriptor.bin"),
-        ("../proto/auth.proto", "auth_descriptor.bin")
+        ("../proto/rmcs_auth_api/api.proto", "api_descriptor.bin"),
+        ("../proto/rmcs_auth_api/role.proto", "role_descriptor.bin"),
+        ("../proto/rmcs_auth_api/user.proto", "user_descriptor.bin"),
+        ("../proto/rmcs_auth_api/token.proto", "token_descriptor.bin"),
+        ("../proto/rmcs_auth_api/auth.proto", "auth_descriptor.bin")
     ];
     let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 
@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             .build_server(true)
             .file_descriptor_set_path(out_dir.join(fdescriptor))
             .out_dir("./src")
-            .compile(&[fproto], &["../proto"])?;
+            .compile(&[fproto], &["../proto/rmcs_auth_api"])?;
     }
 
     Ok(())
