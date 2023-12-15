@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class UserRoleSchema(_message.Message):
-    __slots__ = ["api_id", "role", "multi", "ip_lock", "access_duration", "refresh_duration", "access_key"]
+    __slots__ = ("api_id", "role", "multi", "ip_lock", "access_duration", "refresh_duration", "access_key")
     API_ID_FIELD_NUMBER: _ClassVar[int]
     ROLE_FIELD_NUMBER: _ClassVar[int]
     MULTI_FIELD_NUMBER: _ClassVar[int]
@@ -24,7 +24,7 @@ class UserRoleSchema(_message.Message):
     def __init__(self, api_id: _Optional[bytes] = ..., role: _Optional[str] = ..., multi: bool = ..., ip_lock: bool = ..., access_duration: _Optional[int] = ..., refresh_duration: _Optional[int] = ..., access_key: _Optional[bytes] = ...) -> None: ...
 
 class UserSchema(_message.Message):
-    __slots__ = ["id", "name", "email", "phone", "password", "roles"]
+    __slots__ = ("id", "name", "email", "phone", "password", "roles")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
@@ -40,25 +40,25 @@ class UserSchema(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., name: _Optional[str] = ..., email: _Optional[str] = ..., phone: _Optional[str] = ..., password: _Optional[str] = ..., roles: _Optional[_Iterable[_Union[UserRoleSchema, _Mapping]]] = ...) -> None: ...
 
 class UserId(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
 class UserName(_message.Message):
-    __slots__ = ["name"]
+    __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class RoleId(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
 class UserUpdate(_message.Message):
-    __slots__ = ["id", "name", "email", "phone", "password"]
+    __slots__ = ("id", "name", "email", "phone", "password")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
@@ -72,7 +72,7 @@ class UserUpdate(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., name: _Optional[str] = ..., email: _Optional[str] = ..., phone: _Optional[str] = ..., password: _Optional[str] = ...) -> None: ...
 
 class UserRole(_message.Message):
-    __slots__ = ["user_id", "role_id"]
+    __slots__ = ("user_id", "role_id")
     USER_ID_FIELD_NUMBER: _ClassVar[int]
     ROLE_ID_FIELD_NUMBER: _ClassVar[int]
     user_id: bytes
@@ -80,23 +80,23 @@ class UserRole(_message.Message):
     def __init__(self, user_id: _Optional[bytes] = ..., role_id: _Optional[bytes] = ...) -> None: ...
 
 class UserReadResponse(_message.Message):
-    __slots__ = ["result"]
+    __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]
     result: UserSchema
     def __init__(self, result: _Optional[_Union[UserSchema, _Mapping]] = ...) -> None: ...
 
 class UserListResponse(_message.Message):
-    __slots__ = ["results"]
+    __slots__ = ("results",)
     RESULTS_FIELD_NUMBER: _ClassVar[int]
     results: _containers.RepeatedCompositeFieldContainer[UserSchema]
     def __init__(self, results: _Optional[_Iterable[_Union[UserSchema, _Mapping]]] = ...) -> None: ...
 
 class UserCreateResponse(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
 class UserChangeResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...
