@@ -603,10 +603,10 @@ proto.api.ApiSchema.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ApiSchema.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -735,10 +735,10 @@ proto.api.ApiSchema.prototype.setPassword = function(value) {
 
 /**
  * optional bytes access_key = 7;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ApiSchema.prototype.getAccessKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -927,10 +927,10 @@ proto.api.ApiId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ApiId.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1413,10 +1413,10 @@ proto.api.ApiUpdate.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ApiUpdate.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1635,10 +1635,10 @@ proto.api.ApiUpdate.prototype.hasPassword = function() {
 
 /**
  * optional bytes access_key = 7;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ApiUpdate.prototype.getAccessKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -1862,10 +1862,10 @@ proto.api.ProcedureSchema.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ProcedureSchema.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1904,10 +1904,10 @@ proto.api.ProcedureSchema.prototype.setId = function(value) {
 
 /**
  * optional bytes api_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ProcedureSchema.prototype.getApiId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2131,10 +2131,10 @@ proto.api.ProcedureId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ProcedureId.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2297,10 +2297,10 @@ proto.api.ProcedureName.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes api_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ProcedureName.prototype.getApiId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2493,10 +2493,10 @@ proto.api.ProcedureUpdate.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ProcedureUpdate.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -3030,10 +3030,10 @@ proto.api.ApiCreateResponse.serializeBinaryToWriter = function(message, writer) 
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ApiCreateResponse.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -3596,10 +3596,10 @@ proto.api.ProcedureCreateResponse.serializeBinaryToWriter = function(message, wr
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.api.ProcedureCreateResponse.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 

@@ -544,10 +544,10 @@ proto.auth.ApiKeyResponse.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes public_key = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.ApiKeyResponse.prototype.getPublicKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -722,10 +722,10 @@ proto.auth.ApiLoginRequest.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes api_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.ApiLoginRequest.prototype.getApiId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -764,10 +764,10 @@ proto.auth.ApiLoginRequest.prototype.setApiId = function(value) {
 
 /**
  * optional bytes password = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.ApiLoginRequest.prototype.getPassword = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -806,10 +806,10 @@ proto.auth.ApiLoginRequest.prototype.setPassword = function(value) {
 
 /**
  * optional bytes public_key = 3;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.ApiLoginRequest.prototype.getPublicKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -1180,10 +1180,10 @@ proto.auth.ApiLoginResponse.serializeBinaryToWriter = function(message, writer) 
 
 /**
  * optional bytes root_key = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.ApiLoginResponse.prototype.getRootKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1222,10 +1222,10 @@ proto.auth.ApiLoginResponse.prototype.setRootKey = function(value) {
 
 /**
  * optional bytes access_key = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.ApiLoginResponse.prototype.getAccessKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1515,10 +1515,10 @@ proto.auth.UserKeyResponse.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes public_key = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.UserKeyResponse.prototype.getPublicKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1699,10 +1699,10 @@ proto.auth.UserLoginRequest.prototype.setUsername = function(value) {
 
 /**
  * optional bytes password = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.UserLoginRequest.prototype.getPassword = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1877,10 +1877,10 @@ proto.auth.AccessTokenMap.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes api_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.AccessTokenMap.prototype.getApiId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2101,10 +2101,10 @@ proto.auth.UserLoginResponse.serializeBinaryToWriter = function(message, writer)
 
 /**
  * optional bytes user_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.UserLoginResponse.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2335,10 +2335,10 @@ proto.auth.UserRefreshRequest.serializeBinaryToWriter = function(message, writer
 
 /**
  * optional bytes api_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.UserRefreshRequest.prototype.getApiId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2697,10 +2697,10 @@ proto.auth.UserLogoutRequest.serializeBinaryToWriter = function(message, writer)
 
 /**
  * optional bytes user_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.auth.UserLogoutRequest.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 

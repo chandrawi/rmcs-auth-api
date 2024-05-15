@@ -480,10 +480,10 @@ proto.role.RoleSchema.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleSchema.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -522,10 +522,10 @@ proto.role.RoleSchema.prototype.setId = function(value) {
 
 /**
  * optional bytes api_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleSchema.prototype.getApiId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -654,10 +654,10 @@ proto.role.RoleSchema.prototype.setRefreshDuration = function(value) {
 
 /**
  * optional bytes access_key = 8;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleSchema.prototype.getAccessKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -696,10 +696,10 @@ proto.role.RoleSchema.prototype.setAccessKey = function(value) {
 
 /**
  * repeated bytes procedures = 9;
- * @return {!Array<string>}
+ * @return {!(Array<!Uint8Array>|Array<string>)}
  */
 proto.role.RoleSchema.prototype.getProceduresList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 9));
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 9));
 };
 
 
@@ -869,10 +869,10 @@ proto.role.RoleId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleId.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1035,10 +1035,10 @@ proto.role.RoleName.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes api_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleName.prototype.getApiId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1207,10 +1207,10 @@ proto.role.ApiId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes api_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.ApiId.prototype.getApiId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1361,10 +1361,10 @@ proto.role.UserId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes user_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.UserId.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1575,10 +1575,10 @@ proto.role.RoleUpdate.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleUpdate.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1921,10 +1921,10 @@ proto.role.RoleAccess.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleAccess.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1963,10 +1963,10 @@ proto.role.RoleAccess.prototype.setId = function(value) {
 
 /**
  * optional bytes procedure_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleAccess.prototype.getProcedureId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2428,10 +2428,10 @@ proto.role.RoleCreateResponse.serializeBinaryToWriter = function(message, writer
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.role.RoleCreateResponse.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 

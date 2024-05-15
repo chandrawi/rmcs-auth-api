@@ -37,12 +37,12 @@ pub struct UserId {
 pub struct AuthTokenCreate {
     #[prost(bytes = "vec", tag = "1")]
     pub user_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(uint32, tag = "2")]
-    pub number: u32,
-    #[prost(int64, tag = "3")]
+    #[prost(int64, tag = "2")]
     pub expire: i64,
-    #[prost(bytes = "vec", tag = "4")]
+    #[prost(bytes = "vec", tag = "3")]
     pub ip: ::prost::alloc::vec::Vec<u8>,
+    #[prost(uint32, tag = "4")]
+    pub number: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

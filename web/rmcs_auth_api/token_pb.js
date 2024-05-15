@@ -477,10 +477,10 @@ proto.token.TokenSchema.prototype.setAccessId = function(value) {
 
 /**
  * optional bytes user_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.token.TokenSchema.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -573,10 +573,10 @@ proto.token.TokenSchema.prototype.setExpire = function(value) {
 
 /**
  * optional bytes ip = 6;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.token.TokenSchema.prototype.getIp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -987,10 +987,10 @@ proto.token.UserId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes user_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.token.UserId.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1060,9 +1060,9 @@ proto.token.AuthTokenCreate.prototype.toObject = function(opt_includeInstance) {
 proto.token.AuthTokenCreate.toObject = function(includeInstance, msg) {
   var f, obj = {
     userId: msg.getUserId_asB64(),
-    number: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    expire: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    ip: msg.getIp_asB64()
+    expire: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    ip: msg.getIp_asB64(),
+    number: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1104,16 +1104,16 @@ proto.token.AuthTokenCreate.deserializeBinaryFromReader = function(msg, reader) 
       msg.setUserId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint32());
-      msg.setNumber(value);
-      break;
-    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setExpire(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setIp(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setNumber(value);
       break;
     default:
       reader.skipField();
@@ -1151,23 +1151,23 @@ proto.token.AuthTokenCreate.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getNumber();
-  if (f !== 0) {
-    writer.writeUint32(
-      2,
-      f
-    );
-  }
   f = message.getExpire();
   if (f !== 0) {
     writer.writeInt64(
-      3,
+      2,
       f
     );
   }
   f = message.getIp_asU8();
   if (f.length > 0) {
     writer.writeBytes(
+      3,
+      f
+    );
+  }
+  f = message.getNumber();
+  if (f !== 0) {
+    writer.writeUint32(
       4,
       f
     );
@@ -1177,10 +1177,10 @@ proto.token.AuthTokenCreate.serializeBinaryToWriter = function(message, writer) 
 
 /**
  * optional bytes user_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.token.AuthTokenCreate.prototype.getUserId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1218,10 +1218,10 @@ proto.token.AuthTokenCreate.prototype.setUserId = function(value) {
 
 
 /**
- * optional uint32 number = 2;
+ * optional int64 expire = 2;
  * @return {number}
  */
-proto.token.AuthTokenCreate.prototype.getNumber = function() {
+proto.token.AuthTokenCreate.prototype.getExpire = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -1230,40 +1230,22 @@ proto.token.AuthTokenCreate.prototype.getNumber = function() {
  * @param {number} value
  * @return {!proto.token.AuthTokenCreate} returns this
  */
-proto.token.AuthTokenCreate.prototype.setNumber = function(value) {
+proto.token.AuthTokenCreate.prototype.setExpire = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional int64 expire = 3;
- * @return {number}
- */
-proto.token.AuthTokenCreate.prototype.getExpire = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.token.AuthTokenCreate} returns this
- */
-proto.token.AuthTokenCreate.prototype.setExpire = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional bytes ip = 4;
- * @return {string}
+ * optional bytes ip = 3;
+ * @return {!(string|Uint8Array)}
  */
 proto.token.AuthTokenCreate.prototype.getIp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * optional bytes ip = 4;
+ * optional bytes ip = 3;
  * This is a type-conversion wrapper around `getIp()`
  * @return {string}
  */
@@ -1274,7 +1256,7 @@ proto.token.AuthTokenCreate.prototype.getIp_asB64 = function() {
 
 
 /**
- * optional bytes ip = 4;
+ * optional bytes ip = 3;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getIp()`
@@ -1291,7 +1273,25 @@ proto.token.AuthTokenCreate.prototype.getIp_asU8 = function() {
  * @return {!proto.token.AuthTokenCreate} returns this
  */
 proto.token.AuthTokenCreate.prototype.setIp = function(value) {
-  return jspb.Message.setProto3BytesField(this, 4, value);
+  return jspb.Message.setProto3BytesField(this, 3, value);
+};
+
+
+/**
+ * optional uint32 number = 4;
+ * @return {number}
+ */
+proto.token.AuthTokenCreate.prototype.getNumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.token.AuthTokenCreate} returns this
+ */
+proto.token.AuthTokenCreate.prototype.setNumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -1601,10 +1601,10 @@ proto.token.TokenUpdate.prototype.hasExpire = function() {
 
 /**
  * optional bytes ip = 5;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.token.TokenUpdate.prototype.getIp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
