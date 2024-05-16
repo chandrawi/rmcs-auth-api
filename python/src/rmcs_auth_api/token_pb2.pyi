@@ -40,16 +40,16 @@ class UserId(_message.Message):
     def __init__(self, user_id: _Optional[bytes] = ...) -> None: ...
 
 class AuthTokenCreate(_message.Message):
-    __slots__ = ("user_id", "number", "expire", "ip")
+    __slots__ = ("user_id", "expire", "ip", "number")
     USER_ID_FIELD_NUMBER: _ClassVar[int]
-    NUMBER_FIELD_NUMBER: _ClassVar[int]
     EXPIRE_FIELD_NUMBER: _ClassVar[int]
     IP_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
     user_id: bytes
-    number: int
     expire: int
     ip: bytes
-    def __init__(self, user_id: _Optional[bytes] = ..., number: _Optional[int] = ..., expire: _Optional[int] = ..., ip: _Optional[bytes] = ...) -> None: ...
+    number: int
+    def __init__(self, user_id: _Optional[bytes] = ..., expire: _Optional[int] = ..., ip: _Optional[bytes] = ..., number: _Optional[int] = ...) -> None: ...
 
 class TokenUpdate(_message.Message):
     __slots__ = ("access_id", "refresh_token", "auth_token", "expire", "ip")
