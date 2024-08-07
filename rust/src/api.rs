@@ -39,6 +39,14 @@ pub struct ApiCategory {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ApiOption {
+    #[prost(string, optional, tag = "1")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "2")]
+    pub category: ::core::option::Option<::prost::alloc::string::String>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ApiUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -82,6 +90,14 @@ pub struct ProcedureName {
     pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProcedureOption {
+    #[prost(bytes = "vec", optional, tag = "1")]
+    pub api_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(string, optional, tag = "2")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -267,6 +283,31 @@ pub mod api_service_client {
                 .insert(GrpcMethod::new("api.ApiService", "ReadApiByName"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_api_by_name(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ApiName>,
+        ) -> std::result::Result<
+            tonic::Response<super::ApiListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/api.ApiService/ListApiByName",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("api.ApiService", "ListApiByName"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn list_api_by_category(
             &mut self,
             request: impl tonic::IntoRequest<super::ApiCategory>,
@@ -290,6 +331,31 @@ pub mod api_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("api.ApiService", "ListApiByCategory"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_api_option(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ApiOption>,
+        ) -> std::result::Result<
+            tonic::Response<super::ApiListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/api.ApiService/ListApiOption",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("api.ApiService", "ListApiOption"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_api(
@@ -433,6 +499,56 @@ pub mod api_service_client {
                 .insert(GrpcMethod::new("api.ApiService", "ListProcedureByApi"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_procedure_by_name(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ProcedureName>,
+        ) -> std::result::Result<
+            tonic::Response<super::ProcedureListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/api.ApiService/ListProcedureByName",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("api.ApiService", "ListProcedureByName"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_procedure_option(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ProcedureOption>,
+        ) -> std::result::Result<
+            tonic::Response<super::ProcedureListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/api.ApiService/ListProcedureOption",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("api.ApiService", "ListProcedureOption"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn create_procedure(
             &mut self,
             request: impl tonic::IntoRequest<super::ProcedureSchema>,
@@ -525,9 +641,17 @@ pub mod api_service_server {
             &self,
             request: tonic::Request<super::ApiName>,
         ) -> std::result::Result<tonic::Response<super::ApiReadResponse>, tonic::Status>;
+        async fn list_api_by_name(
+            &self,
+            request: tonic::Request<super::ApiName>,
+        ) -> std::result::Result<tonic::Response<super::ApiListResponse>, tonic::Status>;
         async fn list_api_by_category(
             &self,
             request: tonic::Request<super::ApiCategory>,
+        ) -> std::result::Result<tonic::Response<super::ApiListResponse>, tonic::Status>;
+        async fn list_api_option(
+            &self,
+            request: tonic::Request<super::ApiOption>,
         ) -> std::result::Result<tonic::Response<super::ApiListResponse>, tonic::Status>;
         async fn create_api(
             &self,
@@ -567,6 +691,20 @@ pub mod api_service_server {
         async fn list_procedure_by_api(
             &self,
             request: tonic::Request<super::ApiId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ProcedureListResponse>,
+            tonic::Status,
+        >;
+        async fn list_procedure_by_name(
+            &self,
+            request: tonic::Request<super::ProcedureName>,
+        ) -> std::result::Result<
+            tonic::Response<super::ProcedureListResponse>,
+            tonic::Status,
+        >;
+        async fn list_procedure_option(
+            &self,
+            request: tonic::Request<super::ProcedureOption>,
         ) -> std::result::Result<
             tonic::Response<super::ProcedureListResponse>,
             tonic::Status,
@@ -755,6 +893,49 @@ pub mod api_service_server {
                     };
                     Box::pin(fut)
                 }
+                "/api.ApiService/ListApiByName" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListApiByNameSvc<T: ApiService>(pub Arc<T>);
+                    impl<T: ApiService> tonic::server::UnaryService<super::ApiName>
+                    for ListApiByNameSvc<T> {
+                        type Response = super::ApiListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ApiName>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ApiService>::list_api_by_name(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListApiByNameSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/api.ApiService/ListApiByCategory" => {
                     #[allow(non_camel_case_types)]
                     struct ListApiByCategorySvc<T: ApiService>(pub Arc<T>);
@@ -784,6 +965,49 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListApiByCategorySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/api.ApiService/ListApiOption" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListApiOptionSvc<T: ApiService>(pub Arc<T>);
+                    impl<T: ApiService> tonic::server::UnaryService<super::ApiOption>
+                    for ListApiOptionSvc<T> {
+                        type Response = super::ApiListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ApiOption>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ApiService>::list_api_option(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListApiOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1044,6 +1268,96 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListProcedureByApiSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/api.ApiService/ListProcedureByName" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListProcedureByNameSvc<T: ApiService>(pub Arc<T>);
+                    impl<T: ApiService> tonic::server::UnaryService<super::ProcedureName>
+                    for ListProcedureByNameSvc<T> {
+                        type Response = super::ProcedureListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ProcedureName>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ApiService>::list_procedure_by_name(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListProcedureByNameSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/api.ApiService/ListProcedureOption" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListProcedureOptionSvc<T: ApiService>(pub Arc<T>);
+                    impl<
+                        T: ApiService,
+                    > tonic::server::UnaryService<super::ProcedureOption>
+                    for ListProcedureOptionSvc<T> {
+                        type Response = super::ProcedureListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ProcedureOption>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ApiService>::list_procedure_option(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListProcedureOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

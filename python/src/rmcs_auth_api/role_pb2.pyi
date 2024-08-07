@@ -53,6 +53,16 @@ class UserId(_message.Message):
     user_id: bytes
     def __init__(self, user_id: _Optional[bytes] = ...) -> None: ...
 
+class RoleOption(_message.Message):
+    __slots__ = ("api_id", "user_id", "name")
+    API_ID_FIELD_NUMBER: _ClassVar[int]
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    api_id: bytes
+    user_id: bytes
+    name: str
+    def __init__(self, api_id: _Optional[bytes] = ..., user_id: _Optional[bytes] = ..., name: _Optional[str] = ...) -> None: ...
+
 class RoleUpdate(_message.Message):
     __slots__ = ("id", "name", "multi", "ip_lock", "access_duration", "refresh_duration")
     ID_FIELD_NUMBER: _ClassVar[int]

@@ -59,6 +59,16 @@ class RoleServiceStub(object):
                 request_serializer=rmcs__auth__api_dot_role__pb2.UserId.SerializeToString,
                 response_deserializer=rmcs__auth__api_dot_role__pb2.RoleListResponse.FromString,
                 _registered_method=True)
+        self.ListRoleByName = channel.unary_unary(
+                '/role.RoleService/ListRoleByName',
+                request_serializer=rmcs__auth__api_dot_role__pb2.RoleName.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_role__pb2.RoleListResponse.FromString,
+                _registered_method=True)
+        self.ListRoleOption = channel.unary_unary(
+                '/role.RoleService/ListRoleOption',
+                request_serializer=rmcs__auth__api_dot_role__pb2.RoleOption.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_role__pb2.RoleListResponse.FromString,
+                _registered_method=True)
         self.CreateRole = channel.unary_unary(
                 '/role.RoleService/CreateRole',
                 request_serializer=rmcs__auth__api_dot_role__pb2.RoleSchema.SerializeToString,
@@ -108,6 +118,18 @@ class RoleServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListRoleByUser(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListRoleByName(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListRoleOption(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -164,6 +186,16 @@ def add_RoleServiceServicer_to_server(servicer, server):
             'ListRoleByUser': grpc.unary_unary_rpc_method_handler(
                     servicer.ListRoleByUser,
                     request_deserializer=rmcs__auth__api_dot_role__pb2.UserId.FromString,
+                    response_serializer=rmcs__auth__api_dot_role__pb2.RoleListResponse.SerializeToString,
+            ),
+            'ListRoleByName': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListRoleByName,
+                    request_deserializer=rmcs__auth__api_dot_role__pb2.RoleName.FromString,
+                    response_serializer=rmcs__auth__api_dot_role__pb2.RoleListResponse.SerializeToString,
+            ),
+            'ListRoleOption': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListRoleOption,
+                    request_deserializer=rmcs__auth__api_dot_role__pb2.RoleOption.FromString,
                     response_serializer=rmcs__auth__api_dot_role__pb2.RoleListResponse.SerializeToString,
             ),
             'CreateRole': grpc.unary_unary_rpc_method_handler(
@@ -298,6 +330,60 @@ class RoleService(object):
             target,
             '/role.RoleService/ListRoleByUser',
             rmcs__auth__api_dot_role__pb2.UserId.SerializeToString,
+            rmcs__auth__api_dot_role__pb2.RoleListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListRoleByName(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/role.RoleService/ListRoleByName',
+            rmcs__auth__api_dot_role__pb2.RoleName.SerializeToString,
+            rmcs__auth__api_dot_role__pb2.RoleListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListRoleOption(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/role.RoleService/ListRoleOption',
+            rmcs__auth__api_dot_role__pb2.RoleOption.SerializeToString,
             rmcs__auth__api_dot_role__pb2.RoleListResponse.FromString,
             options,
             channel_credentials,

@@ -49,9 +49,24 @@ class UserServiceStub(object):
                 request_serializer=rmcs__auth__api_dot_user__pb2.UserName.SerializeToString,
                 response_deserializer=rmcs__auth__api_dot_user__pb2.UserReadResponse.FromString,
                 _registered_method=True)
+        self.ListUserByApi = channel.unary_unary(
+                '/user.UserService/ListUserByApi',
+                request_serializer=rmcs__auth__api_dot_user__pb2.ApiId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_user__pb2.UserListResponse.FromString,
+                _registered_method=True)
         self.ListUserByRole = channel.unary_unary(
                 '/user.UserService/ListUserByRole',
                 request_serializer=rmcs__auth__api_dot_user__pb2.RoleId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_user__pb2.UserListResponse.FromString,
+                _registered_method=True)
+        self.ListUserByName = channel.unary_unary(
+                '/user.UserService/ListUserByName',
+                request_serializer=rmcs__auth__api_dot_user__pb2.UserName.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_user__pb2.UserListResponse.FromString,
+                _registered_method=True)
+        self.ListUserOption = channel.unary_unary(
+                '/user.UserService/ListUserOption',
+                request_serializer=rmcs__auth__api_dot_user__pb2.UserOption.SerializeToString,
                 response_deserializer=rmcs__auth__api_dot_user__pb2.UserListResponse.FromString,
                 _registered_method=True)
         self.CreateUser = channel.unary_unary(
@@ -96,7 +111,25 @@ class UserServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListUserByApi(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListUserByRole(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListUserByName(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListUserOption(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -145,9 +178,24 @@ def add_UserServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__auth__api_dot_user__pb2.UserName.FromString,
                     response_serializer=rmcs__auth__api_dot_user__pb2.UserReadResponse.SerializeToString,
             ),
+            'ListUserByApi': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUserByApi,
+                    request_deserializer=rmcs__auth__api_dot_user__pb2.ApiId.FromString,
+                    response_serializer=rmcs__auth__api_dot_user__pb2.UserListResponse.SerializeToString,
+            ),
             'ListUserByRole': grpc.unary_unary_rpc_method_handler(
                     servicer.ListUserByRole,
                     request_deserializer=rmcs__auth__api_dot_user__pb2.RoleId.FromString,
+                    response_serializer=rmcs__auth__api_dot_user__pb2.UserListResponse.SerializeToString,
+            ),
+            'ListUserByName': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUserByName,
+                    request_deserializer=rmcs__auth__api_dot_user__pb2.UserName.FromString,
+                    response_serializer=rmcs__auth__api_dot_user__pb2.UserListResponse.SerializeToString,
+            ),
+            'ListUserOption': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUserOption,
+                    request_deserializer=rmcs__auth__api_dot_user__pb2.UserOption.FromString,
                     response_serializer=rmcs__auth__api_dot_user__pb2.UserListResponse.SerializeToString,
             ),
             'CreateUser': grpc.unary_unary_rpc_method_handler(
@@ -240,6 +288,33 @@ class UserService(object):
             _registered_method=True)
 
     @staticmethod
+    def ListUserByApi(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/user.UserService/ListUserByApi',
+            rmcs__auth__api_dot_user__pb2.ApiId.SerializeToString,
+            rmcs__auth__api_dot_user__pb2.UserListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def ListUserByRole(request,
             target,
             options=(),
@@ -255,6 +330,60 @@ class UserService(object):
             target,
             '/user.UserService/ListUserByRole',
             rmcs__auth__api_dot_user__pb2.RoleId.SerializeToString,
+            rmcs__auth__api_dot_user__pb2.UserListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListUserByName(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/user.UserService/ListUserByName',
+            rmcs__auth__api_dot_user__pb2.UserName.SerializeToString,
+            rmcs__auth__api_dot_user__pb2.UserListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListUserOption(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/user.UserService/ListUserOption',
+            rmcs__auth__api_dot_user__pb2.UserOption.SerializeToString,
             rmcs__auth__api_dot_user__pb2.UserListResponse.FromString,
             options,
             channel_credentials,

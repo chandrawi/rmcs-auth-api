@@ -51,11 +51,27 @@ class UserName(_message.Message):
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
+class ApiId(_message.Message):
+    __slots__ = ("id",)
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: bytes
+    def __init__(self, id: _Optional[bytes] = ...) -> None: ...
+
 class RoleId(_message.Message):
     __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
+
+class UserOption(_message.Message):
+    __slots__ = ("api_id", "role_id", "name")
+    API_ID_FIELD_NUMBER: _ClassVar[int]
+    ROLE_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    api_id: bytes
+    role_id: bytes
+    name: str
+    def __init__(self, api_id: _Optional[bytes] = ..., role_id: _Optional[bytes] = ..., name: _Optional[str] = ...) -> None: ...
 
 class UserUpdate(_message.Message):
     __slots__ = ("id", "name", "email", "phone", "password")

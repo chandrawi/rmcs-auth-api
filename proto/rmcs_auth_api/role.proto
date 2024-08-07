@@ -10,6 +10,10 @@ service RoleService {
 
     rpc ListRoleByUser(UserId) returns (RoleListResponse);
 
+    rpc ListRoleByName(RoleName) returns (RoleListResponse);
+
+    rpc ListRoleOption(RoleOption) returns (RoleListResponse);
+
     rpc CreateRole(RoleSchema) returns (RoleCreateResponse);
 
     rpc UpdateRole(RoleUpdate) returns (RoleChangeResponse);
@@ -48,6 +52,12 @@ message ApiId {
 
 message UserId {
     bytes user_id = 1;
+}
+
+message RoleOption {
+    optional bytes api_id = 1;
+    optional bytes user_id = 2;
+    optional string name = 3;
 }
 
 message RoleUpdate {

@@ -43,6 +43,14 @@ class ApiCategory(_message.Message):
     category: str
     def __init__(self, category: _Optional[str] = ...) -> None: ...
 
+class ApiOption(_message.Message):
+    __slots__ = ("name", "category")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    CATEGORY_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    category: str
+    def __init__(self, name: _Optional[str] = ..., category: _Optional[str] = ...) -> None: ...
+
 class ApiUpdate(_message.Message):
     __slots__ = ("id", "name", "address", "category", "description", "password", "access_key")
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -82,6 +90,14 @@ class ProcedureId(_message.Message):
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
 class ProcedureName(_message.Message):
+    __slots__ = ("api_id", "name")
+    API_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    api_id: bytes
+    name: str
+    def __init__(self, api_id: _Optional[bytes] = ..., name: _Optional[str] = ...) -> None: ...
+
+class ProcedureOption(_message.Message):
     __slots__ = ("api_id", "name")
     API_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]

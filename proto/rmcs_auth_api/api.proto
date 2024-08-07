@@ -6,7 +6,11 @@ service ApiService {
 
     rpc ReadApiByName(ApiName) returns (ApiReadResponse);
 
+    rpc ListApiByName(ApiName) returns (ApiListResponse);
+
     rpc ListApiByCategory(ApiCategory) returns (ApiListResponse);
+
+    rpc ListApiOption(ApiOption) returns (ApiListResponse);
 
     rpc CreateApi(ApiSchema) returns (ApiCreateResponse);
 
@@ -19,6 +23,10 @@ service ApiService {
     rpc ReadProcedureByName(ProcedureName) returns (ProcedureReadResponse);
 
     rpc ListProcedureByApi(ApiId) returns (ProcedureListResponse);
+
+    rpc ListProcedureByName(ProcedureName) returns (ProcedureListResponse);
+
+    rpc ListProcedureOption(ProcedureOption) returns (ProcedureListResponse);
 
     rpc CreateProcedure(ProcedureSchema) returns (ProcedureCreateResponse);
 
@@ -50,6 +58,11 @@ message ApiCategory {
     string category = 1;
 }
 
+message ApiOption {
+    optional string name = 1;
+    optional string category = 2;
+}
+
 message ApiUpdate {
     bytes id = 1;
     optional string name = 2;
@@ -75,6 +88,11 @@ message ProcedureId {
 message ProcedureName {
     bytes api_id = 1;
     string name = 3;
+}
+
+message ProcedureOption {
+    optional bytes api_id = 1;
+    optional string name = 2;
 }
 
 message ProcedureUpdate {

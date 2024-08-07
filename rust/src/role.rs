@@ -49,6 +49,16 @@ pub struct UserId {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct RoleOption {
+    #[prost(bytes = "vec", optional, tag = "1")]
+    pub api_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(bytes = "vec", optional, tag = "2")]
+    pub user_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(string, optional, tag = "3")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RoleUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -276,6 +286,56 @@ pub mod role_service_client {
                 .insert(GrpcMethod::new("role.RoleService", "ListRoleByUser"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_role_by_name(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RoleName>,
+        ) -> std::result::Result<
+            tonic::Response<super::RoleListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/role.RoleService/ListRoleByName",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("role.RoleService", "ListRoleByName"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_role_option(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RoleOption>,
+        ) -> std::result::Result<
+            tonic::Response<super::RoleListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/role.RoleService/ListRoleOption",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("role.RoleService", "ListRoleOption"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn create_role(
             &mut self,
             request: impl tonic::IntoRequest<super::RoleSchema>,
@@ -434,6 +494,20 @@ pub mod role_service_server {
         async fn list_role_by_user(
             &self,
             request: tonic::Request<super::UserId>,
+        ) -> std::result::Result<
+            tonic::Response<super::RoleListResponse>,
+            tonic::Status,
+        >;
+        async fn list_role_by_name(
+            &self,
+            request: tonic::Request<super::RoleName>,
+        ) -> std::result::Result<
+            tonic::Response<super::RoleListResponse>,
+            tonic::Status,
+        >;
+        async fn list_role_option(
+            &self,
+            request: tonic::Request<super::RoleOption>,
         ) -> std::result::Result<
             tonic::Response<super::RoleListResponse>,
             tonic::Status,
@@ -707,6 +781,92 @@ pub mod role_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListRoleByUserSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/role.RoleService/ListRoleByName" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListRoleByNameSvc<T: RoleService>(pub Arc<T>);
+                    impl<T: RoleService> tonic::server::UnaryService<super::RoleName>
+                    for ListRoleByNameSvc<T> {
+                        type Response = super::RoleListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RoleName>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as RoleService>::list_role_by_name(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListRoleByNameSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/role.RoleService/ListRoleOption" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListRoleOptionSvc<T: RoleService>(pub Arc<T>);
+                    impl<T: RoleService> tonic::server::UnaryService<super::RoleOption>
+                    for ListRoleOptionSvc<T> {
+                        type Response = super::RoleListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RoleOption>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as RoleService>::list_role_option(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListRoleOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

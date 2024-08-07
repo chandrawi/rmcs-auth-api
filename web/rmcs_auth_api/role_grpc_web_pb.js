@@ -321,6 +321,128 @@ proto.role.RoleServicePromiseClient.prototype.listRoleByUser =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.role.RoleName,
+ *   !proto.role.RoleListResponse>}
+ */
+const methodDescriptor_RoleService_ListRoleByName = new grpc.web.MethodDescriptor(
+  '/role.RoleService/ListRoleByName',
+  grpc.web.MethodType.UNARY,
+  proto.role.RoleName,
+  proto.role.RoleListResponse,
+  /**
+   * @param {!proto.role.RoleName} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.role.RoleListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.role.RoleName} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.role.RoleListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.role.RoleListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.role.RoleServiceClient.prototype.listRoleByName =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/role.RoleService/ListRoleByName',
+      request,
+      metadata || {},
+      methodDescriptor_RoleService_ListRoleByName,
+      callback);
+};
+
+
+/**
+ * @param {!proto.role.RoleName} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.role.RoleListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.role.RoleServicePromiseClient.prototype.listRoleByName =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/role.RoleService/ListRoleByName',
+      request,
+      metadata || {},
+      methodDescriptor_RoleService_ListRoleByName);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.role.RoleOption,
+ *   !proto.role.RoleListResponse>}
+ */
+const methodDescriptor_RoleService_ListRoleOption = new grpc.web.MethodDescriptor(
+  '/role.RoleService/ListRoleOption',
+  grpc.web.MethodType.UNARY,
+  proto.role.RoleOption,
+  proto.role.RoleListResponse,
+  /**
+   * @param {!proto.role.RoleOption} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.role.RoleListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.role.RoleOption} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.role.RoleListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.role.RoleListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.role.RoleServiceClient.prototype.listRoleOption =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/role.RoleService/ListRoleOption',
+      request,
+      metadata || {},
+      methodDescriptor_RoleService_ListRoleOption,
+      callback);
+};
+
+
+/**
+ * @param {!proto.role.RoleOption} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.role.RoleListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.role.RoleServicePromiseClient.prototype.listRoleOption =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/role.RoleService/ListRoleOption',
+      request,
+      metadata || {},
+      methodDescriptor_RoleService_ListRoleOption);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.role.RoleSchema,
  *   !proto.role.RoleCreateResponse>}
  */

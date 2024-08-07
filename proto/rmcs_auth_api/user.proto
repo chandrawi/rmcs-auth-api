@@ -6,7 +6,13 @@ service UserService {
 
     rpc ReadUserByName(UserName) returns (UserReadResponse);
 
+    rpc ListUserByApi(ApiId) returns (UserListResponse);
+
     rpc ListUserByRole(RoleId) returns (UserListResponse);
+
+    rpc ListUserByName(UserName) returns (UserListResponse);
+
+    rpc ListUserOption(UserOption) returns (UserListResponse);
 
     rpc CreateUser(UserSchema) returns (UserCreateResponse);
 
@@ -46,8 +52,18 @@ message UserName {
     string name = 1;
 }
 
+message ApiId {
+    bytes id = 1;
+}
+
 message RoleId {
     bytes id = 1;
+}
+
+message UserOption {
+    optional bytes api_id = 1;
+    optional bytes role_id = 2;
+    optional string name = 3;
 }
 
 message UserUpdate {
