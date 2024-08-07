@@ -5,7 +5,7 @@ import warnings
 
 from rmcs_auth_api import api_pb2 as rmcs__auth__api_dot_api__pb2
 
-GRPC_GENERATED_VERSION = '1.63.0'
+GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
 EXPECTED_ERROR_RELEASE = '1.65.0'
 SCHEDULED_RELEASE_DATE = 'June 25, 2024'
@@ -49,6 +49,11 @@ class ApiServiceStub(object):
                 request_serializer=rmcs__auth__api_dot_api__pb2.ApiName.SerializeToString,
                 response_deserializer=rmcs__auth__api_dot_api__pb2.ApiReadResponse.FromString,
                 _registered_method=True)
+        self.ListApiByIds = channel.unary_unary(
+                '/api.ApiService/ListApiByIds',
+                request_serializer=rmcs__auth__api_dot_api__pb2.ApiIds.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ApiListResponse.FromString,
+                _registered_method=True)
         self.ListApiByName = channel.unary_unary(
                 '/api.ApiService/ListApiByName',
                 request_serializer=rmcs__auth__api_dot_api__pb2.ApiName.SerializeToString,
@@ -88,6 +93,11 @@ class ApiServiceStub(object):
                 '/api.ApiService/ReadProcedureByName',
                 request_serializer=rmcs__auth__api_dot_api__pb2.ProcedureName.SerializeToString,
                 response_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.FromString,
+                _registered_method=True)
+        self.ListProcedureByIds = channel.unary_unary(
+                '/api.ApiService/ListProcedureByIds',
+                request_serializer=rmcs__auth__api_dot_api__pb2.ProcedureIds.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureListResponse.FromString,
                 _registered_method=True)
         self.ListProcedureByApi = channel.unary_unary(
                 '/api.ApiService/ListProcedureByApi',
@@ -136,6 +146,12 @@ class ApiServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListApiByIds(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListApiByName(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -179,6 +195,12 @@ class ApiServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadProcedureByName(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListProcedureByIds(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -233,6 +255,11 @@ def add_ApiServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__auth__api_dot_api__pb2.ApiName.FromString,
                     response_serializer=rmcs__auth__api_dot_api__pb2.ApiReadResponse.SerializeToString,
             ),
+            'ListApiByIds': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListApiByIds,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ApiIds.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ApiListResponse.SerializeToString,
+            ),
             'ListApiByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListApiByName,
                     request_deserializer=rmcs__auth__api_dot_api__pb2.ApiName.FromString,
@@ -273,6 +300,11 @@ def add_ApiServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureName.FromString,
                     response_serializer=rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.SerializeToString,
             ),
+            'ListProcedureByIds': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListProcedureByIds,
+                    request_deserializer=rmcs__auth__api_dot_api__pb2.ProcedureIds.FromString,
+                    response_serializer=rmcs__auth__api_dot_api__pb2.ProcedureListResponse.SerializeToString,
+            ),
             'ListProcedureByApi': grpc.unary_unary_rpc_method_handler(
                     servicer.ListProcedureByApi,
                     request_deserializer=rmcs__auth__api_dot_api__pb2.ApiId.FromString,
@@ -307,6 +339,7 @@ def add_ApiServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'api.ApiService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('api.ApiService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -357,6 +390,33 @@ class ApiService(object):
             '/api.ApiService/ReadApiByName',
             rmcs__auth__api_dot_api__pb2.ApiName.SerializeToString,
             rmcs__auth__api_dot_api__pb2.ApiReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListApiByIds(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/api.ApiService/ListApiByIds',
+            rmcs__auth__api_dot_api__pb2.ApiIds.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ApiListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -573,6 +633,33 @@ class ApiService(object):
             '/api.ApiService/ReadProcedureByName',
             rmcs__auth__api_dot_api__pb2.ProcedureName.SerializeToString,
             rmcs__auth__api_dot_api__pb2.ProcedureReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListProcedureByIds(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/api.ApiService/ListProcedureByIds',
+            rmcs__auth__api_dot_api__pb2.ProcedureIds.SerializeToString,
+            rmcs__auth__api_dot_api__pb2.ProcedureListResponse.FromString,
             options,
             channel_credentials,
             insecure,

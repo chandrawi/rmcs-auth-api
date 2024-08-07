@@ -31,6 +31,12 @@ class ApiId(_message.Message):
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
+class ApiIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[bytes]
+    def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
+
 class ApiName(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -88,6 +94,12 @@ class ProcedureId(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
+
+class ProcedureIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[bytes]
+    def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
 
 class ProcedureName(_message.Message):
     __slots__ = ("api_id", "name")

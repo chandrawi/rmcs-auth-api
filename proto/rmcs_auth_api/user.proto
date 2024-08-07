@@ -6,6 +6,8 @@ service UserService {
 
     rpc ReadUserByName(UserName) returns (UserReadResponse);
 
+    rpc ListUserByIds(UserIds) returns (UserListResponse);
+
     rpc ListUserByApi(ApiId) returns (UserListResponse);
 
     rpc ListUserByRole(RoleId) returns (UserListResponse);
@@ -46,6 +48,10 @@ message UserSchema {
 
 message UserId {
     bytes id = 1;
+}
+
+message UserIds {
+    repeated bytes ids = 1;
 }
 
 message UserName {

@@ -6,6 +6,8 @@ service RoleService {
 
     rpc ReadRoleByName(RoleName) returns (RoleReadResponse);
 
+    rpc ListRoleByIds(RoleIds) returns (RoleListResponse);
+
     rpc ListRoleByApi(ApiId) returns (RoleListResponse);
 
     rpc ListRoleByUser(UserId) returns (RoleListResponse);
@@ -39,6 +41,10 @@ message RoleSchema {
 
 message RoleId {
     bytes id = 1;
+}
+
+message RoleIds {
+    repeated bytes ids = 1;
 }
 
 message RoleName {

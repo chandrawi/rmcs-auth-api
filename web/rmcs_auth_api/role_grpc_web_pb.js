@@ -199,6 +199,67 @@ proto.role.RoleServicePromiseClient.prototype.readRoleByName =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.role.RoleIds,
+ *   !proto.role.RoleListResponse>}
+ */
+const methodDescriptor_RoleService_ListRoleByIds = new grpc.web.MethodDescriptor(
+  '/role.RoleService/ListRoleByIds',
+  grpc.web.MethodType.UNARY,
+  proto.role.RoleIds,
+  proto.role.RoleListResponse,
+  /**
+   * @param {!proto.role.RoleIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.role.RoleListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.role.RoleIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.role.RoleListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.role.RoleListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.role.RoleServiceClient.prototype.listRoleByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/role.RoleService/ListRoleByIds',
+      request,
+      metadata || {},
+      methodDescriptor_RoleService_ListRoleByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.role.RoleIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.role.RoleListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.role.RoleServicePromiseClient.prototype.listRoleByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/role.RoleService/ListRoleByIds',
+      request,
+      metadata || {},
+      methodDescriptor_RoleService_ListRoleByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.role.ApiId,
  *   !proto.role.RoleListResponse>}
  */

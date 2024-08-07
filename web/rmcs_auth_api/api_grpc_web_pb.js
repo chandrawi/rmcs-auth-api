@@ -199,6 +199,67 @@ proto.api.ApiServicePromiseClient.prototype.readApiByName =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.api.ApiIds,
+ *   !proto.api.ApiListResponse>}
+ */
+const methodDescriptor_ApiService_ListApiByIds = new grpc.web.MethodDescriptor(
+  '/api.ApiService/ListApiByIds',
+  grpc.web.MethodType.UNARY,
+  proto.api.ApiIds,
+  proto.api.ApiListResponse,
+  /**
+   * @param {!proto.api.ApiIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.api.ApiListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.api.ApiIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.api.ApiListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.api.ApiListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.api.ApiServiceClient.prototype.listApiByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/api.ApiService/ListApiByIds',
+      request,
+      metadata || {},
+      methodDescriptor_ApiService_ListApiByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.api.ApiIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.api.ApiListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.api.ApiServicePromiseClient.prototype.listApiByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/api.ApiService/ListApiByIds',
+      request,
+      metadata || {},
+      methodDescriptor_ApiService_ListApiByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.api.ApiName,
  *   !proto.api.ApiListResponse>}
  */
@@ -681,6 +742,67 @@ proto.api.ApiServicePromiseClient.prototype.readProcedureByName =
       request,
       metadata || {},
       methodDescriptor_ApiService_ReadProcedureByName);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.api.ProcedureIds,
+ *   !proto.api.ProcedureListResponse>}
+ */
+const methodDescriptor_ApiService_ListProcedureByIds = new grpc.web.MethodDescriptor(
+  '/api.ApiService/ListProcedureByIds',
+  grpc.web.MethodType.UNARY,
+  proto.api.ProcedureIds,
+  proto.api.ProcedureListResponse,
+  /**
+   * @param {!proto.api.ProcedureIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.api.ProcedureListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.api.ProcedureIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.api.ProcedureListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.api.ApiServiceClient.prototype.listProcedureByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/api.ApiService/ListProcedureByIds',
+      request,
+      metadata || {},
+      methodDescriptor_ApiService_ListProcedureByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.api.ProcedureIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.api.ProcedureListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.api.ApiServicePromiseClient.prototype.listProcedureByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/api.ApiService/ListProcedureByIds',
+      request,
+      metadata || {},
+      methodDescriptor_ApiService_ListProcedureByIds);
 };
 
 

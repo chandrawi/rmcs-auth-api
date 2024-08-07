@@ -6,6 +6,8 @@ service ApiService {
 
     rpc ReadApiByName(ApiName) returns (ApiReadResponse);
 
+    rpc ListApiByIds(ApiIds) returns (ApiListResponse);
+
     rpc ListApiByName(ApiName) returns (ApiListResponse);
 
     rpc ListApiByCategory(ApiCategory) returns (ApiListResponse);
@@ -21,6 +23,8 @@ service ApiService {
     rpc ReadProcedure(ProcedureId) returns (ProcedureReadResponse);
 
     rpc ReadProcedureByName(ProcedureName) returns (ProcedureReadResponse);
+
+    rpc ListProcedureByIds(ProcedureIds) returns (ProcedureListResponse);
 
     rpc ListProcedureByApi(ApiId) returns (ProcedureListResponse);
 
@@ -48,6 +52,10 @@ message ApiSchema {
 
 message ApiId {
     bytes id = 1;
+}
+
+message ApiIds {
+    repeated bytes ids = 1;
 }
 
 message ApiName {
@@ -83,6 +91,10 @@ message ProcedureSchema {
 
 message ProcedureId {
     bytes id = 1;
+}
+
+message ProcedureIds {
+    repeated bytes ids = 1;
 }
 
 message ProcedureName {

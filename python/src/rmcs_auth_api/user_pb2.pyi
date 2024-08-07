@@ -45,6 +45,12 @@ class UserId(_message.Message):
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
+class UserIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[bytes]
+    def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
+
 class UserName(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]

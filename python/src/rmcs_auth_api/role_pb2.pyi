@@ -33,6 +33,12 @@ class RoleId(_message.Message):
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
+class RoleIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[bytes]
+    def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
+
 class RoleName(_message.Message):
     __slots__ = ("api_id", "name")
     API_ID_FIELD_NUMBER: _ClassVar[int]
