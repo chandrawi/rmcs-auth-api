@@ -532,14 +532,14 @@ var api_pb = {};
 	 */
 	proto.api.ApiSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    address: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    category: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-	    password: jspb.Message.getFieldWithDefault(msg, 6, ""),
-	    accessKey: msg.getAccessKey_asB64(),
-	    proceduresList: jspb.Message.toObjectList(msg.getProceduresList(),
+	id: msg.getId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	address: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	category: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+	password: jspb.Message.getFieldWithDefault(msg, 6, ""),
+	accessKey: msg.getAccessKey_asB64(),
+	proceduresList: jspb.Message.toObjectList(msg.getProceduresList(),
 	    proto.api.ProcedureSchema.toObject, includeInstance)
 	  };
 
@@ -943,7 +943,7 @@ var api_pb = {};
 	 */
 	proto.api.ApiId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -1104,7 +1104,7 @@ var api_pb = {};
 	 */
 	proto.api.ApiIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -1277,7 +1277,7 @@ var api_pb = {};
 	 */
 	proto.api.ApiName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -1407,7 +1407,7 @@ var api_pb = {};
 	 */
 	proto.api.ApiCategory.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    category: jspb.Message.getFieldWithDefault(msg, 1, "")
+	category: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -1536,9 +1536,9 @@ var api_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.api.ApiOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-	    category: jspb.Message.getFieldWithDefault(msg, 2, "")
+	  var f, obj = {
+	name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+	category: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -1732,14 +1732,14 @@ var api_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.api.ApiUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    address: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    category: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-	    password: jspb.Message.getFieldWithDefault(msg, 6, ""),
-	    accessKey: msg.getAccessKey_asB64()
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	address: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	category: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+	password: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+	accessKey: msg.getAccessKey_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -2206,11 +2206,11 @@ var api_pb = {};
 	 */
 	proto.api.ProcedureSchema.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    id: msg.getId_asB64(),
-	    apiId: msg.getApiId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    rolesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+	id: msg.getId_asB64(),
+	apiId: msg.getApiId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	rolesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -2523,7 +2523,7 @@ var api_pb = {};
 	 */
 	proto.api.ProcedureId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -2684,7 +2684,7 @@ var api_pb = {};
 	 */
 	proto.api.ProcedureIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -2857,8 +2857,8 @@ var api_pb = {};
 	 */
 	proto.api.ProcedureName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+	apiId: msg.getApiId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 3, "")
 	  };
 
 	  if (includeInstance) {
@@ -3040,9 +3040,9 @@ var api_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.api.ProcedureOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+	  var f, obj = {
+	apiId: msg.getApiId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -3260,10 +3260,10 @@ var api_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.api.ProcedureUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -3511,7 +3511,7 @@ var api_pb = {};
 	 */
 	proto.api.ApiReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.api.ApiSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.api.ApiSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -3669,7 +3669,7 @@ var api_pb = {};
 	 */
 	proto.api.ApiListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.api.ApiSchema.toObject, includeInstance)
 	  };
 
@@ -3822,7 +3822,7 @@ var api_pb = {};
 	 */
 	proto.api.ApiCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -4076,7 +4076,7 @@ var api_pb = {};
 	 */
 	proto.api.ProcedureReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.api.ProcedureSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.api.ProcedureSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -4234,7 +4234,7 @@ var api_pb = {};
 	 */
 	proto.api.ProcedureListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.api.ProcedureSchema.toObject, includeInstance)
 	  };
 
@@ -4387,7 +4387,7 @@ var api_pb = {};
 	 */
 	proto.api.ProcedureCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -4621,7 +4621,7 @@ var api_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_auth_api/api.proto
 
 
@@ -4630,11 +4630,11 @@ var api_pb = {};
 
 
 
-const grpc$4 = {};
-grpc$4.web = require$$0$1;
+const grpc$5 = {};
+grpc$5.web = require$$0$1;
 
-const proto$5 = {};
-proto$5.api = api_pb;
+const proto$6 = {};
+proto$6.api = api_pb;
 
 /**
  * @param {string} hostname
@@ -4644,7 +4644,7 @@ proto$5.api = api_pb;
  * @struct
  * @final
  */
-proto$5.api.ApiServiceClient =
+proto$6.api.ApiServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -4652,7 +4652,7 @@ proto$5.api.ApiServiceClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$4.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$5.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -4670,7 +4670,7 @@ proto$5.api.ApiServiceClient =
  * @struct
  * @final
  */
-proto$5.api.ApiServicePromiseClient =
+proto$6.api.ApiServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -4678,7 +4678,7 @@ proto$5.api.ApiServicePromiseClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$4.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$5.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -4694,11 +4694,11 @@ proto$5.api.ApiServicePromiseClient =
  *   !proto.api.ApiId,
  *   !proto.api.ApiReadResponse>}
  */
-const methodDescriptor_ApiService_ReadApi = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ReadApi = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ReadApi',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiId,
-  proto$5.api.ApiReadResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiId,
+  proto$6.api.ApiReadResponse,
   /**
    * @param {!proto.api.ApiId} request
    * @return {!Uint8Array}
@@ -4706,7 +4706,7 @@ const methodDescriptor_ApiService_ReadApi = new grpc$4.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiReadResponse.deserializeBinary
+  proto$6.api.ApiReadResponse.deserializeBinary
 );
 
 
@@ -4720,7 +4720,7 @@ const methodDescriptor_ApiService_ReadApi = new grpc$4.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.readApi =
+proto$6.api.ApiServiceClient.prototype.readApi =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ReadApi',
@@ -4739,7 +4739,7 @@ proto$5.api.ApiServiceClient.prototype.readApi =
  * @return {!Promise<!proto.api.ApiReadResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.readApi =
+proto$6.api.ApiServicePromiseClient.prototype.readApi =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ReadApi',
@@ -4755,11 +4755,11 @@ proto$5.api.ApiServicePromiseClient.prototype.readApi =
  *   !proto.api.ApiName,
  *   !proto.api.ApiReadResponse>}
  */
-const methodDescriptor_ApiService_ReadApiByName = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ReadApiByName = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ReadApiByName',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiName,
-  proto$5.api.ApiReadResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiName,
+  proto$6.api.ApiReadResponse,
   /**
    * @param {!proto.api.ApiName} request
    * @return {!Uint8Array}
@@ -4767,7 +4767,7 @@ const methodDescriptor_ApiService_ReadApiByName = new grpc$4.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiReadResponse.deserializeBinary
+  proto$6.api.ApiReadResponse.deserializeBinary
 );
 
 
@@ -4781,7 +4781,7 @@ const methodDescriptor_ApiService_ReadApiByName = new grpc$4.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.readApiByName =
+proto$6.api.ApiServiceClient.prototype.readApiByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ReadApiByName',
@@ -4800,7 +4800,7 @@ proto$5.api.ApiServiceClient.prototype.readApiByName =
  * @return {!Promise<!proto.api.ApiReadResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.readApiByName =
+proto$6.api.ApiServicePromiseClient.prototype.readApiByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ReadApiByName',
@@ -4816,11 +4816,11 @@ proto$5.api.ApiServicePromiseClient.prototype.readApiByName =
  *   !proto.api.ApiIds,
  *   !proto.api.ApiListResponse>}
  */
-const methodDescriptor_ApiService_ListApiByIds = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ListApiByIds = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ListApiByIds',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiIds,
-  proto$5.api.ApiListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiIds,
+  proto$6.api.ApiListResponse,
   /**
    * @param {!proto.api.ApiIds} request
    * @return {!Uint8Array}
@@ -4828,7 +4828,7 @@ const methodDescriptor_ApiService_ListApiByIds = new grpc$4.web.MethodDescriptor
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiListResponse.deserializeBinary
+  proto$6.api.ApiListResponse.deserializeBinary
 );
 
 
@@ -4842,7 +4842,7 @@ const methodDescriptor_ApiService_ListApiByIds = new grpc$4.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.listApiByIds =
+proto$6.api.ApiServiceClient.prototype.listApiByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ListApiByIds',
@@ -4861,7 +4861,7 @@ proto$5.api.ApiServiceClient.prototype.listApiByIds =
  * @return {!Promise<!proto.api.ApiListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.listApiByIds =
+proto$6.api.ApiServicePromiseClient.prototype.listApiByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ListApiByIds',
@@ -4877,11 +4877,11 @@ proto$5.api.ApiServicePromiseClient.prototype.listApiByIds =
  *   !proto.api.ApiName,
  *   !proto.api.ApiListResponse>}
  */
-const methodDescriptor_ApiService_ListApiByName = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ListApiByName = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ListApiByName',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiName,
-  proto$5.api.ApiListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiName,
+  proto$6.api.ApiListResponse,
   /**
    * @param {!proto.api.ApiName} request
    * @return {!Uint8Array}
@@ -4889,7 +4889,7 @@ const methodDescriptor_ApiService_ListApiByName = new grpc$4.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiListResponse.deserializeBinary
+  proto$6.api.ApiListResponse.deserializeBinary
 );
 
 
@@ -4903,7 +4903,7 @@ const methodDescriptor_ApiService_ListApiByName = new grpc$4.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.listApiByName =
+proto$6.api.ApiServiceClient.prototype.listApiByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ListApiByName',
@@ -4922,7 +4922,7 @@ proto$5.api.ApiServiceClient.prototype.listApiByName =
  * @return {!Promise<!proto.api.ApiListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.listApiByName =
+proto$6.api.ApiServicePromiseClient.prototype.listApiByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ListApiByName',
@@ -4938,11 +4938,11 @@ proto$5.api.ApiServicePromiseClient.prototype.listApiByName =
  *   !proto.api.ApiCategory,
  *   !proto.api.ApiListResponse>}
  */
-const methodDescriptor_ApiService_ListApiByCategory = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ListApiByCategory = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ListApiByCategory',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiCategory,
-  proto$5.api.ApiListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiCategory,
+  proto$6.api.ApiListResponse,
   /**
    * @param {!proto.api.ApiCategory} request
    * @return {!Uint8Array}
@@ -4950,7 +4950,7 @@ const methodDescriptor_ApiService_ListApiByCategory = new grpc$4.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiListResponse.deserializeBinary
+  proto$6.api.ApiListResponse.deserializeBinary
 );
 
 
@@ -4964,7 +4964,7 @@ const methodDescriptor_ApiService_ListApiByCategory = new grpc$4.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.listApiByCategory =
+proto$6.api.ApiServiceClient.prototype.listApiByCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ListApiByCategory',
@@ -4983,7 +4983,7 @@ proto$5.api.ApiServiceClient.prototype.listApiByCategory =
  * @return {!Promise<!proto.api.ApiListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.listApiByCategory =
+proto$6.api.ApiServicePromiseClient.prototype.listApiByCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ListApiByCategory',
@@ -4999,11 +4999,11 @@ proto$5.api.ApiServicePromiseClient.prototype.listApiByCategory =
  *   !proto.api.ApiOption,
  *   !proto.api.ApiListResponse>}
  */
-const methodDescriptor_ApiService_ListApiOption = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ListApiOption = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ListApiOption',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiOption,
-  proto$5.api.ApiListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiOption,
+  proto$6.api.ApiListResponse,
   /**
    * @param {!proto.api.ApiOption} request
    * @return {!Uint8Array}
@@ -5011,7 +5011,7 @@ const methodDescriptor_ApiService_ListApiOption = new grpc$4.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiListResponse.deserializeBinary
+  proto$6.api.ApiListResponse.deserializeBinary
 );
 
 
@@ -5025,7 +5025,7 @@ const methodDescriptor_ApiService_ListApiOption = new grpc$4.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.listApiOption =
+proto$6.api.ApiServiceClient.prototype.listApiOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ListApiOption',
@@ -5044,7 +5044,7 @@ proto$5.api.ApiServiceClient.prototype.listApiOption =
  * @return {!Promise<!proto.api.ApiListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.listApiOption =
+proto$6.api.ApiServicePromiseClient.prototype.listApiOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ListApiOption',
@@ -5060,11 +5060,11 @@ proto$5.api.ApiServicePromiseClient.prototype.listApiOption =
  *   !proto.api.ApiSchema,
  *   !proto.api.ApiCreateResponse>}
  */
-const methodDescriptor_ApiService_CreateApi = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_CreateApi = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/CreateApi',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiSchema,
-  proto$5.api.ApiCreateResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiSchema,
+  proto$6.api.ApiCreateResponse,
   /**
    * @param {!proto.api.ApiSchema} request
    * @return {!Uint8Array}
@@ -5072,7 +5072,7 @@ const methodDescriptor_ApiService_CreateApi = new grpc$4.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiCreateResponse.deserializeBinary
+  proto$6.api.ApiCreateResponse.deserializeBinary
 );
 
 
@@ -5086,7 +5086,7 @@ const methodDescriptor_ApiService_CreateApi = new grpc$4.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.createApi =
+proto$6.api.ApiServiceClient.prototype.createApi =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/CreateApi',
@@ -5105,7 +5105,7 @@ proto$5.api.ApiServiceClient.prototype.createApi =
  * @return {!Promise<!proto.api.ApiCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.createApi =
+proto$6.api.ApiServicePromiseClient.prototype.createApi =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/CreateApi',
@@ -5121,11 +5121,11 @@ proto$5.api.ApiServicePromiseClient.prototype.createApi =
  *   !proto.api.ApiUpdate,
  *   !proto.api.ApiChangeResponse>}
  */
-const methodDescriptor_ApiService_UpdateApi = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_UpdateApi = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/UpdateApi',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiUpdate,
-  proto$5.api.ApiChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiUpdate,
+  proto$6.api.ApiChangeResponse,
   /**
    * @param {!proto.api.ApiUpdate} request
    * @return {!Uint8Array}
@@ -5133,7 +5133,7 @@ const methodDescriptor_ApiService_UpdateApi = new grpc$4.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiChangeResponse.deserializeBinary
+  proto$6.api.ApiChangeResponse.deserializeBinary
 );
 
 
@@ -5147,7 +5147,7 @@ const methodDescriptor_ApiService_UpdateApi = new grpc$4.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.updateApi =
+proto$6.api.ApiServiceClient.prototype.updateApi =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/UpdateApi',
@@ -5166,7 +5166,7 @@ proto$5.api.ApiServiceClient.prototype.updateApi =
  * @return {!Promise<!proto.api.ApiChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.updateApi =
+proto$6.api.ApiServicePromiseClient.prototype.updateApi =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/UpdateApi',
@@ -5182,11 +5182,11 @@ proto$5.api.ApiServicePromiseClient.prototype.updateApi =
  *   !proto.api.ApiId,
  *   !proto.api.ApiChangeResponse>}
  */
-const methodDescriptor_ApiService_DeleteApi = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_DeleteApi = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/DeleteApi',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiId,
-  proto$5.api.ApiChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiId,
+  proto$6.api.ApiChangeResponse,
   /**
    * @param {!proto.api.ApiId} request
    * @return {!Uint8Array}
@@ -5194,7 +5194,7 @@ const methodDescriptor_ApiService_DeleteApi = new grpc$4.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ApiChangeResponse.deserializeBinary
+  proto$6.api.ApiChangeResponse.deserializeBinary
 );
 
 
@@ -5208,7 +5208,7 @@ const methodDescriptor_ApiService_DeleteApi = new grpc$4.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.api.ApiChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.deleteApi =
+proto$6.api.ApiServiceClient.prototype.deleteApi =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/DeleteApi',
@@ -5227,7 +5227,7 @@ proto$5.api.ApiServiceClient.prototype.deleteApi =
  * @return {!Promise<!proto.api.ApiChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.deleteApi =
+proto$6.api.ApiServicePromiseClient.prototype.deleteApi =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/DeleteApi',
@@ -5243,11 +5243,11 @@ proto$5.api.ApiServicePromiseClient.prototype.deleteApi =
  *   !proto.api.ProcedureId,
  *   !proto.api.ProcedureReadResponse>}
  */
-const methodDescriptor_ApiService_ReadProcedure = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ReadProcedure = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ReadProcedure',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ProcedureId,
-  proto$5.api.ProcedureReadResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ProcedureId,
+  proto$6.api.ProcedureReadResponse,
   /**
    * @param {!proto.api.ProcedureId} request
    * @return {!Uint8Array}
@@ -5255,7 +5255,7 @@ const methodDescriptor_ApiService_ReadProcedure = new grpc$4.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureReadResponse.deserializeBinary
+  proto$6.api.ProcedureReadResponse.deserializeBinary
 );
 
 
@@ -5269,7 +5269,7 @@ const methodDescriptor_ApiService_ReadProcedure = new grpc$4.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.readProcedure =
+proto$6.api.ApiServiceClient.prototype.readProcedure =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ReadProcedure',
@@ -5288,7 +5288,7 @@ proto$5.api.ApiServiceClient.prototype.readProcedure =
  * @return {!Promise<!proto.api.ProcedureReadResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.readProcedure =
+proto$6.api.ApiServicePromiseClient.prototype.readProcedure =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ReadProcedure',
@@ -5304,11 +5304,11 @@ proto$5.api.ApiServicePromiseClient.prototype.readProcedure =
  *   !proto.api.ProcedureName,
  *   !proto.api.ProcedureReadResponse>}
  */
-const methodDescriptor_ApiService_ReadProcedureByName = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ReadProcedureByName = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ReadProcedureByName',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ProcedureName,
-  proto$5.api.ProcedureReadResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ProcedureName,
+  proto$6.api.ProcedureReadResponse,
   /**
    * @param {!proto.api.ProcedureName} request
    * @return {!Uint8Array}
@@ -5316,7 +5316,7 @@ const methodDescriptor_ApiService_ReadProcedureByName = new grpc$4.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureReadResponse.deserializeBinary
+  proto$6.api.ProcedureReadResponse.deserializeBinary
 );
 
 
@@ -5330,7 +5330,7 @@ const methodDescriptor_ApiService_ReadProcedureByName = new grpc$4.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.readProcedureByName =
+proto$6.api.ApiServiceClient.prototype.readProcedureByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ReadProcedureByName',
@@ -5349,7 +5349,7 @@ proto$5.api.ApiServiceClient.prototype.readProcedureByName =
  * @return {!Promise<!proto.api.ProcedureReadResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.readProcedureByName =
+proto$6.api.ApiServicePromiseClient.prototype.readProcedureByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ReadProcedureByName',
@@ -5365,11 +5365,11 @@ proto$5.api.ApiServicePromiseClient.prototype.readProcedureByName =
  *   !proto.api.ProcedureIds,
  *   !proto.api.ProcedureListResponse>}
  */
-const methodDescriptor_ApiService_ListProcedureByIds = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ListProcedureByIds = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ListProcedureByIds',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ProcedureIds,
-  proto$5.api.ProcedureListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ProcedureIds,
+  proto$6.api.ProcedureListResponse,
   /**
    * @param {!proto.api.ProcedureIds} request
    * @return {!Uint8Array}
@@ -5377,7 +5377,7 @@ const methodDescriptor_ApiService_ListProcedureByIds = new grpc$4.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureListResponse.deserializeBinary
+  proto$6.api.ProcedureListResponse.deserializeBinary
 );
 
 
@@ -5391,7 +5391,7 @@ const methodDescriptor_ApiService_ListProcedureByIds = new grpc$4.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.listProcedureByIds =
+proto$6.api.ApiServiceClient.prototype.listProcedureByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ListProcedureByIds',
@@ -5410,7 +5410,7 @@ proto$5.api.ApiServiceClient.prototype.listProcedureByIds =
  * @return {!Promise<!proto.api.ProcedureListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.listProcedureByIds =
+proto$6.api.ApiServicePromiseClient.prototype.listProcedureByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ListProcedureByIds',
@@ -5426,11 +5426,11 @@ proto$5.api.ApiServicePromiseClient.prototype.listProcedureByIds =
  *   !proto.api.ApiId,
  *   !proto.api.ProcedureListResponse>}
  */
-const methodDescriptor_ApiService_ListProcedureByApi = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ListProcedureByApi = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ListProcedureByApi',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ApiId,
-  proto$5.api.ProcedureListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ApiId,
+  proto$6.api.ProcedureListResponse,
   /**
    * @param {!proto.api.ApiId} request
    * @return {!Uint8Array}
@@ -5438,7 +5438,7 @@ const methodDescriptor_ApiService_ListProcedureByApi = new grpc$4.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureListResponse.deserializeBinary
+  proto$6.api.ProcedureListResponse.deserializeBinary
 );
 
 
@@ -5452,7 +5452,7 @@ const methodDescriptor_ApiService_ListProcedureByApi = new grpc$4.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.listProcedureByApi =
+proto$6.api.ApiServiceClient.prototype.listProcedureByApi =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ListProcedureByApi',
@@ -5471,7 +5471,7 @@ proto$5.api.ApiServiceClient.prototype.listProcedureByApi =
  * @return {!Promise<!proto.api.ProcedureListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.listProcedureByApi =
+proto$6.api.ApiServicePromiseClient.prototype.listProcedureByApi =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ListProcedureByApi',
@@ -5487,11 +5487,11 @@ proto$5.api.ApiServicePromiseClient.prototype.listProcedureByApi =
  *   !proto.api.ProcedureName,
  *   !proto.api.ProcedureListResponse>}
  */
-const methodDescriptor_ApiService_ListProcedureByName = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ListProcedureByName = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ListProcedureByName',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ProcedureName,
-  proto$5.api.ProcedureListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ProcedureName,
+  proto$6.api.ProcedureListResponse,
   /**
    * @param {!proto.api.ProcedureName} request
    * @return {!Uint8Array}
@@ -5499,7 +5499,7 @@ const methodDescriptor_ApiService_ListProcedureByName = new grpc$4.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureListResponse.deserializeBinary
+  proto$6.api.ProcedureListResponse.deserializeBinary
 );
 
 
@@ -5513,7 +5513,7 @@ const methodDescriptor_ApiService_ListProcedureByName = new grpc$4.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.listProcedureByName =
+proto$6.api.ApiServiceClient.prototype.listProcedureByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ListProcedureByName',
@@ -5532,7 +5532,7 @@ proto$5.api.ApiServiceClient.prototype.listProcedureByName =
  * @return {!Promise<!proto.api.ProcedureListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.listProcedureByName =
+proto$6.api.ApiServicePromiseClient.prototype.listProcedureByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ListProcedureByName',
@@ -5548,11 +5548,11 @@ proto$5.api.ApiServicePromiseClient.prototype.listProcedureByName =
  *   !proto.api.ProcedureOption,
  *   !proto.api.ProcedureListResponse>}
  */
-const methodDescriptor_ApiService_ListProcedureOption = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_ListProcedureOption = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/ListProcedureOption',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ProcedureOption,
-  proto$5.api.ProcedureListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ProcedureOption,
+  proto$6.api.ProcedureListResponse,
   /**
    * @param {!proto.api.ProcedureOption} request
    * @return {!Uint8Array}
@@ -5560,7 +5560,7 @@ const methodDescriptor_ApiService_ListProcedureOption = new grpc$4.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureListResponse.deserializeBinary
+  proto$6.api.ProcedureListResponse.deserializeBinary
 );
 
 
@@ -5574,7 +5574,7 @@ const methodDescriptor_ApiService_ListProcedureOption = new grpc$4.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.listProcedureOption =
+proto$6.api.ApiServiceClient.prototype.listProcedureOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/ListProcedureOption',
@@ -5593,7 +5593,7 @@ proto$5.api.ApiServiceClient.prototype.listProcedureOption =
  * @return {!Promise<!proto.api.ProcedureListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.listProcedureOption =
+proto$6.api.ApiServicePromiseClient.prototype.listProcedureOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/ListProcedureOption',
@@ -5609,11 +5609,11 @@ proto$5.api.ApiServicePromiseClient.prototype.listProcedureOption =
  *   !proto.api.ProcedureSchema,
  *   !proto.api.ProcedureCreateResponse>}
  */
-const methodDescriptor_ApiService_CreateProcedure = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_CreateProcedure = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/CreateProcedure',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ProcedureSchema,
-  proto$5.api.ProcedureCreateResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ProcedureSchema,
+  proto$6.api.ProcedureCreateResponse,
   /**
    * @param {!proto.api.ProcedureSchema} request
    * @return {!Uint8Array}
@@ -5621,7 +5621,7 @@ const methodDescriptor_ApiService_CreateProcedure = new grpc$4.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureCreateResponse.deserializeBinary
+  proto$6.api.ProcedureCreateResponse.deserializeBinary
 );
 
 
@@ -5635,7 +5635,7 @@ const methodDescriptor_ApiService_CreateProcedure = new grpc$4.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.createProcedure =
+proto$6.api.ApiServiceClient.prototype.createProcedure =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/CreateProcedure',
@@ -5654,7 +5654,7 @@ proto$5.api.ApiServiceClient.prototype.createProcedure =
  * @return {!Promise<!proto.api.ProcedureCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.createProcedure =
+proto$6.api.ApiServicePromiseClient.prototype.createProcedure =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/CreateProcedure',
@@ -5670,11 +5670,11 @@ proto$5.api.ApiServicePromiseClient.prototype.createProcedure =
  *   !proto.api.ProcedureUpdate,
  *   !proto.api.ProcedureChangeResponse>}
  */
-const methodDescriptor_ApiService_UpdateProcedure = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_UpdateProcedure = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/UpdateProcedure',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ProcedureUpdate,
-  proto$5.api.ProcedureChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ProcedureUpdate,
+  proto$6.api.ProcedureChangeResponse,
   /**
    * @param {!proto.api.ProcedureUpdate} request
    * @return {!Uint8Array}
@@ -5682,7 +5682,7 @@ const methodDescriptor_ApiService_UpdateProcedure = new grpc$4.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureChangeResponse.deserializeBinary
+  proto$6.api.ProcedureChangeResponse.deserializeBinary
 );
 
 
@@ -5696,7 +5696,7 @@ const methodDescriptor_ApiService_UpdateProcedure = new grpc$4.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.updateProcedure =
+proto$6.api.ApiServiceClient.prototype.updateProcedure =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/UpdateProcedure',
@@ -5715,7 +5715,7 @@ proto$5.api.ApiServiceClient.prototype.updateProcedure =
  * @return {!Promise<!proto.api.ProcedureChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.updateProcedure =
+proto$6.api.ApiServicePromiseClient.prototype.updateProcedure =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/UpdateProcedure',
@@ -5731,11 +5731,11 @@ proto$5.api.ApiServicePromiseClient.prototype.updateProcedure =
  *   !proto.api.ProcedureId,
  *   !proto.api.ProcedureChangeResponse>}
  */
-const methodDescriptor_ApiService_DeleteProcedure = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_ApiService_DeleteProcedure = new grpc$5.web.MethodDescriptor(
   '/api.ApiService/DeleteProcedure',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.api.ProcedureId,
-  proto$5.api.ProcedureChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.api.ProcedureId,
+  proto$6.api.ProcedureChangeResponse,
   /**
    * @param {!proto.api.ProcedureId} request
    * @return {!Uint8Array}
@@ -5743,7 +5743,7 @@ const methodDescriptor_ApiService_DeleteProcedure = new grpc$4.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.api.ProcedureChangeResponse.deserializeBinary
+  proto$6.api.ProcedureChangeResponse.deserializeBinary
 );
 
 
@@ -5757,7 +5757,7 @@ const methodDescriptor_ApiService_DeleteProcedure = new grpc$4.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.api.ProcedureChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.api.ApiServiceClient.prototype.deleteProcedure =
+proto$6.api.ApiServiceClient.prototype.deleteProcedure =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/api.ApiService/DeleteProcedure',
@@ -5776,7 +5776,7 @@ proto$5.api.ApiServiceClient.prototype.deleteProcedure =
  * @return {!Promise<!proto.api.ProcedureChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.api.ApiServicePromiseClient.prototype.deleteProcedure =
+proto$6.api.ApiServicePromiseClient.prototype.deleteProcedure =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/api.ApiService/DeleteProcedure',
@@ -5786,7 +5786,7 @@ proto$5.api.ApiServicePromiseClient.prototype.deleteProcedure =
 };
 
 
-var api_grpc_web_pb = proto$5.api;
+var api_grpc_web_pb = proto$6.api;
 
 var api_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(api_grpc_web_pb);
 
@@ -6141,15 +6141,15 @@ var role_pb = {};
 	 */
 	proto.role.RoleSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    apiId: msg.getApiId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    multi: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-	    ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-	    accessDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
-	    refreshDuration: jspb.Message.getFieldWithDefault(msg, 7, 0),
-	    accessKey: msg.getAccessKey_asB64(),
-	    proceduresList: msg.getProceduresList_asB64()
+	id: msg.getId_asB64(),
+	apiId: msg.getApiId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	multi: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+	ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+	accessDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
+	refreshDuration: jspb.Message.getFieldWithDefault(msg, 7, 0),
+	accessKey: msg.getAccessKey_asB64(),
+	proceduresList: msg.getProceduresList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -6626,7 +6626,7 @@ var role_pb = {};
 	 */
 	proto.role.RoleId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -6787,7 +6787,7 @@ var role_pb = {};
 	 */
 	proto.role.RoleIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -6960,8 +6960,8 @@ var role_pb = {};
 	 */
 	proto.role.RoleName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+	apiId: msg.getApiId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 2, "")
 	  };
 
 	  if (includeInstance) {
@@ -7144,7 +7144,7 @@ var role_pb = {};
 	 */
 	proto.role.ApiId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    apiId: msg.getApiId_asB64()
+	apiId: msg.getApiId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -7298,7 +7298,7 @@ var role_pb = {};
 	 */
 	proto.role.UserId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    userId: msg.getUserId_asB64()
+	userId: msg.getUserId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -7451,10 +7451,10 @@ var role_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.role.RoleOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    userId: msg.getUserId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+	  var f, obj = {
+	apiId: msg.getApiId_asB64(),
+	userId: msg.getUserId_asB64(),
+	name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -7743,13 +7743,13 @@ var role_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.role.RoleUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    multi: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-	    ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-	    accessDuration: jspb.Message.getFieldWithDefault(msg, 5, 0),
-	    refreshDuration: jspb.Message.getFieldWithDefault(msg, 6, 0)
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	multi: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+	ipLock: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+	accessDuration: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+	refreshDuration: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -8138,8 +8138,8 @@ var role_pb = {};
 	 */
 	proto.role.RoleAccess.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    procedureId: msg.getProcedureId_asB64()
+	id: msg.getId_asB64(),
+	procedureId: msg.getProcedureId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -8346,7 +8346,7 @@ var role_pb = {};
 	 */
 	proto.role.RoleReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.role.RoleSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.role.RoleSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -8504,7 +8504,7 @@ var role_pb = {};
 	 */
 	proto.role.RoleListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.role.RoleSchema.toObject, includeInstance)
 	  };
 
@@ -8657,7 +8657,7 @@ var role_pb = {};
 	 */
 	proto.role.RoleCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -8891,7 +8891,7 @@ var role_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_auth_api/role.proto
 
 
@@ -8900,11 +8900,11 @@ var role_pb = {};
 
 
 
-const grpc$3 = {};
-grpc$3.web = require$$0$1;
+const grpc$4 = {};
+grpc$4.web = require$$0$1;
 
-const proto$4 = {};
-proto$4.role = role_pb;
+const proto$5 = {};
+proto$5.role = role_pb;
 
 /**
  * @param {string} hostname
@@ -8914,7 +8914,7 @@ proto$4.role = role_pb;
  * @struct
  * @final
  */
-proto$4.role.RoleServiceClient =
+proto$5.role.RoleServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -8922,7 +8922,7 @@ proto$4.role.RoleServiceClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$3.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$4.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -8940,7 +8940,7 @@ proto$4.role.RoleServiceClient =
  * @struct
  * @final
  */
-proto$4.role.RoleServicePromiseClient =
+proto$5.role.RoleServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -8948,7 +8948,7 @@ proto$4.role.RoleServicePromiseClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$3.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$4.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -8964,11 +8964,11 @@ proto$4.role.RoleServicePromiseClient =
  *   !proto.role.RoleId,
  *   !proto.role.RoleReadResponse>}
  */
-const methodDescriptor_RoleService_ReadRole = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_ReadRole = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/ReadRole',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleId,
-  proto$4.role.RoleReadResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleId,
+  proto$5.role.RoleReadResponse,
   /**
    * @param {!proto.role.RoleId} request
    * @return {!Uint8Array}
@@ -8976,7 +8976,7 @@ const methodDescriptor_RoleService_ReadRole = new grpc$3.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleReadResponse.deserializeBinary
+  proto$5.role.RoleReadResponse.deserializeBinary
 );
 
 
@@ -8990,7 +8990,7 @@ const methodDescriptor_RoleService_ReadRole = new grpc$3.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.readRole =
+proto$5.role.RoleServiceClient.prototype.readRole =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/ReadRole',
@@ -9009,7 +9009,7 @@ proto$4.role.RoleServiceClient.prototype.readRole =
  * @return {!Promise<!proto.role.RoleReadResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.readRole =
+proto$5.role.RoleServicePromiseClient.prototype.readRole =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/ReadRole',
@@ -9025,11 +9025,11 @@ proto$4.role.RoleServicePromiseClient.prototype.readRole =
  *   !proto.role.RoleName,
  *   !proto.role.RoleReadResponse>}
  */
-const methodDescriptor_RoleService_ReadRoleByName = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_ReadRoleByName = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/ReadRoleByName',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleName,
-  proto$4.role.RoleReadResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleName,
+  proto$5.role.RoleReadResponse,
   /**
    * @param {!proto.role.RoleName} request
    * @return {!Uint8Array}
@@ -9037,7 +9037,7 @@ const methodDescriptor_RoleService_ReadRoleByName = new grpc$3.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleReadResponse.deserializeBinary
+  proto$5.role.RoleReadResponse.deserializeBinary
 );
 
 
@@ -9051,7 +9051,7 @@ const methodDescriptor_RoleService_ReadRoleByName = new grpc$3.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.readRoleByName =
+proto$5.role.RoleServiceClient.prototype.readRoleByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/ReadRoleByName',
@@ -9070,7 +9070,7 @@ proto$4.role.RoleServiceClient.prototype.readRoleByName =
  * @return {!Promise<!proto.role.RoleReadResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.readRoleByName =
+proto$5.role.RoleServicePromiseClient.prototype.readRoleByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/ReadRoleByName',
@@ -9086,11 +9086,11 @@ proto$4.role.RoleServicePromiseClient.prototype.readRoleByName =
  *   !proto.role.RoleIds,
  *   !proto.role.RoleListResponse>}
  */
-const methodDescriptor_RoleService_ListRoleByIds = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_ListRoleByIds = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/ListRoleByIds',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleIds,
-  proto$4.role.RoleListResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleIds,
+  proto$5.role.RoleListResponse,
   /**
    * @param {!proto.role.RoleIds} request
    * @return {!Uint8Array}
@@ -9098,7 +9098,7 @@ const methodDescriptor_RoleService_ListRoleByIds = new grpc$3.web.MethodDescript
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleListResponse.deserializeBinary
+  proto$5.role.RoleListResponse.deserializeBinary
 );
 
 
@@ -9112,7 +9112,7 @@ const methodDescriptor_RoleService_ListRoleByIds = new grpc$3.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.listRoleByIds =
+proto$5.role.RoleServiceClient.prototype.listRoleByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/ListRoleByIds',
@@ -9131,7 +9131,7 @@ proto$4.role.RoleServiceClient.prototype.listRoleByIds =
  * @return {!Promise<!proto.role.RoleListResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.listRoleByIds =
+proto$5.role.RoleServicePromiseClient.prototype.listRoleByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/ListRoleByIds',
@@ -9147,11 +9147,11 @@ proto$4.role.RoleServicePromiseClient.prototype.listRoleByIds =
  *   !proto.role.ApiId,
  *   !proto.role.RoleListResponse>}
  */
-const methodDescriptor_RoleService_ListRoleByApi = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_ListRoleByApi = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/ListRoleByApi',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.ApiId,
-  proto$4.role.RoleListResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.ApiId,
+  proto$5.role.RoleListResponse,
   /**
    * @param {!proto.role.ApiId} request
    * @return {!Uint8Array}
@@ -9159,7 +9159,7 @@ const methodDescriptor_RoleService_ListRoleByApi = new grpc$3.web.MethodDescript
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleListResponse.deserializeBinary
+  proto$5.role.RoleListResponse.deserializeBinary
 );
 
 
@@ -9173,7 +9173,7 @@ const methodDescriptor_RoleService_ListRoleByApi = new grpc$3.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.listRoleByApi =
+proto$5.role.RoleServiceClient.prototype.listRoleByApi =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/ListRoleByApi',
@@ -9192,7 +9192,7 @@ proto$4.role.RoleServiceClient.prototype.listRoleByApi =
  * @return {!Promise<!proto.role.RoleListResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.listRoleByApi =
+proto$5.role.RoleServicePromiseClient.prototype.listRoleByApi =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/ListRoleByApi',
@@ -9208,11 +9208,11 @@ proto$4.role.RoleServicePromiseClient.prototype.listRoleByApi =
  *   !proto.role.UserId,
  *   !proto.role.RoleListResponse>}
  */
-const methodDescriptor_RoleService_ListRoleByUser = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_ListRoleByUser = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/ListRoleByUser',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.UserId,
-  proto$4.role.RoleListResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.UserId,
+  proto$5.role.RoleListResponse,
   /**
    * @param {!proto.role.UserId} request
    * @return {!Uint8Array}
@@ -9220,7 +9220,7 @@ const methodDescriptor_RoleService_ListRoleByUser = new grpc$3.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleListResponse.deserializeBinary
+  proto$5.role.RoleListResponse.deserializeBinary
 );
 
 
@@ -9234,7 +9234,7 @@ const methodDescriptor_RoleService_ListRoleByUser = new grpc$3.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.listRoleByUser =
+proto$5.role.RoleServiceClient.prototype.listRoleByUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/ListRoleByUser',
@@ -9253,7 +9253,7 @@ proto$4.role.RoleServiceClient.prototype.listRoleByUser =
  * @return {!Promise<!proto.role.RoleListResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.listRoleByUser =
+proto$5.role.RoleServicePromiseClient.prototype.listRoleByUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/ListRoleByUser',
@@ -9269,11 +9269,11 @@ proto$4.role.RoleServicePromiseClient.prototype.listRoleByUser =
  *   !proto.role.RoleName,
  *   !proto.role.RoleListResponse>}
  */
-const methodDescriptor_RoleService_ListRoleByName = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_ListRoleByName = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/ListRoleByName',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleName,
-  proto$4.role.RoleListResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleName,
+  proto$5.role.RoleListResponse,
   /**
    * @param {!proto.role.RoleName} request
    * @return {!Uint8Array}
@@ -9281,7 +9281,7 @@ const methodDescriptor_RoleService_ListRoleByName = new grpc$3.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleListResponse.deserializeBinary
+  proto$5.role.RoleListResponse.deserializeBinary
 );
 
 
@@ -9295,7 +9295,7 @@ const methodDescriptor_RoleService_ListRoleByName = new grpc$3.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.listRoleByName =
+proto$5.role.RoleServiceClient.prototype.listRoleByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/ListRoleByName',
@@ -9314,7 +9314,7 @@ proto$4.role.RoleServiceClient.prototype.listRoleByName =
  * @return {!Promise<!proto.role.RoleListResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.listRoleByName =
+proto$5.role.RoleServicePromiseClient.prototype.listRoleByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/ListRoleByName',
@@ -9330,11 +9330,11 @@ proto$4.role.RoleServicePromiseClient.prototype.listRoleByName =
  *   !proto.role.RoleOption,
  *   !proto.role.RoleListResponse>}
  */
-const methodDescriptor_RoleService_ListRoleOption = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_ListRoleOption = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/ListRoleOption',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleOption,
-  proto$4.role.RoleListResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleOption,
+  proto$5.role.RoleListResponse,
   /**
    * @param {!proto.role.RoleOption} request
    * @return {!Uint8Array}
@@ -9342,7 +9342,7 @@ const methodDescriptor_RoleService_ListRoleOption = new grpc$3.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleListResponse.deserializeBinary
+  proto$5.role.RoleListResponse.deserializeBinary
 );
 
 
@@ -9356,7 +9356,7 @@ const methodDescriptor_RoleService_ListRoleOption = new grpc$3.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.listRoleOption =
+proto$5.role.RoleServiceClient.prototype.listRoleOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/ListRoleOption',
@@ -9375,7 +9375,7 @@ proto$4.role.RoleServiceClient.prototype.listRoleOption =
  * @return {!Promise<!proto.role.RoleListResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.listRoleOption =
+proto$5.role.RoleServicePromiseClient.prototype.listRoleOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/ListRoleOption',
@@ -9391,11 +9391,11 @@ proto$4.role.RoleServicePromiseClient.prototype.listRoleOption =
  *   !proto.role.RoleSchema,
  *   !proto.role.RoleCreateResponse>}
  */
-const methodDescriptor_RoleService_CreateRole = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_CreateRole = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/CreateRole',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleSchema,
-  proto$4.role.RoleCreateResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleSchema,
+  proto$5.role.RoleCreateResponse,
   /**
    * @param {!proto.role.RoleSchema} request
    * @return {!Uint8Array}
@@ -9403,7 +9403,7 @@ const methodDescriptor_RoleService_CreateRole = new grpc$3.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleCreateResponse.deserializeBinary
+  proto$5.role.RoleCreateResponse.deserializeBinary
 );
 
 
@@ -9417,7 +9417,7 @@ const methodDescriptor_RoleService_CreateRole = new grpc$3.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.createRole =
+proto$5.role.RoleServiceClient.prototype.createRole =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/CreateRole',
@@ -9436,7 +9436,7 @@ proto$4.role.RoleServiceClient.prototype.createRole =
  * @return {!Promise<!proto.role.RoleCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.createRole =
+proto$5.role.RoleServicePromiseClient.prototype.createRole =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/CreateRole',
@@ -9452,11 +9452,11 @@ proto$4.role.RoleServicePromiseClient.prototype.createRole =
  *   !proto.role.RoleUpdate,
  *   !proto.role.RoleChangeResponse>}
  */
-const methodDescriptor_RoleService_UpdateRole = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_UpdateRole = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/UpdateRole',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleUpdate,
-  proto$4.role.RoleChangeResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleUpdate,
+  proto$5.role.RoleChangeResponse,
   /**
    * @param {!proto.role.RoleUpdate} request
    * @return {!Uint8Array}
@@ -9464,7 +9464,7 @@ const methodDescriptor_RoleService_UpdateRole = new grpc$3.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleChangeResponse.deserializeBinary
+  proto$5.role.RoleChangeResponse.deserializeBinary
 );
 
 
@@ -9478,7 +9478,7 @@ const methodDescriptor_RoleService_UpdateRole = new grpc$3.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.updateRole =
+proto$5.role.RoleServiceClient.prototype.updateRole =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/UpdateRole',
@@ -9497,7 +9497,7 @@ proto$4.role.RoleServiceClient.prototype.updateRole =
  * @return {!Promise<!proto.role.RoleChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.updateRole =
+proto$5.role.RoleServicePromiseClient.prototype.updateRole =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/UpdateRole',
@@ -9513,11 +9513,11 @@ proto$4.role.RoleServicePromiseClient.prototype.updateRole =
  *   !proto.role.RoleId,
  *   !proto.role.RoleChangeResponse>}
  */
-const methodDescriptor_RoleService_DeleteRole = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_DeleteRole = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/DeleteRole',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleId,
-  proto$4.role.RoleChangeResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleId,
+  proto$5.role.RoleChangeResponse,
   /**
    * @param {!proto.role.RoleId} request
    * @return {!Uint8Array}
@@ -9525,7 +9525,7 @@ const methodDescriptor_RoleService_DeleteRole = new grpc$3.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleChangeResponse.deserializeBinary
+  proto$5.role.RoleChangeResponse.deserializeBinary
 );
 
 
@@ -9539,7 +9539,7 @@ const methodDescriptor_RoleService_DeleteRole = new grpc$3.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.deleteRole =
+proto$5.role.RoleServiceClient.prototype.deleteRole =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/DeleteRole',
@@ -9558,7 +9558,7 @@ proto$4.role.RoleServiceClient.prototype.deleteRole =
  * @return {!Promise<!proto.role.RoleChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.deleteRole =
+proto$5.role.RoleServicePromiseClient.prototype.deleteRole =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/DeleteRole',
@@ -9574,11 +9574,11 @@ proto$4.role.RoleServicePromiseClient.prototype.deleteRole =
  *   !proto.role.RoleAccess,
  *   !proto.role.RoleChangeResponse>}
  */
-const methodDescriptor_RoleService_AddRoleAccess = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_AddRoleAccess = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/AddRoleAccess',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleAccess,
-  proto$4.role.RoleChangeResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleAccess,
+  proto$5.role.RoleChangeResponse,
   /**
    * @param {!proto.role.RoleAccess} request
    * @return {!Uint8Array}
@@ -9586,7 +9586,7 @@ const methodDescriptor_RoleService_AddRoleAccess = new grpc$3.web.MethodDescript
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleChangeResponse.deserializeBinary
+  proto$5.role.RoleChangeResponse.deserializeBinary
 );
 
 
@@ -9600,7 +9600,7 @@ const methodDescriptor_RoleService_AddRoleAccess = new grpc$3.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.addRoleAccess =
+proto$5.role.RoleServiceClient.prototype.addRoleAccess =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/AddRoleAccess',
@@ -9619,7 +9619,7 @@ proto$4.role.RoleServiceClient.prototype.addRoleAccess =
  * @return {!Promise<!proto.role.RoleChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.addRoleAccess =
+proto$5.role.RoleServicePromiseClient.prototype.addRoleAccess =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/AddRoleAccess',
@@ -9635,11 +9635,11 @@ proto$4.role.RoleServicePromiseClient.prototype.addRoleAccess =
  *   !proto.role.RoleAccess,
  *   !proto.role.RoleChangeResponse>}
  */
-const methodDescriptor_RoleService_RemoveRoleAccess = new grpc$3.web.MethodDescriptor(
+const methodDescriptor_RoleService_RemoveRoleAccess = new grpc$4.web.MethodDescriptor(
   '/role.RoleService/RemoveRoleAccess',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.role.RoleAccess,
-  proto$4.role.RoleChangeResponse,
+  grpc$4.web.MethodType.UNARY,
+  proto$5.role.RoleAccess,
+  proto$5.role.RoleChangeResponse,
   /**
    * @param {!proto.role.RoleAccess} request
    * @return {!Uint8Array}
@@ -9647,7 +9647,7 @@ const methodDescriptor_RoleService_RemoveRoleAccess = new grpc$3.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$4.role.RoleChangeResponse.deserializeBinary
+  proto$5.role.RoleChangeResponse.deserializeBinary
 );
 
 
@@ -9661,7 +9661,7 @@ const methodDescriptor_RoleService_RemoveRoleAccess = new grpc$3.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.role.RoleChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.role.RoleServiceClient.prototype.removeRoleAccess =
+proto$5.role.RoleServiceClient.prototype.removeRoleAccess =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/role.RoleService/RemoveRoleAccess',
@@ -9680,7 +9680,7 @@ proto$4.role.RoleServiceClient.prototype.removeRoleAccess =
  * @return {!Promise<!proto.role.RoleChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$4.role.RoleServicePromiseClient.prototype.removeRoleAccess =
+proto$5.role.RoleServicePromiseClient.prototype.removeRoleAccess =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/role.RoleService/RemoveRoleAccess',
@@ -9690,7 +9690,7 @@ proto$4.role.RoleServicePromiseClient.prototype.removeRoleAccess =
 };
 
 
-var role_grpc_web_pb = proto$4.role;
+var role_grpc_web_pb = proto$5.role;
 
 var role_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(role_grpc_web_pb);
 
@@ -10060,13 +10060,13 @@ var user_pb = {};
 	 */
 	proto.user.UserRoleSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    role: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    multi: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-	    ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-	    accessDuration: jspb.Message.getFieldWithDefault(msg, 5, 0),
-	    refreshDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
-	    accessKey: msg.getAccessKey_asB64()
+	apiId: msg.getApiId_asB64(),
+	role: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	multi: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+	ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+	accessDuration: jspb.Message.getFieldWithDefault(msg, 5, 0),
+	refreshDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
+	accessKey: msg.getAccessKey_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -10425,12 +10425,12 @@ var user_pb = {};
 	 */
 	proto.user.UserSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    email: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    phone: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-	    rolesList: jspb.Message.toObjectList(msg.getRolesList(),
+	id: msg.getId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	email: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	phone: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	password: jspb.Message.getFieldWithDefault(msg, 5, ""),
+	rolesList: jspb.Message.toObjectList(msg.getRolesList(),
 	    proto.user.UserRoleSchema.toObject, includeInstance)
 	  };
 
@@ -10752,7 +10752,7 @@ var user_pb = {};
 	 */
 	proto.user.UserId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -10913,7 +10913,7 @@ var user_pb = {};
 	 */
 	proto.user.UserIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -11086,7 +11086,7 @@ var user_pb = {};
 	 */
 	proto.user.UserName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -11216,7 +11216,7 @@ var user_pb = {};
 	 */
 	proto.user.ApiId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -11370,7 +11370,7 @@ var user_pb = {};
 	 */
 	proto.user.RoleId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -11523,10 +11523,10 @@ var user_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.user.UserOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    roleId: msg.getRoleId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+	  var f, obj = {
+	apiId: msg.getApiId_asB64(),
+	roleId: msg.getRoleId_asB64(),
+	name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -11815,12 +11815,12 @@ var user_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.user.UserUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    email: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    phone: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    password: jspb.Message.getFieldWithDefault(msg, 5, "")
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	email: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	phone: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -12162,8 +12162,8 @@ var user_pb = {};
 	 */
 	proto.user.UserRole.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    userId: msg.getUserId_asB64(),
-	    roleId: msg.getRoleId_asB64()
+	userId: msg.getUserId_asB64(),
+	roleId: msg.getRoleId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -12370,7 +12370,7 @@ var user_pb = {};
 	 */
 	proto.user.UserReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.user.UserSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.user.UserSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -12528,7 +12528,7 @@ var user_pb = {};
 	 */
 	proto.user.UserListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.user.UserSchema.toObject, includeInstance)
 	  };
 
@@ -12681,7 +12681,7 @@ var user_pb = {};
 	 */
 	proto.user.UserCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -12915,7 +12915,7 @@ var user_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_auth_api/user.proto
 
 
@@ -12924,11 +12924,11 @@ var user_pb = {};
 
 
 
-const grpc$2 = {};
-grpc$2.web = require$$0$1;
+const grpc$3 = {};
+grpc$3.web = require$$0$1;
 
-const proto$3 = {};
-proto$3.user = user_pb;
+const proto$4 = {};
+proto$4.user = user_pb;
 
 /**
  * @param {string} hostname
@@ -12938,7 +12938,7 @@ proto$3.user = user_pb;
  * @struct
  * @final
  */
-proto$3.user.UserServiceClient =
+proto$4.user.UserServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -12946,7 +12946,7 @@ proto$3.user.UserServiceClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$2.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$3.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -12964,7 +12964,7 @@ proto$3.user.UserServiceClient =
  * @struct
  * @final
  */
-proto$3.user.UserServicePromiseClient =
+proto$4.user.UserServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -12972,7 +12972,7 @@ proto$3.user.UserServicePromiseClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$2.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$3.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -12988,11 +12988,11 @@ proto$3.user.UserServicePromiseClient =
  *   !proto.user.UserId,
  *   !proto.user.UserReadResponse>}
  */
-const methodDescriptor_UserService_ReadUser = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_ReadUser = new grpc$3.web.MethodDescriptor(
   '/user.UserService/ReadUser',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserId,
-  proto$3.user.UserReadResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserId,
+  proto$4.user.UserReadResponse,
   /**
    * @param {!proto.user.UserId} request
    * @return {!Uint8Array}
@@ -13000,7 +13000,7 @@ const methodDescriptor_UserService_ReadUser = new grpc$2.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserReadResponse.deserializeBinary
+  proto$4.user.UserReadResponse.deserializeBinary
 );
 
 
@@ -13014,7 +13014,7 @@ const methodDescriptor_UserService_ReadUser = new grpc$2.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.readUser =
+proto$4.user.UserServiceClient.prototype.readUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/ReadUser',
@@ -13033,7 +13033,7 @@ proto$3.user.UserServiceClient.prototype.readUser =
  * @return {!Promise<!proto.user.UserReadResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.readUser =
+proto$4.user.UserServicePromiseClient.prototype.readUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/ReadUser',
@@ -13049,11 +13049,11 @@ proto$3.user.UserServicePromiseClient.prototype.readUser =
  *   !proto.user.UserName,
  *   !proto.user.UserReadResponse>}
  */
-const methodDescriptor_UserService_ReadUserByName = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_ReadUserByName = new grpc$3.web.MethodDescriptor(
   '/user.UserService/ReadUserByName',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserName,
-  proto$3.user.UserReadResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserName,
+  proto$4.user.UserReadResponse,
   /**
    * @param {!proto.user.UserName} request
    * @return {!Uint8Array}
@@ -13061,7 +13061,7 @@ const methodDescriptor_UserService_ReadUserByName = new grpc$2.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserReadResponse.deserializeBinary
+  proto$4.user.UserReadResponse.deserializeBinary
 );
 
 
@@ -13075,7 +13075,7 @@ const methodDescriptor_UserService_ReadUserByName = new grpc$2.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.readUserByName =
+proto$4.user.UserServiceClient.prototype.readUserByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/ReadUserByName',
@@ -13094,7 +13094,7 @@ proto$3.user.UserServiceClient.prototype.readUserByName =
  * @return {!Promise<!proto.user.UserReadResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.readUserByName =
+proto$4.user.UserServicePromiseClient.prototype.readUserByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/ReadUserByName',
@@ -13110,11 +13110,11 @@ proto$3.user.UserServicePromiseClient.prototype.readUserByName =
  *   !proto.user.UserIds,
  *   !proto.user.UserListResponse>}
  */
-const methodDescriptor_UserService_ListUserByIds = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_ListUserByIds = new grpc$3.web.MethodDescriptor(
   '/user.UserService/ListUserByIds',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserIds,
-  proto$3.user.UserListResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserIds,
+  proto$4.user.UserListResponse,
   /**
    * @param {!proto.user.UserIds} request
    * @return {!Uint8Array}
@@ -13122,7 +13122,7 @@ const methodDescriptor_UserService_ListUserByIds = new grpc$2.web.MethodDescript
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserListResponse.deserializeBinary
+  proto$4.user.UserListResponse.deserializeBinary
 );
 
 
@@ -13136,7 +13136,7 @@ const methodDescriptor_UserService_ListUserByIds = new grpc$2.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.listUserByIds =
+proto$4.user.UserServiceClient.prototype.listUserByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/ListUserByIds',
@@ -13155,7 +13155,7 @@ proto$3.user.UserServiceClient.prototype.listUserByIds =
  * @return {!Promise<!proto.user.UserListResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.listUserByIds =
+proto$4.user.UserServicePromiseClient.prototype.listUserByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/ListUserByIds',
@@ -13171,11 +13171,11 @@ proto$3.user.UserServicePromiseClient.prototype.listUserByIds =
  *   !proto.user.ApiId,
  *   !proto.user.UserListResponse>}
  */
-const methodDescriptor_UserService_ListUserByApi = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_ListUserByApi = new grpc$3.web.MethodDescriptor(
   '/user.UserService/ListUserByApi',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.ApiId,
-  proto$3.user.UserListResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.ApiId,
+  proto$4.user.UserListResponse,
   /**
    * @param {!proto.user.ApiId} request
    * @return {!Uint8Array}
@@ -13183,7 +13183,7 @@ const methodDescriptor_UserService_ListUserByApi = new grpc$2.web.MethodDescript
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserListResponse.deserializeBinary
+  proto$4.user.UserListResponse.deserializeBinary
 );
 
 
@@ -13197,7 +13197,7 @@ const methodDescriptor_UserService_ListUserByApi = new grpc$2.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.listUserByApi =
+proto$4.user.UserServiceClient.prototype.listUserByApi =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/ListUserByApi',
@@ -13216,7 +13216,7 @@ proto$3.user.UserServiceClient.prototype.listUserByApi =
  * @return {!Promise<!proto.user.UserListResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.listUserByApi =
+proto$4.user.UserServicePromiseClient.prototype.listUserByApi =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/ListUserByApi',
@@ -13232,11 +13232,11 @@ proto$3.user.UserServicePromiseClient.prototype.listUserByApi =
  *   !proto.user.RoleId,
  *   !proto.user.UserListResponse>}
  */
-const methodDescriptor_UserService_ListUserByRole = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_ListUserByRole = new grpc$3.web.MethodDescriptor(
   '/user.UserService/ListUserByRole',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.RoleId,
-  proto$3.user.UserListResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.RoleId,
+  proto$4.user.UserListResponse,
   /**
    * @param {!proto.user.RoleId} request
    * @return {!Uint8Array}
@@ -13244,7 +13244,7 @@ const methodDescriptor_UserService_ListUserByRole = new grpc$2.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserListResponse.deserializeBinary
+  proto$4.user.UserListResponse.deserializeBinary
 );
 
 
@@ -13258,7 +13258,7 @@ const methodDescriptor_UserService_ListUserByRole = new grpc$2.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.listUserByRole =
+proto$4.user.UserServiceClient.prototype.listUserByRole =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/ListUserByRole',
@@ -13277,7 +13277,7 @@ proto$3.user.UserServiceClient.prototype.listUserByRole =
  * @return {!Promise<!proto.user.UserListResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.listUserByRole =
+proto$4.user.UserServicePromiseClient.prototype.listUserByRole =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/ListUserByRole',
@@ -13293,11 +13293,11 @@ proto$3.user.UserServicePromiseClient.prototype.listUserByRole =
  *   !proto.user.UserName,
  *   !proto.user.UserListResponse>}
  */
-const methodDescriptor_UserService_ListUserByName = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_ListUserByName = new grpc$3.web.MethodDescriptor(
   '/user.UserService/ListUserByName',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserName,
-  proto$3.user.UserListResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserName,
+  proto$4.user.UserListResponse,
   /**
    * @param {!proto.user.UserName} request
    * @return {!Uint8Array}
@@ -13305,7 +13305,7 @@ const methodDescriptor_UserService_ListUserByName = new grpc$2.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserListResponse.deserializeBinary
+  proto$4.user.UserListResponse.deserializeBinary
 );
 
 
@@ -13319,7 +13319,7 @@ const methodDescriptor_UserService_ListUserByName = new grpc$2.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.listUserByName =
+proto$4.user.UserServiceClient.prototype.listUserByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/ListUserByName',
@@ -13338,7 +13338,7 @@ proto$3.user.UserServiceClient.prototype.listUserByName =
  * @return {!Promise<!proto.user.UserListResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.listUserByName =
+proto$4.user.UserServicePromiseClient.prototype.listUserByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/ListUserByName',
@@ -13354,11 +13354,11 @@ proto$3.user.UserServicePromiseClient.prototype.listUserByName =
  *   !proto.user.UserOption,
  *   !proto.user.UserListResponse>}
  */
-const methodDescriptor_UserService_ListUserOption = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_ListUserOption = new grpc$3.web.MethodDescriptor(
   '/user.UserService/ListUserOption',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserOption,
-  proto$3.user.UserListResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserOption,
+  proto$4.user.UserListResponse,
   /**
    * @param {!proto.user.UserOption} request
    * @return {!Uint8Array}
@@ -13366,7 +13366,7 @@ const methodDescriptor_UserService_ListUserOption = new grpc$2.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserListResponse.deserializeBinary
+  proto$4.user.UserListResponse.deserializeBinary
 );
 
 
@@ -13380,7 +13380,7 @@ const methodDescriptor_UserService_ListUserOption = new grpc$2.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.listUserOption =
+proto$4.user.UserServiceClient.prototype.listUserOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/ListUserOption',
@@ -13399,7 +13399,7 @@ proto$3.user.UserServiceClient.prototype.listUserOption =
  * @return {!Promise<!proto.user.UserListResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.listUserOption =
+proto$4.user.UserServicePromiseClient.prototype.listUserOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/ListUserOption',
@@ -13415,11 +13415,11 @@ proto$3.user.UserServicePromiseClient.prototype.listUserOption =
  *   !proto.user.UserSchema,
  *   !proto.user.UserCreateResponse>}
  */
-const methodDescriptor_UserService_CreateUser = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_CreateUser = new grpc$3.web.MethodDescriptor(
   '/user.UserService/CreateUser',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserSchema,
-  proto$3.user.UserCreateResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserSchema,
+  proto$4.user.UserCreateResponse,
   /**
    * @param {!proto.user.UserSchema} request
    * @return {!Uint8Array}
@@ -13427,7 +13427,7 @@ const methodDescriptor_UserService_CreateUser = new grpc$2.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserCreateResponse.deserializeBinary
+  proto$4.user.UserCreateResponse.deserializeBinary
 );
 
 
@@ -13441,7 +13441,7 @@ const methodDescriptor_UserService_CreateUser = new grpc$2.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.createUser =
+proto$4.user.UserServiceClient.prototype.createUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/CreateUser',
@@ -13460,7 +13460,7 @@ proto$3.user.UserServiceClient.prototype.createUser =
  * @return {!Promise<!proto.user.UserCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.createUser =
+proto$4.user.UserServicePromiseClient.prototype.createUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/CreateUser',
@@ -13476,11 +13476,11 @@ proto$3.user.UserServicePromiseClient.prototype.createUser =
  *   !proto.user.UserUpdate,
  *   !proto.user.UserChangeResponse>}
  */
-const methodDescriptor_UserService_UpdateUser = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_UpdateUser = new grpc$3.web.MethodDescriptor(
   '/user.UserService/UpdateUser',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserUpdate,
-  proto$3.user.UserChangeResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserUpdate,
+  proto$4.user.UserChangeResponse,
   /**
    * @param {!proto.user.UserUpdate} request
    * @return {!Uint8Array}
@@ -13488,7 +13488,7 @@ const methodDescriptor_UserService_UpdateUser = new grpc$2.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserChangeResponse.deserializeBinary
+  proto$4.user.UserChangeResponse.deserializeBinary
 );
 
 
@@ -13502,7 +13502,7 @@ const methodDescriptor_UserService_UpdateUser = new grpc$2.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.updateUser =
+proto$4.user.UserServiceClient.prototype.updateUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/UpdateUser',
@@ -13521,7 +13521,7 @@ proto$3.user.UserServiceClient.prototype.updateUser =
  * @return {!Promise<!proto.user.UserChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.updateUser =
+proto$4.user.UserServicePromiseClient.prototype.updateUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/UpdateUser',
@@ -13537,11 +13537,11 @@ proto$3.user.UserServicePromiseClient.prototype.updateUser =
  *   !proto.user.UserId,
  *   !proto.user.UserChangeResponse>}
  */
-const methodDescriptor_UserService_DeleteUser = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_DeleteUser = new grpc$3.web.MethodDescriptor(
   '/user.UserService/DeleteUser',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserId,
-  proto$3.user.UserChangeResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserId,
+  proto$4.user.UserChangeResponse,
   /**
    * @param {!proto.user.UserId} request
    * @return {!Uint8Array}
@@ -13549,7 +13549,7 @@ const methodDescriptor_UserService_DeleteUser = new grpc$2.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserChangeResponse.deserializeBinary
+  proto$4.user.UserChangeResponse.deserializeBinary
 );
 
 
@@ -13563,7 +13563,7 @@ const methodDescriptor_UserService_DeleteUser = new grpc$2.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.deleteUser =
+proto$4.user.UserServiceClient.prototype.deleteUser =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/DeleteUser',
@@ -13582,7 +13582,7 @@ proto$3.user.UserServiceClient.prototype.deleteUser =
  * @return {!Promise<!proto.user.UserChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.deleteUser =
+proto$4.user.UserServicePromiseClient.prototype.deleteUser =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/DeleteUser',
@@ -13598,11 +13598,11 @@ proto$3.user.UserServicePromiseClient.prototype.deleteUser =
  *   !proto.user.UserRole,
  *   !proto.user.UserChangeResponse>}
  */
-const methodDescriptor_UserService_AddUserRole = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_AddUserRole = new grpc$3.web.MethodDescriptor(
   '/user.UserService/AddUserRole',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserRole,
-  proto$3.user.UserChangeResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserRole,
+  proto$4.user.UserChangeResponse,
   /**
    * @param {!proto.user.UserRole} request
    * @return {!Uint8Array}
@@ -13610,7 +13610,7 @@ const methodDescriptor_UserService_AddUserRole = new grpc$2.web.MethodDescriptor
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserChangeResponse.deserializeBinary
+  proto$4.user.UserChangeResponse.deserializeBinary
 );
 
 
@@ -13624,7 +13624,7 @@ const methodDescriptor_UserService_AddUserRole = new grpc$2.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.addUserRole =
+proto$4.user.UserServiceClient.prototype.addUserRole =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/AddUserRole',
@@ -13643,7 +13643,7 @@ proto$3.user.UserServiceClient.prototype.addUserRole =
  * @return {!Promise<!proto.user.UserChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.addUserRole =
+proto$4.user.UserServicePromiseClient.prototype.addUserRole =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/AddUserRole',
@@ -13659,11 +13659,11 @@ proto$3.user.UserServicePromiseClient.prototype.addUserRole =
  *   !proto.user.UserRole,
  *   !proto.user.UserChangeResponse>}
  */
-const methodDescriptor_UserService_RemoveUserRole = new grpc$2.web.MethodDescriptor(
+const methodDescriptor_UserService_RemoveUserRole = new grpc$3.web.MethodDescriptor(
   '/user.UserService/RemoveUserRole',
-  grpc$2.web.MethodType.UNARY,
-  proto$3.user.UserRole,
-  proto$3.user.UserChangeResponse,
+  grpc$3.web.MethodType.UNARY,
+  proto$4.user.UserRole,
+  proto$4.user.UserChangeResponse,
   /**
    * @param {!proto.user.UserRole} request
    * @return {!Uint8Array}
@@ -13671,7 +13671,7 @@ const methodDescriptor_UserService_RemoveUserRole = new grpc$2.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$3.user.UserChangeResponse.deserializeBinary
+  proto$4.user.UserChangeResponse.deserializeBinary
 );
 
 
@@ -13685,7 +13685,7 @@ const methodDescriptor_UserService_RemoveUserRole = new grpc$2.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.user.UserChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$3.user.UserServiceClient.prototype.removeUserRole =
+proto$4.user.UserServiceClient.prototype.removeUserRole =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/user.UserService/RemoveUserRole',
@@ -13704,7 +13704,7 @@ proto$3.user.UserServiceClient.prototype.removeUserRole =
  * @return {!Promise<!proto.user.UserChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$3.user.UserServicePromiseClient.prototype.removeUserRole =
+proto$4.user.UserServicePromiseClient.prototype.removeUserRole =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/user.UserService/RemoveUserRole',
@@ -13714,9 +13714,3526 @@ proto$3.user.UserServicePromiseClient.prototype.removeUserRole =
 };
 
 
-var user_grpc_web_pb = proto$3.user;
+var user_grpc_web_pb = proto$4.user;
 
 var user_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(user_grpc_web_pb);
+
+var profile_pb = {};
+
+(function (exports) {
+	// source: rmcs_auth_api/profile.proto
+	/**
+	 * @fileoverview
+	 * @enhanceable
+	 * @suppress {missingRequire} reports error on implicit type usages.
+	 * @suppress {messageConventions} JS Compiler reports an error if a variable or
+	 *     field starts with 'MSG_' and isn't a translatable message.
+	 * @public
+	 */
+	// GENERATED CODE -- DO NOT EDIT!
+	/* eslint-disable */
+	// @ts-nocheck
+
+	var jspb = require$$0;
+	var goog = jspb;
+	var global =
+	    (typeof globalThis !== 'undefined' && globalThis) ||
+	    (typeof window !== 'undefined' && window) ||
+	    (typeof global !== 'undefined' && global) ||
+	    (typeof self !== 'undefined' && self) ||
+	    (function () { return this; }).call(null) ||
+	    Function('return this')();
+
+	goog.exportSymbol('proto.profile.ProfileChangeResponse', null, global);
+	goog.exportSymbol('proto.profile.ProfileCreateResponse', null, global);
+	goog.exportSymbol('proto.profile.ProfileId', null, global);
+	goog.exportSymbol('proto.profile.RoleId', null, global);
+	goog.exportSymbol('proto.profile.RoleProfileListResponse', null, global);
+	goog.exportSymbol('proto.profile.RoleProfileReadResponse', null, global);
+	goog.exportSymbol('proto.profile.RoleProfileSchema', null, global);
+	goog.exportSymbol('proto.profile.RoleProfileUpdate', null, global);
+	goog.exportSymbol('proto.profile.UserId', null, global);
+	goog.exportSymbol('proto.profile.UserProfileListResponse', null, global);
+	goog.exportSymbol('proto.profile.UserProfileReadResponse', null, global);
+	goog.exportSymbol('proto.profile.UserProfileSchema', null, global);
+	goog.exportSymbol('proto.profile.UserProfileUpdate', null, global);
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.RoleProfileSchema = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.RoleProfileSchema, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.RoleProfileSchema.displayName = 'proto.profile.RoleProfileSchema';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.UserProfileSchema = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.UserProfileSchema, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.UserProfileSchema.displayName = 'proto.profile.UserProfileSchema';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.ProfileId = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.ProfileId, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.ProfileId.displayName = 'proto.profile.ProfileId';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.RoleId = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.RoleId, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.RoleId.displayName = 'proto.profile.RoleId';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.UserId = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.UserId, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.UserId.displayName = 'proto.profile.UserId';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.RoleProfileUpdate = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.RoleProfileUpdate, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.RoleProfileUpdate.displayName = 'proto.profile.RoleProfileUpdate';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.UserProfileUpdate = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.UserProfileUpdate, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.UserProfileUpdate.displayName = 'proto.profile.UserProfileUpdate';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.RoleProfileReadResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.RoleProfileReadResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.RoleProfileReadResponse.displayName = 'proto.profile.RoleProfileReadResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.RoleProfileListResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, proto.profile.RoleProfileListResponse.repeatedFields_, null);
+	};
+	goog.inherits(proto.profile.RoleProfileListResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.RoleProfileListResponse.displayName = 'proto.profile.RoleProfileListResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.UserProfileReadResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.UserProfileReadResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.UserProfileReadResponse.displayName = 'proto.profile.UserProfileReadResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.UserProfileListResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, proto.profile.UserProfileListResponse.repeatedFields_, null);
+	};
+	goog.inherits(proto.profile.UserProfileListResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.UserProfileListResponse.displayName = 'proto.profile.UserProfileListResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.ProfileCreateResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.ProfileCreateResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.ProfileCreateResponse.displayName = 'proto.profile.ProfileCreateResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.profile.ProfileChangeResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.profile.ProfileChangeResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.profile.ProfileChangeResponse.displayName = 'proto.profile.ProfileChangeResponse';
+	}
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.RoleProfileSchema.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.RoleProfileSchema.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.RoleProfileSchema} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleProfileSchema.toObject = function(includeInstance, msg) {
+	  var obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	roleId: msg.getRoleId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	valueType: jspb.Message.getFieldWithDefault(msg, 4, 0),
+	mode: jspb.Message.getFieldWithDefault(msg, 5, 0)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.RoleProfileSchema}
+	 */
+	proto.profile.RoleProfileSchema.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.RoleProfileSchema;
+	  return proto.profile.RoleProfileSchema.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.RoleProfileSchema} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.RoleProfileSchema}
+	 */
+	proto.profile.RoleProfileSchema.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setRoleId(value);
+	      break;
+	    case 3:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    case 4:
+	      var value = /** @type {number} */ (reader.readUint32());
+	      msg.setValueType(value);
+	      break;
+	    case 5:
+	      var value = /** @type {number} */ (reader.readUint32());
+	      msg.setMode(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.RoleProfileSchema.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.RoleProfileSchema.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.RoleProfileSchema} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleProfileSchema.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getRoleId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getName();
+	  if (f.length > 0) {
+	    writer.writeString(
+	      3,
+	      f
+	    );
+	  }
+	  f = message.getValueType();
+	  if (f !== 0) {
+	    writer.writeUint32(
+	      4,
+	      f
+	    );
+	  }
+	  f = message.getMode();
+	  if (f !== 0) {
+	    writer.writeUint32(
+	      5,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional int32 id = 1;
+	 * @return {number}
+	 */
+	proto.profile.RoleProfileSchema.prototype.getId = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.RoleProfileSchema} returns this
+	 */
+	proto.profile.RoleProfileSchema.prototype.setId = function(value) {
+	  return jspb.Message.setProto3IntField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes role_id = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.profile.RoleProfileSchema.prototype.getRoleId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes role_id = 2;
+	 * This is a type-conversion wrapper around `getRoleId()`
+	 * @return {string}
+	 */
+	proto.profile.RoleProfileSchema.prototype.getRoleId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getRoleId()));
+	};
+
+
+	/**
+	 * optional bytes role_id = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getRoleId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.RoleProfileSchema.prototype.getRoleId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getRoleId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.profile.RoleProfileSchema} returns this
+	 */
+	proto.profile.RoleProfileSchema.prototype.setRoleId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 2, value);
+	};
+
+
+	/**
+	 * optional string name = 3;
+	 * @return {string}
+	 */
+	proto.profile.RoleProfileSchema.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.profile.RoleProfileSchema} returns this
+	 */
+	proto.profile.RoleProfileSchema.prototype.setName = function(value) {
+	  return jspb.Message.setProto3StringField(this, 3, value);
+	};
+
+
+	/**
+	 * optional uint32 value_type = 4;
+	 * @return {number}
+	 */
+	proto.profile.RoleProfileSchema.prototype.getValueType = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.RoleProfileSchema} returns this
+	 */
+	proto.profile.RoleProfileSchema.prototype.setValueType = function(value) {
+	  return jspb.Message.setProto3IntField(this, 4, value);
+	};
+
+
+	/**
+	 * optional uint32 mode = 5;
+	 * @return {number}
+	 */
+	proto.profile.RoleProfileSchema.prototype.getMode = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.RoleProfileSchema} returns this
+	 */
+	proto.profile.RoleProfileSchema.prototype.setMode = function(value) {
+	  return jspb.Message.setProto3IntField(this, 5, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.UserProfileSchema.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.UserProfileSchema.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.UserProfileSchema} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserProfileSchema.toObject = function(includeInstance, msg) {
+	  var obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	userId: msg.getUserId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	valueBytes: msg.getValueBytes_asB64(),
+	valueType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+	order: jspb.Message.getFieldWithDefault(msg, 6, 0)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.UserProfileSchema}
+	 */
+	proto.profile.UserProfileSchema.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.UserProfileSchema;
+	  return proto.profile.UserProfileSchema.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.UserProfileSchema} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.UserProfileSchema}
+	 */
+	proto.profile.UserProfileSchema.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setUserId(value);
+	      break;
+	    case 3:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    case 4:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setValueBytes(value);
+	      break;
+	    case 5:
+	      var value = /** @type {number} */ (reader.readUint32());
+	      msg.setValueType(value);
+	      break;
+	    case 6:
+	      var value = /** @type {number} */ (reader.readUint32());
+	      msg.setOrder(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserProfileSchema.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.UserProfileSchema.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.UserProfileSchema} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserProfileSchema.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getUserId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getName();
+	  if (f.length > 0) {
+	    writer.writeString(
+	      3,
+	      f
+	    );
+	  }
+	  f = message.getValueBytes_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      4,
+	      f
+	    );
+	  }
+	  f = message.getValueType();
+	  if (f !== 0) {
+	    writer.writeUint32(
+	      5,
+	      f
+	    );
+	  }
+	  f = message.getOrder();
+	  if (f !== 0) {
+	    writer.writeUint32(
+	      6,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional int32 id = 1;
+	 * @return {number}
+	 */
+	proto.profile.UserProfileSchema.prototype.getId = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.UserProfileSchema} returns this
+	 */
+	proto.profile.UserProfileSchema.prototype.setId = function(value) {
+	  return jspb.Message.setProto3IntField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes user_id = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.profile.UserProfileSchema.prototype.getUserId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes user_id = 2;
+	 * This is a type-conversion wrapper around `getUserId()`
+	 * @return {string}
+	 */
+	proto.profile.UserProfileSchema.prototype.getUserId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getUserId()));
+	};
+
+
+	/**
+	 * optional bytes user_id = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getUserId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserProfileSchema.prototype.getUserId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getUserId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.profile.UserProfileSchema} returns this
+	 */
+	proto.profile.UserProfileSchema.prototype.setUserId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 2, value);
+	};
+
+
+	/**
+	 * optional string name = 3;
+	 * @return {string}
+	 */
+	proto.profile.UserProfileSchema.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.profile.UserProfileSchema} returns this
+	 */
+	proto.profile.UserProfileSchema.prototype.setName = function(value) {
+	  return jspb.Message.setProto3StringField(this, 3, value);
+	};
+
+
+	/**
+	 * optional bytes value_bytes = 4;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.profile.UserProfileSchema.prototype.getValueBytes = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+	};
+
+
+	/**
+	 * optional bytes value_bytes = 4;
+	 * This is a type-conversion wrapper around `getValueBytes()`
+	 * @return {string}
+	 */
+	proto.profile.UserProfileSchema.prototype.getValueBytes_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getValueBytes()));
+	};
+
+
+	/**
+	 * optional bytes value_bytes = 4;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getValueBytes()`
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserProfileSchema.prototype.getValueBytes_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getValueBytes()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.profile.UserProfileSchema} returns this
+	 */
+	proto.profile.UserProfileSchema.prototype.setValueBytes = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 4, value);
+	};
+
+
+	/**
+	 * optional uint32 value_type = 5;
+	 * @return {number}
+	 */
+	proto.profile.UserProfileSchema.prototype.getValueType = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.UserProfileSchema} returns this
+	 */
+	proto.profile.UserProfileSchema.prototype.setValueType = function(value) {
+	  return jspb.Message.setProto3IntField(this, 5, value);
+	};
+
+
+	/**
+	 * optional uint32 order = 6;
+	 * @return {number}
+	 */
+	proto.profile.UserProfileSchema.prototype.getOrder = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.UserProfileSchema} returns this
+	 */
+	proto.profile.UserProfileSchema.prototype.setOrder = function(value) {
+	  return jspb.Message.setProto3IntField(this, 6, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.ProfileId.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.ProfileId.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.ProfileId} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.ProfileId.toObject = function(includeInstance, msg) {
+	  var obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.ProfileId}
+	 */
+	proto.profile.ProfileId.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.ProfileId;
+	  return proto.profile.ProfileId.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.ProfileId} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.ProfileId}
+	 */
+	proto.profile.ProfileId.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setId(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.ProfileId.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.ProfileId.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.ProfileId} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.ProfileId.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional int32 id = 1;
+	 * @return {number}
+	 */
+	proto.profile.ProfileId.prototype.getId = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.ProfileId} returns this
+	 */
+	proto.profile.ProfileId.prototype.setId = function(value) {
+	  return jspb.Message.setProto3IntField(this, 1, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.RoleId.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.RoleId.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.RoleId} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleId.toObject = function(includeInstance, msg) {
+	  var obj = {
+	id: msg.getId_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.RoleId}
+	 */
+	proto.profile.RoleId.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.RoleId;
+	  return proto.profile.RoleId.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.RoleId} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.RoleId}
+	 */
+	proto.profile.RoleId.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.RoleId.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.RoleId.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.RoleId} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleId.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.profile.RoleId.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.profile.RoleId.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.RoleId.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.profile.RoleId} returns this
+	 */
+	proto.profile.RoleId.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.UserId.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.UserId.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.UserId} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserId.toObject = function(includeInstance, msg) {
+	  var obj = {
+	id: msg.getId_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.UserId}
+	 */
+	proto.profile.UserId.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.UserId;
+	  return proto.profile.UserId.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.UserId} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.UserId}
+	 */
+	proto.profile.UserId.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserId.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.UserId.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.UserId} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserId.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.profile.UserId.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.profile.UserId.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserId.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.profile.UserId} returns this
+	 */
+	proto.profile.UserId.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.RoleProfileUpdate.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.RoleProfileUpdate} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleProfileUpdate.toObject = function(includeInstance, msg) {
+	  var f, obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	valueType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	mode: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.RoleProfileUpdate}
+	 */
+	proto.profile.RoleProfileUpdate.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.RoleProfileUpdate;
+	  return proto.profile.RoleProfileUpdate.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.RoleProfileUpdate} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.RoleProfileUpdate}
+	 */
+	proto.profile.RoleProfileUpdate.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    case 3:
+	      var value = /** @type {number} */ (reader.readUint32());
+	      msg.setValueType(value);
+	      break;
+	    case 4:
+	      var value = /** @type {number} */ (reader.readUint32());
+	      msg.setMode(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.RoleProfileUpdate.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.RoleProfileUpdate} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleProfileUpdate.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      1,
+	      f
+	    );
+	  }
+	  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+	  if (f != null) {
+	    writer.writeString(
+	      2,
+	      f
+	    );
+	  }
+	  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+	  if (f != null) {
+	    writer.writeUint32(
+	      3,
+	      f
+	    );
+	  }
+	  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+	  if (f != null) {
+	    writer.writeUint32(
+	      4,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional int32 id = 1;
+	 * @return {number}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.getId = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.RoleProfileUpdate} returns this
+	 */
+	proto.profile.RoleProfileUpdate.prototype.setId = function(value) {
+	  return jspb.Message.setProto3IntField(this, 1, value);
+	};
+
+
+	/**
+	 * optional string name = 2;
+	 * @return {string}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.profile.RoleProfileUpdate} returns this
+	 */
+	proto.profile.RoleProfileUpdate.prototype.setName = function(value) {
+	  return jspb.Message.setField(this, 2, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.profile.RoleProfileUpdate} returns this
+	 */
+	proto.profile.RoleProfileUpdate.prototype.clearName = function() {
+	  return jspb.Message.setField(this, 2, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.hasName = function() {
+	  return jspb.Message.getField(this, 2) != null;
+	};
+
+
+	/**
+	 * optional uint32 value_type = 3;
+	 * @return {number}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.getValueType = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.RoleProfileUpdate} returns this
+	 */
+	proto.profile.RoleProfileUpdate.prototype.setValueType = function(value) {
+	  return jspb.Message.setField(this, 3, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.profile.RoleProfileUpdate} returns this
+	 */
+	proto.profile.RoleProfileUpdate.prototype.clearValueType = function() {
+	  return jspb.Message.setField(this, 3, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.hasValueType = function() {
+	  return jspb.Message.getField(this, 3) != null;
+	};
+
+
+	/**
+	 * optional uint32 mode = 4;
+	 * @return {number}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.getMode = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.RoleProfileUpdate} returns this
+	 */
+	proto.profile.RoleProfileUpdate.prototype.setMode = function(value) {
+	  return jspb.Message.setField(this, 4, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.profile.RoleProfileUpdate} returns this
+	 */
+	proto.profile.RoleProfileUpdate.prototype.clearMode = function() {
+	  return jspb.Message.setField(this, 4, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.RoleProfileUpdate.prototype.hasMode = function() {
+	  return jspb.Message.getField(this, 4) != null;
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.UserProfileUpdate.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.UserProfileUpdate.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.UserProfileUpdate} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserProfileUpdate.toObject = function(includeInstance, msg) {
+	  var f, obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	order: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	valueBytes: msg.getValueBytes_asB64(),
+	valueType: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.UserProfileUpdate}
+	 */
+	proto.profile.UserProfileUpdate.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.UserProfileUpdate;
+	  return proto.profile.UserProfileUpdate.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.UserProfileUpdate} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.UserProfileUpdate}
+	 */
+	proto.profile.UserProfileUpdate.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    case 3:
+	      var value = /** @type {number} */ (reader.readUint32());
+	      msg.setOrder(value);
+	      break;
+	    case 4:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setValueBytes(value);
+	      break;
+	    case 5:
+	      var value = /** @type {number} */ (reader.readUint32());
+	      msg.setValueType(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserProfileUpdate.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.UserProfileUpdate.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.UserProfileUpdate} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserProfileUpdate.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      1,
+	      f
+	    );
+	  }
+	  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+	  if (f != null) {
+	    writer.writeString(
+	      2,
+	      f
+	    );
+	  }
+	  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+	  if (f != null) {
+	    writer.writeUint32(
+	      3,
+	      f
+	    );
+	  }
+	  f = /** @type {!(string|Uint8Array)} */ (jspb.Message.getField(message, 4));
+	  if (f != null) {
+	    writer.writeBytes(
+	      4,
+	      f
+	    );
+	  }
+	  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+	  if (f != null) {
+	    writer.writeUint32(
+	      5,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional int32 id = 1;
+	 * @return {number}
+	 */
+	proto.profile.UserProfileUpdate.prototype.getId = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.setId = function(value) {
+	  return jspb.Message.setProto3IntField(this, 1, value);
+	};
+
+
+	/**
+	 * optional string name = 2;
+	 * @return {string}
+	 */
+	proto.profile.UserProfileUpdate.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.setName = function(value) {
+	  return jspb.Message.setField(this, 2, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.clearName = function() {
+	  return jspb.Message.setField(this, 2, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.UserProfileUpdate.prototype.hasName = function() {
+	  return jspb.Message.getField(this, 2) != null;
+	};
+
+
+	/**
+	 * optional uint32 order = 3;
+	 * @return {number}
+	 */
+	proto.profile.UserProfileUpdate.prototype.getOrder = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.setOrder = function(value) {
+	  return jspb.Message.setField(this, 3, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.clearOrder = function() {
+	  return jspb.Message.setField(this, 3, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.UserProfileUpdate.prototype.hasOrder = function() {
+	  return jspb.Message.getField(this, 3) != null;
+	};
+
+
+	/**
+	 * optional bytes value_bytes = 4;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.profile.UserProfileUpdate.prototype.getValueBytes = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+	};
+
+
+	/**
+	 * optional bytes value_bytes = 4;
+	 * This is a type-conversion wrapper around `getValueBytes()`
+	 * @return {string}
+	 */
+	proto.profile.UserProfileUpdate.prototype.getValueBytes_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getValueBytes()));
+	};
+
+
+	/**
+	 * optional bytes value_bytes = 4;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getValueBytes()`
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserProfileUpdate.prototype.getValueBytes_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getValueBytes()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.setValueBytes = function(value) {
+	  return jspb.Message.setField(this, 4, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.clearValueBytes = function() {
+	  return jspb.Message.setField(this, 4, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.UserProfileUpdate.prototype.hasValueBytes = function() {
+	  return jspb.Message.getField(this, 4) != null;
+	};
+
+
+	/**
+	 * optional uint32 value_type = 5;
+	 * @return {number}
+	 */
+	proto.profile.UserProfileUpdate.prototype.getValueType = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.setValueType = function(value) {
+	  return jspb.Message.setField(this, 5, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.profile.UserProfileUpdate} returns this
+	 */
+	proto.profile.UserProfileUpdate.prototype.clearValueType = function() {
+	  return jspb.Message.setField(this, 5, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.UserProfileUpdate.prototype.hasValueType = function() {
+	  return jspb.Message.getField(this, 5) != null;
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.RoleProfileReadResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.RoleProfileReadResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.RoleProfileReadResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleProfileReadResponse.toObject = function(includeInstance, msg) {
+	  var f, obj = {
+	result: (f = msg.getResult()) && proto.profile.RoleProfileSchema.toObject(includeInstance, f)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.RoleProfileReadResponse}
+	 */
+	proto.profile.RoleProfileReadResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.RoleProfileReadResponse;
+	  return proto.profile.RoleProfileReadResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.RoleProfileReadResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.RoleProfileReadResponse}
+	 */
+	proto.profile.RoleProfileReadResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = new proto.profile.RoleProfileSchema;
+	      reader.readMessage(value,proto.profile.RoleProfileSchema.deserializeBinaryFromReader);
+	      msg.setResult(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.RoleProfileReadResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.RoleProfileReadResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.RoleProfileReadResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleProfileReadResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getResult();
+	  if (f != null) {
+	    writer.writeMessage(
+	      1,
+	      f,
+	      proto.profile.RoleProfileSchema.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional RoleProfileSchema result = 1;
+	 * @return {?proto.profile.RoleProfileSchema}
+	 */
+	proto.profile.RoleProfileReadResponse.prototype.getResult = function() {
+	  return /** @type{?proto.profile.RoleProfileSchema} */ (
+	    jspb.Message.getWrapperField(this, proto.profile.RoleProfileSchema, 1));
+	};
+
+
+	/**
+	 * @param {?proto.profile.RoleProfileSchema|undefined} value
+	 * @return {!proto.profile.RoleProfileReadResponse} returns this
+	*/
+	proto.profile.RoleProfileReadResponse.prototype.setResult = function(value) {
+	  return jspb.Message.setWrapperField(this, 1, value);
+	};
+
+
+	/**
+	 * Clears the message field making it undefined.
+	 * @return {!proto.profile.RoleProfileReadResponse} returns this
+	 */
+	proto.profile.RoleProfileReadResponse.prototype.clearResult = function() {
+	  return this.setResult(undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.RoleProfileReadResponse.prototype.hasResult = function() {
+	  return jspb.Message.getField(this, 1) != null;
+	};
+
+
+
+	/**
+	 * List of repeated fields within this message type.
+	 * @private {!Array<number>}
+	 * @const
+	 */
+	proto.profile.RoleProfileListResponse.repeatedFields_ = [1];
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.RoleProfileListResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.RoleProfileListResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.RoleProfileListResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleProfileListResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	    proto.profile.RoleProfileSchema.toObject, includeInstance)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.RoleProfileListResponse}
+	 */
+	proto.profile.RoleProfileListResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.RoleProfileListResponse;
+	  return proto.profile.RoleProfileListResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.RoleProfileListResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.RoleProfileListResponse}
+	 */
+	proto.profile.RoleProfileListResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = new proto.profile.RoleProfileSchema;
+	      reader.readMessage(value,proto.profile.RoleProfileSchema.deserializeBinaryFromReader);
+	      msg.addResults(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.RoleProfileListResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.RoleProfileListResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.RoleProfileListResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.RoleProfileListResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getResultsList();
+	  if (f.length > 0) {
+	    writer.writeRepeatedMessage(
+	      1,
+	      f,
+	      proto.profile.RoleProfileSchema.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * repeated RoleProfileSchema results = 1;
+	 * @return {!Array<!proto.profile.RoleProfileSchema>}
+	 */
+	proto.profile.RoleProfileListResponse.prototype.getResultsList = function() {
+	  return /** @type{!Array<!proto.profile.RoleProfileSchema>} */ (
+	    jspb.Message.getRepeatedWrapperField(this, proto.profile.RoleProfileSchema, 1));
+	};
+
+
+	/**
+	 * @param {!Array<!proto.profile.RoleProfileSchema>} value
+	 * @return {!proto.profile.RoleProfileListResponse} returns this
+	*/
+	proto.profile.RoleProfileListResponse.prototype.setResultsList = function(value) {
+	  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+	};
+
+
+	/**
+	 * @param {!proto.profile.RoleProfileSchema=} opt_value
+	 * @param {number=} opt_index
+	 * @return {!proto.profile.RoleProfileSchema}
+	 */
+	proto.profile.RoleProfileListResponse.prototype.addResults = function(opt_value, opt_index) {
+	  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.profile.RoleProfileSchema, opt_index);
+	};
+
+
+	/**
+	 * Clears the list making it empty but non-null.
+	 * @return {!proto.profile.RoleProfileListResponse} returns this
+	 */
+	proto.profile.RoleProfileListResponse.prototype.clearResultsList = function() {
+	  return this.setResultsList([]);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.UserProfileReadResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.UserProfileReadResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.UserProfileReadResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserProfileReadResponse.toObject = function(includeInstance, msg) {
+	  var f, obj = {
+	result: (f = msg.getResult()) && proto.profile.UserProfileSchema.toObject(includeInstance, f)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.UserProfileReadResponse}
+	 */
+	proto.profile.UserProfileReadResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.UserProfileReadResponse;
+	  return proto.profile.UserProfileReadResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.UserProfileReadResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.UserProfileReadResponse}
+	 */
+	proto.profile.UserProfileReadResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = new proto.profile.UserProfileSchema;
+	      reader.readMessage(value,proto.profile.UserProfileSchema.deserializeBinaryFromReader);
+	      msg.setResult(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserProfileReadResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.UserProfileReadResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.UserProfileReadResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserProfileReadResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getResult();
+	  if (f != null) {
+	    writer.writeMessage(
+	      1,
+	      f,
+	      proto.profile.UserProfileSchema.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional UserProfileSchema result = 1;
+	 * @return {?proto.profile.UserProfileSchema}
+	 */
+	proto.profile.UserProfileReadResponse.prototype.getResult = function() {
+	  return /** @type{?proto.profile.UserProfileSchema} */ (
+	    jspb.Message.getWrapperField(this, proto.profile.UserProfileSchema, 1));
+	};
+
+
+	/**
+	 * @param {?proto.profile.UserProfileSchema|undefined} value
+	 * @return {!proto.profile.UserProfileReadResponse} returns this
+	*/
+	proto.profile.UserProfileReadResponse.prototype.setResult = function(value) {
+	  return jspb.Message.setWrapperField(this, 1, value);
+	};
+
+
+	/**
+	 * Clears the message field making it undefined.
+	 * @return {!proto.profile.UserProfileReadResponse} returns this
+	 */
+	proto.profile.UserProfileReadResponse.prototype.clearResult = function() {
+	  return this.setResult(undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.profile.UserProfileReadResponse.prototype.hasResult = function() {
+	  return jspb.Message.getField(this, 1) != null;
+	};
+
+
+
+	/**
+	 * List of repeated fields within this message type.
+	 * @private {!Array<number>}
+	 * @const
+	 */
+	proto.profile.UserProfileListResponse.repeatedFields_ = [1];
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.UserProfileListResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.UserProfileListResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.UserProfileListResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserProfileListResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	    proto.profile.UserProfileSchema.toObject, includeInstance)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.UserProfileListResponse}
+	 */
+	proto.profile.UserProfileListResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.UserProfileListResponse;
+	  return proto.profile.UserProfileListResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.UserProfileListResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.UserProfileListResponse}
+	 */
+	proto.profile.UserProfileListResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = new proto.profile.UserProfileSchema;
+	      reader.readMessage(value,proto.profile.UserProfileSchema.deserializeBinaryFromReader);
+	      msg.addResults(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.UserProfileListResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.UserProfileListResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.UserProfileListResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.UserProfileListResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getResultsList();
+	  if (f.length > 0) {
+	    writer.writeRepeatedMessage(
+	      1,
+	      f,
+	      proto.profile.UserProfileSchema.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * repeated UserProfileSchema results = 1;
+	 * @return {!Array<!proto.profile.UserProfileSchema>}
+	 */
+	proto.profile.UserProfileListResponse.prototype.getResultsList = function() {
+	  return /** @type{!Array<!proto.profile.UserProfileSchema>} */ (
+	    jspb.Message.getRepeatedWrapperField(this, proto.profile.UserProfileSchema, 1));
+	};
+
+
+	/**
+	 * @param {!Array<!proto.profile.UserProfileSchema>} value
+	 * @return {!proto.profile.UserProfileListResponse} returns this
+	*/
+	proto.profile.UserProfileListResponse.prototype.setResultsList = function(value) {
+	  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+	};
+
+
+	/**
+	 * @param {!proto.profile.UserProfileSchema=} opt_value
+	 * @param {number=} opt_index
+	 * @return {!proto.profile.UserProfileSchema}
+	 */
+	proto.profile.UserProfileListResponse.prototype.addResults = function(opt_value, opt_index) {
+	  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.profile.UserProfileSchema, opt_index);
+	};
+
+
+	/**
+	 * Clears the list making it empty but non-null.
+	 * @return {!proto.profile.UserProfileListResponse} returns this
+	 */
+	proto.profile.UserProfileListResponse.prototype.clearResultsList = function() {
+	  return this.setResultsList([]);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.ProfileCreateResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.ProfileCreateResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.ProfileCreateResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.ProfileCreateResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.ProfileCreateResponse}
+	 */
+	proto.profile.ProfileCreateResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.ProfileCreateResponse;
+	  return proto.profile.ProfileCreateResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.ProfileCreateResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.ProfileCreateResponse}
+	 */
+	proto.profile.ProfileCreateResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setId(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.ProfileCreateResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.ProfileCreateResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.ProfileCreateResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.ProfileCreateResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional int32 id = 1;
+	 * @return {number}
+	 */
+	proto.profile.ProfileCreateResponse.prototype.getId = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.profile.ProfileCreateResponse} returns this
+	 */
+	proto.profile.ProfileCreateResponse.prototype.setId = function(value) {
+	  return jspb.Message.setProto3IntField(this, 1, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.profile.ProfileChangeResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.profile.ProfileChangeResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.profile.ProfileChangeResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.ProfileChangeResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.profile.ProfileChangeResponse}
+	 */
+	proto.profile.ProfileChangeResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.profile.ProfileChangeResponse;
+	  return proto.profile.ProfileChangeResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.profile.ProfileChangeResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.profile.ProfileChangeResponse}
+	 */
+	proto.profile.ProfileChangeResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.profile.ProfileChangeResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.profile.ProfileChangeResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.profile.ProfileChangeResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.profile.ProfileChangeResponse.serializeBinaryToWriter = function(message, writer) {
+	};
+
+
+	goog.object.extend(exports, proto.profile); 
+} (profile_pb));
+
+/**
+ * @fileoverview gRPC-Web generated client stub for profile
+ * @enhanceable
+ * @public
+ */
+
+// Code generated by protoc-gen-grpc-web. DO NOT EDIT.
+// versions:
+// 	protoc-gen-grpc-web v1.5.0
+// 	protoc              v5.27.3
+// source: rmcs_auth_api/profile.proto
+
+
+/* eslint-disable */
+// @ts-nocheck
+
+
+
+const grpc$2 = {};
+grpc$2.web = require$$0$1;
+
+const proto$3 = {};
+proto$3.profile = profile_pb;
+
+/**
+ * @param {string} hostname
+ * @param {?Object} credentials
+ * @param {?grpc.web.ClientOptions} options
+ * @constructor
+ * @struct
+ * @final
+ */
+proto$3.profile.ProfileServiceClient =
+    function(hostname, credentials, options) {
+  if (!options) options = {};
+  options.format = 'text';
+
+  /**
+   * @private @const {!grpc.web.GrpcWebClientBase} The client
+   */
+  this.client_ = new grpc$2.web.GrpcWebClientBase(options);
+
+  /**
+   * @private @const {string} The hostname
+   */
+  this.hostname_ = hostname.replace(/\/+$/, '');
+
+};
+
+
+/**
+ * @param {string} hostname
+ * @param {?Object} credentials
+ * @param {?grpc.web.ClientOptions} options
+ * @constructor
+ * @struct
+ * @final
+ */
+proto$3.profile.ProfileServicePromiseClient =
+    function(hostname, credentials, options) {
+  if (!options) options = {};
+  options.format = 'text';
+
+  /**
+   * @private @const {!grpc.web.GrpcWebClientBase} The client
+   */
+  this.client_ = new grpc$2.web.GrpcWebClientBase(options);
+
+  /**
+   * @private @const {string} The hostname
+   */
+  this.hostname_ = hostname.replace(/\/+$/, '');
+
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.ProfileId,
+ *   !proto.profile.RoleProfileReadResponse>}
+ */
+const methodDescriptor_ProfileService_ReadRoleProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/ReadRoleProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.ProfileId,
+  proto$3.profile.RoleProfileReadResponse,
+  /**
+   * @param {!proto.profile.ProfileId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.RoleProfileReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.ProfileId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.RoleProfileReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.RoleProfileReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.readRoleProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/ReadRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_ReadRoleProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.ProfileId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.RoleProfileReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.readRoleProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/ReadRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_ReadRoleProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.RoleId,
+ *   !proto.profile.RoleProfileListResponse>}
+ */
+const methodDescriptor_ProfileService_ListRoleProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/ListRoleProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.RoleId,
+  proto$3.profile.RoleProfileListResponse,
+  /**
+   * @param {!proto.profile.RoleId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.RoleProfileListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.RoleId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.RoleProfileListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.RoleProfileListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.listRoleProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/ListRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_ListRoleProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.RoleId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.RoleProfileListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.listRoleProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/ListRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_ListRoleProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.RoleProfileSchema,
+ *   !proto.profile.ProfileCreateResponse>}
+ */
+const methodDescriptor_ProfileService_CreateRoleProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/CreateRoleProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.RoleProfileSchema,
+  proto$3.profile.ProfileCreateResponse,
+  /**
+   * @param {!proto.profile.RoleProfileSchema} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.ProfileCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.RoleProfileSchema} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.ProfileCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.ProfileCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.createRoleProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/CreateRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_CreateRoleProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.RoleProfileSchema} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.ProfileCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.createRoleProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/CreateRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_CreateRoleProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.RoleProfileUpdate,
+ *   !proto.profile.ProfileChangeResponse>}
+ */
+const methodDescriptor_ProfileService_UpdateRoleProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/UpdateRoleProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.RoleProfileUpdate,
+  proto$3.profile.ProfileChangeResponse,
+  /**
+   * @param {!proto.profile.RoleProfileUpdate} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.ProfileChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.RoleProfileUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.ProfileChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.ProfileChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.updateRoleProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/UpdateRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_UpdateRoleProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.RoleProfileUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.ProfileChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.updateRoleProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/UpdateRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_UpdateRoleProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.ProfileId,
+ *   !proto.profile.ProfileChangeResponse>}
+ */
+const methodDescriptor_ProfileService_DeleteRoleProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/DeleteRoleProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.ProfileId,
+  proto$3.profile.ProfileChangeResponse,
+  /**
+   * @param {!proto.profile.ProfileId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.ProfileChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.ProfileId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.ProfileChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.ProfileChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.deleteRoleProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/DeleteRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_DeleteRoleProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.ProfileId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.ProfileChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.deleteRoleProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/DeleteRoleProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_DeleteRoleProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.ProfileId,
+ *   !proto.profile.UserProfileReadResponse>}
+ */
+const methodDescriptor_ProfileService_ReadUserProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/ReadUserProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.ProfileId,
+  proto$3.profile.UserProfileReadResponse,
+  /**
+   * @param {!proto.profile.ProfileId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.UserProfileReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.ProfileId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.UserProfileReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.UserProfileReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.readUserProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/ReadUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_ReadUserProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.ProfileId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.UserProfileReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.readUserProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/ReadUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_ReadUserProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.UserId,
+ *   !proto.profile.UserProfileListResponse>}
+ */
+const methodDescriptor_ProfileService_ListUserProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/ListUserProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.UserId,
+  proto$3.profile.UserProfileListResponse,
+  /**
+   * @param {!proto.profile.UserId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.UserProfileListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.UserId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.UserProfileListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.UserProfileListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.listUserProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/ListUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_ListUserProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.UserId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.UserProfileListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.listUserProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/ListUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_ListUserProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.UserProfileSchema,
+ *   !proto.profile.ProfileCreateResponse>}
+ */
+const methodDescriptor_ProfileService_CreateUserProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/CreateUserProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.UserProfileSchema,
+  proto$3.profile.ProfileCreateResponse,
+  /**
+   * @param {!proto.profile.UserProfileSchema} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.ProfileCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.UserProfileSchema} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.ProfileCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.ProfileCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.createUserProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/CreateUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_CreateUserProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.UserProfileSchema} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.ProfileCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.createUserProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/CreateUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_CreateUserProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.UserProfileUpdate,
+ *   !proto.profile.ProfileChangeResponse>}
+ */
+const methodDescriptor_ProfileService_UpdateUserProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/UpdateUserProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.UserProfileUpdate,
+  proto$3.profile.ProfileChangeResponse,
+  /**
+   * @param {!proto.profile.UserProfileUpdate} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.ProfileChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.UserProfileUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.ProfileChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.ProfileChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.updateUserProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/UpdateUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_UpdateUserProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.UserProfileUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.ProfileChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.updateUserProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/UpdateUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_UpdateUserProfile);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.profile.ProfileId,
+ *   !proto.profile.ProfileChangeResponse>}
+ */
+const methodDescriptor_ProfileService_DeleteUserProfile = new grpc$2.web.MethodDescriptor(
+  '/profile.ProfileService/DeleteUserProfile',
+  grpc$2.web.MethodType.UNARY,
+  proto$3.profile.ProfileId,
+  proto$3.profile.ProfileChangeResponse,
+  /**
+   * @param {!proto.profile.ProfileId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$3.profile.ProfileChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.profile.ProfileId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.profile.ProfileChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.profile.ProfileChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$3.profile.ProfileServiceClient.prototype.deleteUserProfile =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/profile.ProfileService/DeleteUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_DeleteUserProfile,
+      callback);
+};
+
+
+/**
+ * @param {!proto.profile.ProfileId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.profile.ProfileChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$3.profile.ProfileServicePromiseClient.prototype.deleteUserProfile =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/profile.ProfileService/DeleteUserProfile',
+      request,
+      metadata || {},
+      methodDescriptor_ProfileService_DeleteUserProfile);
+};
+
+
+var profile_grpc_web_pb = proto$3.profile;
+
+var profile_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(profile_grpc_web_pb);
 
 var token_pb = {};
 
@@ -14040,12 +17557,12 @@ var token_pb = {};
 	 */
 	proto.token.TokenSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    userId: msg.getUserId_asB64(),
-	    refreshToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    authToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    expire: jspb.Message.getFieldWithDefault(msg, 5, 0),
-	    ip: msg.getIp_asB64()
+	accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	userId: msg.getUserId_asB64(),
+	refreshToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	authToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	expire: jspb.Message.getFieldWithDefault(msg, 5, 0),
+	ip: msg.getIp_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -14368,7 +17885,7 @@ var token_pb = {};
 	 */
 	proto.token.AuthToken.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    authToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+	authToken: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -14498,7 +18015,7 @@ var token_pb = {};
 	 */
 	proto.token.AccessId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    accessId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	accessId: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -14628,7 +18145,7 @@ var token_pb = {};
 	 */
 	proto.token.UserId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    userId: msg.getUserId_asB64()
+	userId: msg.getUserId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -14782,10 +18299,10 @@ var token_pb = {};
 	 */
 	proto.token.AuthTokenCreate.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    userId: msg.getUserId_asB64(),
-	    expire: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    ip: msg.getIp_asB64(),
-	    number: jspb.Message.getFieldWithDefault(msg, 4, 0)
+	userId: msg.getUserId_asB64(),
+	expire: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	ip: msg.getIp_asB64(),
+	number: jspb.Message.getFieldWithDefault(msg, 4, 0)
 	  };
 
 	  if (includeInstance) {
@@ -15049,12 +18566,12 @@ var token_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.token.TokenUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    authToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    expire: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    ip: msg.getIp_asB64()
+	  var f, obj = {
+	accessId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+	refreshToken: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	authToken: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	expire: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	ip: msg.getIp_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -15414,7 +18931,7 @@ var token_pb = {};
 	 */
 	proto.token.TokenReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.token.TokenSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.token.TokenSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -15572,7 +19089,7 @@ var token_pb = {};
 	 */
 	proto.token.TokenListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.token.TokenSchema.toObject, includeInstance)
 	  };
 
@@ -15725,9 +19242,9 @@ var token_pb = {};
 	 */
 	proto.token.TokenCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    authToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+	accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	refreshToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	authToken: jspb.Message.getFieldWithDefault(msg, 3, "")
 	  };
 
 	  if (includeInstance) {
@@ -15922,7 +19439,7 @@ var token_pb = {};
 	 */
 	proto.token.AuthTokenCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    tokensList: jspb.Message.toObjectList(msg.getTokensList(),
+	tokensList: jspb.Message.toObjectList(msg.getTokensList(),
 	    proto.token.TokenCreateResponse.toObject, includeInstance)
 	  };
 
@@ -16075,8 +19592,8 @@ var token_pb = {};
 	 */
 	proto.token.TokenUpdateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    refreshToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-	    authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+	refreshToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+	authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
 	  };
 
 	  if (includeInstance) {
@@ -16315,7 +19832,7 @@ var token_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_auth_api/token.proto
 
 
@@ -17462,7 +20979,7 @@ var auth_pb = {};
 	 */
 	proto.auth.ApiKeyResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    publicKey: msg.getPublicKey_asB64()
+	publicKey: msg.getPublicKey_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -17616,9 +21133,9 @@ var auth_pb = {};
 	 */
 	proto.auth.ApiLoginRequest.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    password: msg.getPassword_asB64(),
-	    publicKey: msg.getPublicKey_asB64()
+	apiId: msg.getApiId_asB64(),
+	password: msg.getPassword_asB64(),
+	publicKey: msg.getPublicKey_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -17885,8 +21402,8 @@ var auth_pb = {};
 	 */
 	proto.auth.ProcedureMap.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    procedure: jspb.Message.getFieldWithDefault(msg, 1, ""),
-	    rolesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+	procedure: jspb.Message.getFieldWithDefault(msg, 1, ""),
+	rolesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -18071,9 +21588,9 @@ var auth_pb = {};
 	 */
 	proto.auth.ApiLoginResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    rootKey: msg.getRootKey_asB64(),
-	    accessKey: msg.getAccessKey_asB64(),
-	    accessProceduresList: jspb.Message.toObjectList(msg.getAccessProceduresList(),
+	rootKey: msg.getRootKey_asB64(),
+	accessKey: msg.getAccessKey_asB64(),
+	accessProceduresList: jspb.Message.toObjectList(msg.getAccessProceduresList(),
 	    proto.auth.ProcedureMap.toObject, includeInstance)
 	  };
 
@@ -18432,7 +21949,7 @@ var auth_pb = {};
 	 */
 	proto.auth.UserKeyResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    publicKey: msg.getPublicKey_asB64()
+	publicKey: msg.getPublicKey_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -18586,8 +22103,8 @@ var auth_pb = {};
 	 */
 	proto.auth.UserLoginRequest.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    username: jspb.Message.getFieldWithDefault(msg, 1, ""),
-	    password: msg.getPassword_asB64()
+	username: jspb.Message.getFieldWithDefault(msg, 1, ""),
+	password: msg.getPassword_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -18770,9 +22287,9 @@ var auth_pb = {};
 	 */
 	proto.auth.AccessTokenMap.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    refreshToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+	apiId: msg.getApiId_asB64(),
+	accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	refreshToken: jspb.Message.getFieldWithDefault(msg, 3, "")
 	  };
 
 	  if (includeInstance) {
@@ -18991,9 +22508,9 @@ var auth_pb = {};
 	 */
 	proto.auth.UserLoginResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    userId: msg.getUserId_asB64(),
-	    authToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    accessTokensList: jspb.Message.toObjectList(msg.getAccessTokensList(),
+	userId: msg.getUserId_asB64(),
+	authToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	accessTokensList: jspb.Message.toObjectList(msg.getAccessTokensList(),
 	    proto.auth.AccessTokenMap.toObject, includeInstance)
 	  };
 
@@ -19228,9 +22745,9 @@ var auth_pb = {};
 	 */
 	proto.auth.UserRefreshRequest.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    apiId: msg.getApiId_asB64(),
-	    accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    refreshToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+	apiId: msg.getApiId_asB64(),
+	accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	refreshToken: jspb.Message.getFieldWithDefault(msg, 3, "")
 	  };
 
 	  if (includeInstance) {
@@ -19442,8 +22959,8 @@ var auth_pb = {};
 	 */
 	proto.auth.UserRefreshResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-	    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+	accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+	refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
 	  };
 
 	  if (includeInstance) {
@@ -19602,8 +23119,8 @@ var auth_pb = {};
 	 */
 	proto.auth.UserLogoutRequest.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    userId: msg.getUserId_asB64(),
-	    authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+	userId: msg.getUserId_asB64(),
+	authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
 	  };
 
 	  if (includeInstance) {
@@ -19866,7 +23383,7 @@ var auth_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_auth_api/auth.proto
 
 
@@ -20303,4 +23820,4 @@ var auth_grpc_web_pb = proto$1.auth;
 
 var auth_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(auth_grpc_web_pb);
 
-export { api_grpc_web_pb$1 as pb_api, auth_grpc_web_pb$1 as pb_auth, role_grpc_web_pb$1 as pb_role, token_grpc_web_pb$1 as pb_token, user_grpc_web_pb$1 as pb_user };
+export { api_grpc_web_pb$1 as pb_api, auth_grpc_web_pb$1 as pb_auth, profile_grpc_web_pb$1 as pb_profile, role_grpc_web_pb$1 as pb_role, token_grpc_web_pb$1 as pb_token, user_grpc_web_pb$1 as pb_user };

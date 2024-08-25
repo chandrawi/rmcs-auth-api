@@ -462,7 +462,7 @@ proto.auth.ApiKeyResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.auth.ApiKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publicKey: msg.getPublicKey_asB64()
+publicKey: msg.getPublicKey_asB64()
   };
 
   if (includeInstance) {
@@ -616,9 +616,9 @@ proto.auth.ApiLoginRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.auth.ApiLoginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    password: msg.getPassword_asB64(),
-    publicKey: msg.getPublicKey_asB64()
+apiId: msg.getApiId_asB64(),
+password: msg.getPassword_asB64(),
+publicKey: msg.getPublicKey_asB64()
   };
 
   if (includeInstance) {
@@ -885,8 +885,8 @@ proto.auth.ProcedureMap.prototype.toObject = function(opt_includeInstance) {
  */
 proto.auth.ProcedureMap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    procedure: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rolesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+procedure: jspb.Message.getFieldWithDefault(msg, 1, ""),
+rolesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1071,9 +1071,9 @@ proto.auth.ApiLoginResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.auth.ApiLoginResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    rootKey: msg.getRootKey_asB64(),
-    accessKey: msg.getAccessKey_asB64(),
-    accessProceduresList: jspb.Message.toObjectList(msg.getAccessProceduresList(),
+rootKey: msg.getRootKey_asB64(),
+accessKey: msg.getAccessKey_asB64(),
+accessProceduresList: jspb.Message.toObjectList(msg.getAccessProceduresList(),
     proto.auth.ProcedureMap.toObject, includeInstance)
   };
 
@@ -1433,7 +1433,7 @@ proto.auth.UserKeyResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.auth.UserKeyResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    publicKey: msg.getPublicKey_asB64()
+publicKey: msg.getPublicKey_asB64()
   };
 
   if (includeInstance) {
@@ -1587,8 +1587,8 @@ proto.auth.UserLoginRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.auth.UserLoginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    username: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    password: msg.getPassword_asB64()
+username: jspb.Message.getFieldWithDefault(msg, 1, ""),
+password: msg.getPassword_asB64()
   };
 
   if (includeInstance) {
@@ -1771,9 +1771,9 @@ proto.auth.AccessTokenMap.prototype.toObject = function(opt_includeInstance) {
  */
 proto.auth.AccessTokenMap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+apiId: msg.getApiId_asB64(),
+accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+refreshToken: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1992,9 +1992,9 @@ proto.auth.UserLoginResponse.prototype.toObject = function(opt_includeInstance) 
  */
 proto.auth.UserLoginResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: msg.getUserId_asB64(),
-    authToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    accessTokensList: jspb.Message.toObjectList(msg.getAccessTokensList(),
+userId: msg.getUserId_asB64(),
+authToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+accessTokensList: jspb.Message.toObjectList(msg.getAccessTokensList(),
     proto.auth.AccessTokenMap.toObject, includeInstance)
   };
 
@@ -2229,9 +2229,9 @@ proto.auth.UserRefreshRequest.prototype.toObject = function(opt_includeInstance)
  */
 proto.auth.UserRefreshRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+apiId: msg.getApiId_asB64(),
+accessToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+refreshToken: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2443,8 +2443,8 @@ proto.auth.UserRefreshResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.auth.UserRefreshResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+accessToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2603,8 +2603,8 @@ proto.auth.UserLogoutRequest.prototype.toObject = function(opt_includeInstance) 
  */
 proto.auth.UserLogoutRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: msg.getUserId_asB64(),
-    authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+userId: msg.getUserId_asB64(),
+authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

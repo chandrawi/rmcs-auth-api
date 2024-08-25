@@ -13,6 +13,11 @@ pub mod user {
         tonic::include_file_descriptor_set!("user_descriptor");
 }
 
+pub mod profile {
+    pub const DESCRIPTOR_SET: &[u8] =
+        tonic::include_file_descriptor_set!("profile_descriptor");
+}
+
 pub mod token {
     pub const DESCRIPTOR_SET: &[u8] =
         tonic::include_file_descriptor_set!("token_descriptor");

@@ -361,13 +361,13 @@ proto.user.UserRoleSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserRoleSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    role: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    multi: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    accessDuration: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    refreshDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    accessKey: msg.getAccessKey_asB64()
+apiId: msg.getApiId_asB64(),
+role: jspb.Message.getFieldWithDefault(msg, 2, ""),
+multi: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+accessDuration: jspb.Message.getFieldWithDefault(msg, 5, 0),
+refreshDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
+accessKey: msg.getAccessKey_asB64()
   };
 
   if (includeInstance) {
@@ -726,12 +726,12 @@ proto.user.UserSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    phone: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    rolesList: jspb.Message.toObjectList(msg.getRolesList(),
+id: msg.getId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+email: jspb.Message.getFieldWithDefault(msg, 3, ""),
+phone: jspb.Message.getFieldWithDefault(msg, 4, ""),
+password: jspb.Message.getFieldWithDefault(msg, 5, ""),
+rolesList: jspb.Message.toObjectList(msg.getRolesList(),
     proto.user.UserRoleSchema.toObject, includeInstance)
   };
 
@@ -1053,7 +1053,7 @@ proto.user.UserId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1214,7 +1214,7 @@ proto.user.UserIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -1387,7 +1387,7 @@ proto.user.UserName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1517,7 +1517,7 @@ proto.user.ApiId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.ApiId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1671,7 +1671,7 @@ proto.user.RoleId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.RoleId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1825,9 +1825,9 @@ proto.user.UserOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    roleId: msg.getRoleId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+apiId: msg.getApiId_asB64(),
+roleId: msg.getRoleId_asB64(),
+name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2117,11 +2117,11 @@ proto.user.UserUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    phone: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 5, "")
+id: msg.getId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+email: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+phone: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+password: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2463,8 +2463,8 @@ proto.user.UserRole.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserRole.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: msg.getUserId_asB64(),
-    roleId: msg.getRoleId_asB64()
+userId: msg.getUserId_asB64(),
+roleId: msg.getRoleId_asB64()
   };
 
   if (includeInstance) {
@@ -2671,7 +2671,7 @@ proto.user.UserReadResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.user.UserSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.user.UserSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2829,7 +2829,7 @@ proto.user.UserListResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.UserListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.user.UserSchema.toObject, includeInstance)
   };
 
@@ -2982,7 +2982,7 @@ proto.user.UserCreateResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.user.UserCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {

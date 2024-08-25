@@ -522,14 +522,14 @@ proto.api.ApiSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    address: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    accessKey: msg.getAccessKey_asB64(),
-    proceduresList: jspb.Message.toObjectList(msg.getProceduresList(),
+id: msg.getId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+address: jspb.Message.getFieldWithDefault(msg, 3, ""),
+category: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+password: jspb.Message.getFieldWithDefault(msg, 6, ""),
+accessKey: msg.getAccessKey_asB64(),
+proceduresList: jspb.Message.toObjectList(msg.getProceduresList(),
     proto.api.ProcedureSchema.toObject, includeInstance)
   };
 
@@ -933,7 +933,7 @@ proto.api.ApiId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1094,7 +1094,7 @@ proto.api.ApiIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -1267,7 +1267,7 @@ proto.api.ApiName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1397,7 +1397,7 @@ proto.api.ApiCategory.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiCategory.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: jspb.Message.getFieldWithDefault(msg, 1, "")
+category: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1527,8 +1527,8 @@ proto.api.ApiOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 2, "")
+name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+category: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1723,13 +1723,13 @@ proto.api.ApiUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    address: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    accessKey: msg.getAccessKey_asB64()
+id: msg.getId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+address: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+category: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+password: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+accessKey: msg.getAccessKey_asB64()
   };
 
   if (includeInstance) {
@@ -2196,11 +2196,11 @@ proto.api.ProcedureSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ProcedureSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    apiId: msg.getApiId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    rolesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+id: msg.getId_asB64(),
+apiId: msg.getApiId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+rolesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2513,7 +2513,7 @@ proto.api.ProcedureId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ProcedureId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -2674,7 +2674,7 @@ proto.api.ProcedureIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ProcedureIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -2847,8 +2847,8 @@ proto.api.ProcedureName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ProcedureName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+apiId: msg.getApiId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -3031,8 +3031,8 @@ proto.api.ProcedureOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ProcedureOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+apiId: msg.getApiId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3251,9 +3251,9 @@ proto.api.ProcedureUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ProcedureUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+id: msg.getId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3501,7 +3501,7 @@ proto.api.ApiReadResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.api.ApiSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.api.ApiSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3659,7 +3659,7 @@ proto.api.ApiListResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.api.ApiSchema.toObject, includeInstance)
   };
 
@@ -3812,7 +3812,7 @@ proto.api.ApiCreateResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.ApiCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -4067,7 +4067,7 @@ proto.api.ProcedureReadResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.ProcedureReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.api.ProcedureSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.api.ProcedureSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4225,7 +4225,7 @@ proto.api.ProcedureListResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.api.ProcedureListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.api.ProcedureSchema.toObject, includeInstance)
   };
 
@@ -4378,7 +4378,7 @@ proto.api.ProcedureCreateResponse.prototype.toObject = function(opt_includeInsta
  */
 proto.api.ProcedureCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {

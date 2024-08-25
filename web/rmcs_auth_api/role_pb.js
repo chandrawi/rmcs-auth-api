@@ -346,15 +346,15 @@ proto.role.RoleSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    apiId: msg.getApiId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    multi: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    accessDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    refreshDuration: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    accessKey: msg.getAccessKey_asB64(),
-    proceduresList: msg.getProceduresList_asB64()
+id: msg.getId_asB64(),
+apiId: msg.getApiId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+multi: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+accessDuration: jspb.Message.getFieldWithDefault(msg, 6, 0),
+refreshDuration: jspb.Message.getFieldWithDefault(msg, 7, 0),
+accessKey: msg.getAccessKey_asB64(),
+proceduresList: msg.getProceduresList_asB64()
   };
 
   if (includeInstance) {
@@ -831,7 +831,7 @@ proto.role.RoleId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -992,7 +992,7 @@ proto.role.RoleIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -1165,8 +1165,8 @@ proto.role.RoleName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+apiId: msg.getApiId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1349,7 +1349,7 @@ proto.role.ApiId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.ApiId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64()
+apiId: msg.getApiId_asB64()
   };
 
   if (includeInstance) {
@@ -1503,7 +1503,7 @@ proto.role.UserId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.UserId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: msg.getUserId_asB64()
+userId: msg.getUserId_asB64()
   };
 
   if (includeInstance) {
@@ -1657,9 +1657,9 @@ proto.role.RoleOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apiId: msg.getApiId_asB64(),
-    userId: msg.getUserId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+apiId: msg.getApiId_asB64(),
+userId: msg.getUserId_asB64(),
+name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1949,12 +1949,12 @@ proto.role.RoleUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    multi: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    ipLock: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    accessDuration: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    refreshDuration: jspb.Message.getFieldWithDefault(msg, 6, 0)
+id: msg.getId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+multi: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+ipLock: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+accessDuration: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+refreshDuration: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2343,8 +2343,8 @@ proto.role.RoleAccess.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleAccess.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    procedureId: msg.getProcedureId_asB64()
+id: msg.getId_asB64(),
+procedureId: msg.getProcedureId_asB64()
   };
 
   if (includeInstance) {
@@ -2551,7 +2551,7 @@ proto.role.RoleReadResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.role.RoleSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.role.RoleSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2709,7 +2709,7 @@ proto.role.RoleListResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.role.RoleListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.role.RoleSchema.toObject, includeInstance)
   };
 
@@ -2862,7 +2862,7 @@ proto.role.RoleCreateResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.role.RoleCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {

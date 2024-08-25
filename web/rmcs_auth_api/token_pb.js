@@ -317,12 +317,12 @@ proto.token.TokenSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.token.TokenSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    userId: msg.getUserId_asB64(),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    authToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    expire: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    ip: msg.getIp_asB64()
+accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+userId: msg.getUserId_asB64(),
+refreshToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
+authToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+expire: jspb.Message.getFieldWithDefault(msg, 5, 0),
+ip: msg.getIp_asB64()
   };
 
   if (includeInstance) {
@@ -645,7 +645,7 @@ proto.token.AuthToken.prototype.toObject = function(opt_includeInstance) {
  */
 proto.token.AuthToken.toObject = function(includeInstance, msg) {
   var f, obj = {
-    authToken: jspb.Message.getFieldWithDefault(msg, 1, "")
+authToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -775,7 +775,7 @@ proto.token.AccessId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.token.AccessId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+accessId: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -905,7 +905,7 @@ proto.token.UserId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.token.UserId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: msg.getUserId_asB64()
+userId: msg.getUserId_asB64()
   };
 
   if (includeInstance) {
@@ -1059,10 +1059,10 @@ proto.token.AuthTokenCreate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.token.AuthTokenCreate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userId: msg.getUserId_asB64(),
-    expire: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    ip: msg.getIp_asB64(),
-    number: jspb.Message.getFieldWithDefault(msg, 4, 0)
+userId: msg.getUserId_asB64(),
+expire: jspb.Message.getFieldWithDefault(msg, 2, 0),
+ip: msg.getIp_asB64(),
+number: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1327,11 +1327,11 @@ proto.token.TokenUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.token.TokenUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    authToken: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    expire: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    ip: msg.getIp_asB64()
+accessId: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+refreshToken: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+authToken: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+expire: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+ip: msg.getIp_asB64()
   };
 
   if (includeInstance) {
@@ -1691,7 +1691,7 @@ proto.token.TokenReadResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.token.TokenReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.token.TokenSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.token.TokenSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1849,7 +1849,7 @@ proto.token.TokenListResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.token.TokenListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.token.TokenSchema.toObject, includeInstance)
   };
 
@@ -2002,9 +2002,9 @@ proto.token.TokenCreateResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.token.TokenCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    authToken: jspb.Message.getFieldWithDefault(msg, 3, "")
+accessId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+refreshToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
+authToken: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -2199,7 +2199,7 @@ proto.token.AuthTokenCreateResponse.prototype.toObject = function(opt_includeIns
  */
 proto.token.AuthTokenCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    tokensList: jspb.Message.toObjectList(msg.getTokensList(),
+tokensList: jspb.Message.toObjectList(msg.getTokensList(),
     proto.token.TokenCreateResponse.toObject, includeInstance)
   };
 
@@ -2352,8 +2352,8 @@ proto.token.TokenUpdateResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.token.TokenUpdateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    refreshToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
+refreshToken: jspb.Message.getFieldWithDefault(msg, 1, ""),
+authToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {

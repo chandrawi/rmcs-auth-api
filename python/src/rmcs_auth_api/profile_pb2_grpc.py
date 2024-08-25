@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from rmcs_auth_api import token_pb2 as rmcs__auth__api_dot_token__pb2
+from rmcs_auth_api import profile_pb2 as rmcs__auth__api_dot_profile__pb2
 
 GRPC_GENERATED_VERSION = '1.66.0'
 GRPC_VERSION = grpc.__version__
@@ -18,14 +18,14 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in rmcs_auth_api/token_pb2_grpc.py depends on'
+        + f' but the generated code in rmcs_auth_api/profile_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class TokenServiceStub(object):
+class ProfileServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -34,187 +34,187 @@ class TokenServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.ReadAccessToken = channel.unary_unary(
-                '/token.TokenService/ReadAccessToken',
-                request_serializer=rmcs__auth__api_dot_token__pb2.AccessId.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenReadResponse.FromString,
+        self.ReadRoleProfile = channel.unary_unary(
+                '/profile.ProfileService/ReadRoleProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.ProfileId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.RoleProfileReadResponse.FromString,
                 _registered_method=True)
-        self.ListAuthToken = channel.unary_unary(
-                '/token.TokenService/ListAuthToken',
-                request_serializer=rmcs__auth__api_dot_token__pb2.AuthToken.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenListResponse.FromString,
+        self.ListRoleProfile = channel.unary_unary(
+                '/profile.ProfileService/ListRoleProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.RoleId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.RoleProfileListResponse.FromString,
                 _registered_method=True)
-        self.ListTokenByUser = channel.unary_unary(
-                '/token.TokenService/ListTokenByUser',
-                request_serializer=rmcs__auth__api_dot_token__pb2.UserId.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenListResponse.FromString,
+        self.CreateRoleProfile = channel.unary_unary(
+                '/profile.ProfileService/CreateRoleProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.RoleProfileSchema.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileCreateResponse.FromString,
                 _registered_method=True)
-        self.CreateAccessToken = channel.unary_unary(
-                '/token.TokenService/CreateAccessToken',
-                request_serializer=rmcs__auth__api_dot_token__pb2.TokenSchema.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenCreateResponse.FromString,
+        self.UpdateRoleProfile = channel.unary_unary(
+                '/profile.ProfileService/UpdateRoleProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.RoleProfileUpdate.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.FromString,
                 _registered_method=True)
-        self.CreateAuthToken = channel.unary_unary(
-                '/token.TokenService/CreateAuthToken',
-                request_serializer=rmcs__auth__api_dot_token__pb2.AuthTokenCreate.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.AuthTokenCreateResponse.FromString,
+        self.DeleteRoleProfile = channel.unary_unary(
+                '/profile.ProfileService/DeleteRoleProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.ProfileId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.FromString,
                 _registered_method=True)
-        self.UpdateAccessToken = channel.unary_unary(
-                '/token.TokenService/UpdateAccessToken',
-                request_serializer=rmcs__auth__api_dot_token__pb2.TokenUpdate.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.FromString,
+        self.ReadUserProfile = channel.unary_unary(
+                '/profile.ProfileService/ReadUserProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.ProfileId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.UserProfileReadResponse.FromString,
                 _registered_method=True)
-        self.UpdateAuthToken = channel.unary_unary(
-                '/token.TokenService/UpdateAuthToken',
-                request_serializer=rmcs__auth__api_dot_token__pb2.TokenUpdate.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.FromString,
+        self.ListUserProfile = channel.unary_unary(
+                '/profile.ProfileService/ListUserProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.UserId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.UserProfileListResponse.FromString,
                 _registered_method=True)
-        self.DeleteAccessToken = channel.unary_unary(
-                '/token.TokenService/DeleteAccessToken',
-                request_serializer=rmcs__auth__api_dot_token__pb2.AccessId.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
+        self.CreateUserProfile = channel.unary_unary(
+                '/profile.ProfileService/CreateUserProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.UserProfileSchema.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileCreateResponse.FromString,
                 _registered_method=True)
-        self.DeleteAuthToken = channel.unary_unary(
-                '/token.TokenService/DeleteAuthToken',
-                request_serializer=rmcs__auth__api_dot_token__pb2.AuthToken.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
+        self.UpdateUserProfile = channel.unary_unary(
+                '/profile.ProfileService/UpdateUserProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.UserProfileUpdate.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.FromString,
                 _registered_method=True)
-        self.DeleteTokenByUser = channel.unary_unary(
-                '/token.TokenService/DeleteTokenByUser',
-                request_serializer=rmcs__auth__api_dot_token__pb2.UserId.SerializeToString,
-                response_deserializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
+        self.DeleteUserProfile = channel.unary_unary(
+                '/profile.ProfileService/DeleteUserProfile',
+                request_serializer=rmcs__auth__api_dot_profile__pb2.ProfileId.SerializeToString,
+                response_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.FromString,
                 _registered_method=True)
 
 
-class TokenServiceServicer(object):
+class ProfileServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def ReadAccessToken(self, request, context):
+    def ReadRoleProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListAuthToken(self, request, context):
+    def ListRoleProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListTokenByUser(self, request, context):
+    def CreateRoleProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateAccessToken(self, request, context):
+    def UpdateRoleProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateAuthToken(self, request, context):
+    def DeleteRoleProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateAccessToken(self, request, context):
+    def ReadUserProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateAuthToken(self, request, context):
+    def ListUserProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteAccessToken(self, request, context):
+    def CreateUserProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteAuthToken(self, request, context):
+    def UpdateUserProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteTokenByUser(self, request, context):
+    def DeleteUserProfile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_TokenServiceServicer_to_server(servicer, server):
+def add_ProfileServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'ReadAccessToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReadAccessToken,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.AccessId.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenReadResponse.SerializeToString,
+            'ReadRoleProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReadRoleProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileId.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.RoleProfileReadResponse.SerializeToString,
             ),
-            'ListAuthToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListAuthToken,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.AuthToken.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenListResponse.SerializeToString,
+            'ListRoleProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListRoleProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.RoleId.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.RoleProfileListResponse.SerializeToString,
             ),
-            'ListTokenByUser': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListTokenByUser,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.UserId.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenListResponse.SerializeToString,
+            'CreateRoleProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateRoleProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.RoleProfileSchema.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.ProfileCreateResponse.SerializeToString,
             ),
-            'CreateAccessToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateAccessToken,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.TokenSchema.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenCreateResponse.SerializeToString,
+            'UpdateRoleProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateRoleProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.RoleProfileUpdate.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.SerializeToString,
             ),
-            'CreateAuthToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateAuthToken,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.AuthTokenCreate.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.AuthTokenCreateResponse.SerializeToString,
+            'DeleteRoleProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteRoleProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileId.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.SerializeToString,
             ),
-            'UpdateAccessToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateAccessToken,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.TokenUpdate.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.SerializeToString,
+            'ReadUserProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReadUserProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileId.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.UserProfileReadResponse.SerializeToString,
             ),
-            'UpdateAuthToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateAuthToken,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.TokenUpdate.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.SerializeToString,
+            'ListUserProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUserProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.UserId.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.UserProfileListResponse.SerializeToString,
             ),
-            'DeleteAccessToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteAccessToken,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.AccessId.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.SerializeToString,
+            'CreateUserProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateUserProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.UserProfileSchema.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.ProfileCreateResponse.SerializeToString,
             ),
-            'DeleteAuthToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteAuthToken,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.AuthToken.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.SerializeToString,
+            'UpdateUserProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.UserProfileUpdate.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.SerializeToString,
             ),
-            'DeleteTokenByUser': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteTokenByUser,
-                    request_deserializer=rmcs__auth__api_dot_token__pb2.UserId.FromString,
-                    response_serializer=rmcs__auth__api_dot_token__pb2.TokenChangeResponse.SerializeToString,
+            'DeleteUserProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteUserProfile,
+                    request_deserializer=rmcs__auth__api_dot_profile__pb2.ProfileId.FromString,
+                    response_serializer=rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'token.TokenService', rpc_method_handlers)
+            'profile.ProfileService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('token.TokenService', rpc_method_handlers)
+    server.add_registered_method_handlers('profile.ProfileService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class TokenService(object):
+class ProfileService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def ReadAccessToken(request,
+    def ReadRoleProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -227,9 +227,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/ReadAccessToken',
-            rmcs__auth__api_dot_token__pb2.AccessId.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenReadResponse.FromString,
+            '/profile.ProfileService/ReadRoleProfile',
+            rmcs__auth__api_dot_profile__pb2.ProfileId.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.RoleProfileReadResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -241,7 +241,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListAuthToken(request,
+    def ListRoleProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -254,9 +254,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/ListAuthToken',
-            rmcs__auth__api_dot_token__pb2.AuthToken.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenListResponse.FromString,
+            '/profile.ProfileService/ListRoleProfile',
+            rmcs__auth__api_dot_profile__pb2.RoleId.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.RoleProfileListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -268,7 +268,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListTokenByUser(request,
+    def CreateRoleProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -281,9 +281,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/ListTokenByUser',
-            rmcs__auth__api_dot_token__pb2.UserId.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenListResponse.FromString,
+            '/profile.ProfileService/CreateRoleProfile',
+            rmcs__auth__api_dot_profile__pb2.RoleProfileSchema.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.ProfileCreateResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -295,7 +295,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def CreateAccessToken(request,
+    def UpdateRoleProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -308,9 +308,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/CreateAccessToken',
-            rmcs__auth__api_dot_token__pb2.TokenSchema.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenCreateResponse.FromString,
+            '/profile.ProfileService/UpdateRoleProfile',
+            rmcs__auth__api_dot_profile__pb2.RoleProfileUpdate.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -322,7 +322,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def CreateAuthToken(request,
+    def DeleteRoleProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -335,9 +335,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/CreateAuthToken',
-            rmcs__auth__api_dot_token__pb2.AuthTokenCreate.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.AuthTokenCreateResponse.FromString,
+            '/profile.ProfileService/DeleteRoleProfile',
+            rmcs__auth__api_dot_profile__pb2.ProfileId.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -349,7 +349,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def UpdateAccessToken(request,
+    def ReadUserProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -362,9 +362,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/UpdateAccessToken',
-            rmcs__auth__api_dot_token__pb2.TokenUpdate.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.FromString,
+            '/profile.ProfileService/ReadUserProfile',
+            rmcs__auth__api_dot_profile__pb2.ProfileId.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.UserProfileReadResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -376,7 +376,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def UpdateAuthToken(request,
+    def ListUserProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -389,9 +389,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/UpdateAuthToken',
-            rmcs__auth__api_dot_token__pb2.TokenUpdate.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenUpdateResponse.FromString,
+            '/profile.ProfileService/ListUserProfile',
+            rmcs__auth__api_dot_profile__pb2.UserId.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.UserProfileListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -403,7 +403,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def DeleteAccessToken(request,
+    def CreateUserProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -416,9 +416,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/DeleteAccessToken',
-            rmcs__auth__api_dot_token__pb2.AccessId.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
+            '/profile.ProfileService/CreateUserProfile',
+            rmcs__auth__api_dot_profile__pb2.UserProfileSchema.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.ProfileCreateResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -430,7 +430,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def DeleteAuthToken(request,
+    def UpdateUserProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -443,9 +443,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/DeleteAuthToken',
-            rmcs__auth__api_dot_token__pb2.AuthToken.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
+            '/profile.ProfileService/UpdateUserProfile',
+            rmcs__auth__api_dot_profile__pb2.UserProfileUpdate.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -457,7 +457,7 @@ class TokenService(object):
             _registered_method=True)
 
     @staticmethod
-    def DeleteTokenByUser(request,
+    def DeleteUserProfile(request,
             target,
             options=(),
             channel_credentials=None,
@@ -470,9 +470,9 @@ class TokenService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/token.TokenService/DeleteTokenByUser',
-            rmcs__auth__api_dot_token__pb2.UserId.SerializeToString,
-            rmcs__auth__api_dot_token__pb2.TokenChangeResponse.FromString,
+            '/profile.ProfileService/DeleteUserProfile',
+            rmcs__auth__api_dot_profile__pb2.ProfileId.SerializeToString,
+            rmcs__auth__api_dot_profile__pb2.ProfileChangeResponse.FromString,
             options,
             channel_credentials,
             insecure,

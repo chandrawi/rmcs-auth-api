@@ -6,6 +6,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("../proto/rmcs_auth_api/api.proto", "api_descriptor.bin"),
         ("../proto/rmcs_auth_api/role.proto", "role_descriptor.bin"),
         ("../proto/rmcs_auth_api/user.proto", "user_descriptor.bin"),
+        ("../proto/rmcs_auth_api/profile.proto", "profile_descriptor.bin"),
         ("../proto/rmcs_auth_api/token.proto", "token_descriptor.bin"),
         ("../proto/rmcs_auth_api/auth.proto", "auth_descriptor.bin")
     ];
