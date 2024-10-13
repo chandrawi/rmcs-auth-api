@@ -21,6 +21,8 @@ service ProfileService {
     rpc UpdateUserProfile(UserProfileUpdate) returns (ProfileChangeResponse);
 
     rpc DeleteUserProfile(ProfileId) returns (ProfileChangeResponse);
+
+    rpc SwapUserProfile(UserProfileSwap) returns (ProfileChangeResponse);
 }
 
 message RoleProfileSchema {
@@ -62,9 +64,15 @@ message RoleProfileUpdate {
 message UserProfileUpdate {
     int32 id = 1;
     optional string name = 2;
-    optional uint32 order = 3;
-    optional bytes value_bytes = 4;
-    optional uint32 value_type = 5;
+    optional bytes value_bytes = 3;
+    optional uint32 value_type = 4;
+}
+
+message UserProfileSwap {
+    bytes user_id = 1;
+    string name = 2;
+    uint32 order_1 = 3;
+    uint32 order_2 = 4;
 }
 
 message RoleProfileReadResponse {

@@ -66,18 +66,28 @@ class RoleProfileUpdate(_message.Message):
     def __init__(self, id: _Optional[int] = ..., name: _Optional[str] = ..., value_type: _Optional[int] = ..., mode: _Optional[int] = ...) -> None: ...
 
 class UserProfileUpdate(_message.Message):
-    __slots__ = ("id", "name", "order", "value_bytes", "value_type")
+    __slots__ = ("id", "name", "value_bytes", "value_type")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
-    ORDER_FIELD_NUMBER: _ClassVar[int]
     VALUE_BYTES_FIELD_NUMBER: _ClassVar[int]
     VALUE_TYPE_FIELD_NUMBER: _ClassVar[int]
     id: int
     name: str
-    order: int
     value_bytes: bytes
     value_type: int
-    def __init__(self, id: _Optional[int] = ..., name: _Optional[str] = ..., order: _Optional[int] = ..., value_bytes: _Optional[bytes] = ..., value_type: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[int] = ..., name: _Optional[str] = ..., value_bytes: _Optional[bytes] = ..., value_type: _Optional[int] = ...) -> None: ...
+
+class UserProfileSwap(_message.Message):
+    __slots__ = ("user_id", "name", "order_1", "order_2")
+    USER_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    ORDER_1_FIELD_NUMBER: _ClassVar[int]
+    ORDER_2_FIELD_NUMBER: _ClassVar[int]
+    user_id: bytes
+    name: str
+    order_1: int
+    order_2: int
+    def __init__(self, user_id: _Optional[bytes] = ..., name: _Optional[str] = ..., order_1: _Optional[int] = ..., order_2: _Optional[int] = ...) -> None: ...
 
 class RoleProfileReadResponse(_message.Message):
     __slots__ = ("result",)

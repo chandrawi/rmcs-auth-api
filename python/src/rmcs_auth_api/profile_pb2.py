@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1brmcs_auth_api/profile.proto\x12\x07profile\"`\n\x11RoleProfileSchema\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0f\n\x07role_id\x18\x02 \x01(\x0c\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\nvalue_type\x18\x04 \x01(\r\x12\x0c\n\x04mode\x18\x05 \x01(\r\"v\n\x11UserProfileSchema\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0f\n\x07user_id\x18\x02 \x01(\x0c\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0bvalue_bytes\x18\x04 \x01(\x0c\x12\x12\n\nvalue_type\x18\x05 \x01(\r\x12\r\n\x05order\x18\x06 \x01(\r\"\x17\n\tProfileId\x12\n\n\x02id\x18\x01 \x01(\x05\"\x14\n\x06RoleId\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x14\n\x06UserId\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x7f\n\x11RoleProfileUpdate\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x17\n\nvalue_type\x18\x03 \x01(\rH\x01\x88\x01\x01\x12\x11\n\x04mode\x18\x04 \x01(\rH\x02\x88\x01\x01\x42\x07\n\x05_nameB\r\n\x0b_value_typeB\x07\n\x05_mode\"\xab\x01\n\x11UserProfileUpdate\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05order\x18\x03 \x01(\rH\x01\x88\x01\x01\x12\x18\n\x0bvalue_bytes\x18\x04 \x01(\x0cH\x02\x88\x01\x01\x12\x17\n\nvalue_type\x18\x05 \x01(\rH\x03\x88\x01\x01\x42\x07\n\x05_nameB\x08\n\x06_orderB\x0e\n\x0c_value_bytesB\r\n\x0b_value_type\"E\n\x17RoleProfileReadResponse\x12*\n\x06result\x18\x01 \x01(\x0b\x32\x1a.profile.RoleProfileSchema\"F\n\x17RoleProfileListResponse\x12+\n\x07results\x18\x01 \x03(\x0b\x32\x1a.profile.RoleProfileSchema\"E\n\x17UserProfileReadResponse\x12*\n\x06result\x18\x01 \x01(\x0b\x32\x1a.profile.UserProfileSchema\"F\n\x17UserProfileListResponse\x12+\n\x07results\x18\x01 \x03(\x0b\x32\x1a.profile.UserProfileSchema\"#\n\x15ProfileCreateResponse\x12\n\n\x02id\x18\x01 \x01(\x05\"\x17\n\x15ProfileChangeResponse2\x84\x06\n\x0eProfileService\x12G\n\x0fReadRoleProfile\x12\x12.profile.ProfileId\x1a .profile.RoleProfileReadResponse\x12\x44\n\x0fListRoleProfile\x12\x0f.profile.RoleId\x1a .profile.RoleProfileListResponse\x12O\n\x11\x43reateRoleProfile\x12\x1a.profile.RoleProfileSchema\x1a\x1e.profile.ProfileCreateResponse\x12O\n\x11UpdateRoleProfile\x12\x1a.profile.RoleProfileUpdate\x1a\x1e.profile.ProfileChangeResponse\x12G\n\x11\x44\x65leteRoleProfile\x12\x12.profile.ProfileId\x1a\x1e.profile.ProfileChangeResponse\x12G\n\x0fReadUserProfile\x12\x12.profile.ProfileId\x1a .profile.UserProfileReadResponse\x12\x44\n\x0fListUserProfile\x12\x0f.profile.UserId\x1a .profile.UserProfileListResponse\x12O\n\x11\x43reateUserProfile\x12\x1a.profile.UserProfileSchema\x1a\x1e.profile.ProfileCreateResponse\x12O\n\x11UpdateUserProfile\x12\x1a.profile.UserProfileUpdate\x1a\x1e.profile.ProfileChangeResponse\x12G\n\x11\x44\x65leteUserProfile\x12\x12.profile.ProfileId\x1a\x1e.profile.ProfileChangeResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1brmcs_auth_api/profile.proto\x12\x07profile\"`\n\x11RoleProfileSchema\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0f\n\x07role_id\x18\x02 \x01(\x0c\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\nvalue_type\x18\x04 \x01(\r\x12\x0c\n\x04mode\x18\x05 \x01(\r\"v\n\x11UserProfileSchema\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0f\n\x07user_id\x18\x02 \x01(\x0c\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0bvalue_bytes\x18\x04 \x01(\x0c\x12\x12\n\nvalue_type\x18\x05 \x01(\r\x12\r\n\x05order\x18\x06 \x01(\r\"\x17\n\tProfileId\x12\n\n\x02id\x18\x01 \x01(\x05\"\x14\n\x06RoleId\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x14\n\x06UserId\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x7f\n\x11RoleProfileUpdate\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x17\n\nvalue_type\x18\x03 \x01(\rH\x01\x88\x01\x01\x12\x11\n\x04mode\x18\x04 \x01(\rH\x02\x88\x01\x01\x42\x07\n\x05_nameB\r\n\x0b_value_typeB\x07\n\x05_mode\"\x8d\x01\n\x11UserProfileUpdate\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x18\n\x0bvalue_bytes\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x12\x17\n\nvalue_type\x18\x04 \x01(\rH\x02\x88\x01\x01\x42\x07\n\x05_nameB\x0e\n\x0c_value_bytesB\r\n\x0b_value_type\"R\n\x0fUserProfileSwap\x12\x0f\n\x07user_id\x18\x01 \x01(\x0c\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07order_1\x18\x03 \x01(\r\x12\x0f\n\x07order_2\x18\x04 \x01(\r\"E\n\x17RoleProfileReadResponse\x12*\n\x06result\x18\x01 \x01(\x0b\x32\x1a.profile.RoleProfileSchema\"F\n\x17RoleProfileListResponse\x12+\n\x07results\x18\x01 \x03(\x0b\x32\x1a.profile.RoleProfileSchema\"E\n\x17UserProfileReadResponse\x12*\n\x06result\x18\x01 \x01(\x0b\x32\x1a.profile.UserProfileSchema\"F\n\x17UserProfileListResponse\x12+\n\x07results\x18\x01 \x03(\x0b\x32\x1a.profile.UserProfileSchema\"#\n\x15ProfileCreateResponse\x12\n\n\x02id\x18\x01 \x01(\x05\"\x17\n\x15ProfileChangeResponse2\xd1\x06\n\x0eProfileService\x12G\n\x0fReadRoleProfile\x12\x12.profile.ProfileId\x1a .profile.RoleProfileReadResponse\x12\x44\n\x0fListRoleProfile\x12\x0f.profile.RoleId\x1a .profile.RoleProfileListResponse\x12O\n\x11\x43reateRoleProfile\x12\x1a.profile.RoleProfileSchema\x1a\x1e.profile.ProfileCreateResponse\x12O\n\x11UpdateRoleProfile\x12\x1a.profile.RoleProfileUpdate\x1a\x1e.profile.ProfileChangeResponse\x12G\n\x11\x44\x65leteRoleProfile\x12\x12.profile.ProfileId\x1a\x1e.profile.ProfileChangeResponse\x12G\n\x0fReadUserProfile\x12\x12.profile.ProfileId\x1a .profile.UserProfileReadResponse\x12\x44\n\x0fListUserProfile\x12\x0f.profile.UserId\x1a .profile.UserProfileListResponse\x12O\n\x11\x43reateUserProfile\x12\x1a.profile.UserProfileSchema\x1a\x1e.profile.ProfileCreateResponse\x12O\n\x11UpdateUserProfile\x12\x1a.profile.UserProfileUpdate\x1a\x1e.profile.ProfileChangeResponse\x12G\n\x11\x44\x65leteUserProfile\x12\x12.profile.ProfileId\x1a\x1e.profile.ProfileChangeResponse\x12K\n\x0fSwapUserProfile\x12\x18.profile.UserProfileSwap\x1a\x1e.profile.ProfileChangeResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,19 +44,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ROLEPROFILEUPDATE']._serialized_start=327
   _globals['_ROLEPROFILEUPDATE']._serialized_end=454
   _globals['_USERPROFILEUPDATE']._serialized_start=457
-  _globals['_USERPROFILEUPDATE']._serialized_end=628
-  _globals['_ROLEPROFILEREADRESPONSE']._serialized_start=630
-  _globals['_ROLEPROFILEREADRESPONSE']._serialized_end=699
-  _globals['_ROLEPROFILELISTRESPONSE']._serialized_start=701
-  _globals['_ROLEPROFILELISTRESPONSE']._serialized_end=771
-  _globals['_USERPROFILEREADRESPONSE']._serialized_start=773
-  _globals['_USERPROFILEREADRESPONSE']._serialized_end=842
-  _globals['_USERPROFILELISTRESPONSE']._serialized_start=844
-  _globals['_USERPROFILELISTRESPONSE']._serialized_end=914
-  _globals['_PROFILECREATERESPONSE']._serialized_start=916
-  _globals['_PROFILECREATERESPONSE']._serialized_end=951
-  _globals['_PROFILECHANGERESPONSE']._serialized_start=953
-  _globals['_PROFILECHANGERESPONSE']._serialized_end=976
-  _globals['_PROFILESERVICE']._serialized_start=979
-  _globals['_PROFILESERVICE']._serialized_end=1751
+  _globals['_USERPROFILEUPDATE']._serialized_end=598
+  _globals['_USERPROFILESWAP']._serialized_start=600
+  _globals['_USERPROFILESWAP']._serialized_end=682
+  _globals['_ROLEPROFILEREADRESPONSE']._serialized_start=684
+  _globals['_ROLEPROFILEREADRESPONSE']._serialized_end=753
+  _globals['_ROLEPROFILELISTRESPONSE']._serialized_start=755
+  _globals['_ROLEPROFILELISTRESPONSE']._serialized_end=825
+  _globals['_USERPROFILEREADRESPONSE']._serialized_start=827
+  _globals['_USERPROFILEREADRESPONSE']._serialized_end=896
+  _globals['_USERPROFILELISTRESPONSE']._serialized_start=898
+  _globals['_USERPROFILELISTRESPONSE']._serialized_end=968
+  _globals['_PROFILECREATERESPONSE']._serialized_start=970
+  _globals['_PROFILECREATERESPONSE']._serialized_end=1005
+  _globals['_PROFILECHANGERESPONSE']._serialized_start=1007
+  _globals['_PROFILECHANGERESPONSE']._serialized_end=1030
+  _globals['_PROFILESERVICE']._serialized_start=1033
+  _globals['_PROFILESERVICE']._serialized_end=1882
 # @@protoc_insertion_point(module_scope)
