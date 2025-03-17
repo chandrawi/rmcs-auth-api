@@ -5,7 +5,7 @@ import warnings
 
 from rmcs_auth_api import auth_pb2 as rmcs__auth__api_dot_auth__pb2
 
-GRPC_GENERATED_VERSION = '1.66.0'
+GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
