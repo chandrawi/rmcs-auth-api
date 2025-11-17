@@ -18,34 +18,34 @@ pub struct ApiSchema {
     #[prost(message, repeated, tag = "8")]
     pub procedures: ::prost::alloc::vec::Vec<ProcedureSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ApiId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ApiIds {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ApiName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ApiCategory {
     #[prost(string, tag = "1")]
     pub category: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ApiOption {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "2")]
     pub category: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ApiUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -62,7 +62,7 @@ pub struct ApiUpdate {
     #[prost(bytes = "vec", optional, tag = "7")]
     pub access_key: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureSchema {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -75,31 +75,31 @@ pub struct ProcedureSchema {
     #[prost(string, repeated, tag = "5")]
     pub roles: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureIds {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureName {
     #[prost(bytes = "vec", tag = "1")]
     pub api_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureOption {
     #[prost(bytes = "vec", optional, tag = "1")]
     pub api_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -118,14 +118,14 @@ pub struct ApiListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<ApiSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ApiCreateResponse {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ApiChangeResponse {}
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<ProcedureSchema>,
@@ -135,12 +135,12 @@ pub struct ProcedureListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<ProcedureSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureCreateResponse {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ProcedureChangeResponse {}
 /// Generated client implementations.
 pub mod api_service_client {
@@ -248,7 +248,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/api.ApiService/ReadApi");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("api.ApiService", "ReadApi"));
@@ -269,7 +269,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ReadApiByName",
             );
@@ -293,7 +293,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ListApiByIds",
             );
@@ -317,7 +317,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ListApiByName",
             );
@@ -341,7 +341,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ListApiByCategory",
             );
@@ -365,7 +365,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ListApiOption",
             );
@@ -389,7 +389,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/api.ApiService/CreateApi");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("api.ApiService", "CreateApi"));
@@ -410,7 +410,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/api.ApiService/UpdateApi");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("api.ApiService", "UpdateApi"));
@@ -431,7 +431,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/api.ApiService/DeleteApi");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("api.ApiService", "DeleteApi"));
@@ -452,7 +452,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ReadProcedure",
             );
@@ -476,7 +476,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ReadProcedureByName",
             );
@@ -500,7 +500,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ListProcedureByIds",
             );
@@ -524,7 +524,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ListProcedureByApi",
             );
@@ -548,7 +548,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ListProcedureByName",
             );
@@ -572,7 +572,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/ListProcedureOption",
             );
@@ -596,7 +596,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/CreateProcedure",
             );
@@ -620,7 +620,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/UpdateProcedure",
             );
@@ -644,7 +644,7 @@ pub mod api_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/api.ApiService/DeleteProcedure",
             );
@@ -881,7 +881,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadApiSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -924,7 +924,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadApiByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -967,7 +967,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListApiByIdsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1010,7 +1010,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListApiByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1054,7 +1054,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListApiByCategorySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1097,7 +1097,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListApiOptionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1140,7 +1140,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateApiSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1183,7 +1183,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateApiSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1226,7 +1226,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteApiSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1269,7 +1269,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadProcedureSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1313,7 +1313,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadProcedureByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1357,7 +1357,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListProcedureByIdsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1401,7 +1401,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListProcedureByApiSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1445,7 +1445,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListProcedureByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1491,7 +1491,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListProcedureOptionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1536,7 +1536,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateProcedureSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1581,7 +1581,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateProcedureSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1624,7 +1624,7 @@ pub mod api_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteProcedureSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,

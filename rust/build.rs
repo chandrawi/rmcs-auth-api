@@ -14,7 +14,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     for tuple in proto_files {
         let (fproto, fdescriptor) = tuple;
-        tonic_build::configure()
+        tonic_prost_build::configure()
             .protoc_arg("--experimental_allow_proto3_optional") // for older systems
             .build_client(true)
             .build_server(true)
